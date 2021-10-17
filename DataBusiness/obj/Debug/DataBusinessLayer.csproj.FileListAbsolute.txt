@@ -1,0 +1,9 @@
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.dll
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.pdb
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.dll
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.pdb
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
