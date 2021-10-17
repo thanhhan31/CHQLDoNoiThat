@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Data.SqlClient;
 using DataAccessLayer;
 
@@ -51,15 +52,10 @@ namespace DataBusiness
                 new SqlParameter("@id", id),
                 new SqlParameter("@idCategory", idCategory),
                 new SqlParameter("@name", name),
-                new SqlParameter("@id", SqlDbType.VarBinary)
-                                { Value = image }
+                image.Length != 0 ?
+                    new SqlParameter("@image", SqlDbType.VarBinary) { Value = image } :
+                    new SqlParameter("@image", SqlBinary.Null)
                 );
-
-
-            /*new SqlParameter("@sellPrice", SqlDbType.Decimal)
-            { Precision = 19, Scale = 5, Value = sellPrice },
-                new SqlParameter("@quantity", quantity)
-            , decimal sellPrice, int quantity*/
         }
 
         public bool update_product(string id, string idCategory, string name, byte[] image, ref string error)
@@ -71,18 +67,13 @@ namespace DataBusiness
                 new SqlParameter("@id", id),
                 new SqlParameter("@idCategory", idCategory),
                 new SqlParameter("@name", name),
-                new SqlParameter("@id", SqlDbType.VarBinary)
-                                { Value = image }
+                image.Length != 0 ?
+                    new SqlParameter("@image", SqlDbType.VarBinary) { Value = image } :
+                    new SqlParameter("@image", SqlBinary.Null)
                 );
-
-
-            /*new SqlParameter("@sellPrice", SqlDbType.Decimal)
-            { Precision = 19, Scale = 5, Value = sellPrice },
-                new SqlParameter("@quantity", quantity)
-            , decimal sellPrice, int quantity*/
         }
 
-        public bool delete_product(int id, ref string error)
+        public bool delete_product(string id, ref string error)
         {
             bool candelete = false;
             if (dataProvider.ExecuteScalar("SELECT dbo.fn_can_modify_product(@id)",

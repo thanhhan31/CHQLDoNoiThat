@@ -66,10 +66,10 @@ namespace CHQLDoNoiThat.FormsManager
                 txtEmail.Texts = dataGridViewNhanVien.CurrentRow.Cells["email"].Value.ToString();
 
 
-                var cc = dataGridViewNhanVien.CurrentRow.Cells["idType"] as DataGridViewComboBoxCell;
-                for (int i = 0; i < cc.Items.Count; i++)
+                var t = dataGridViewNhanVien.CurrentRow.Cells["idType"] as DataGridViewComboBoxCell;
+                for (int i = 0; i < t.Items.Count; i++)
                 {
-                    if ((cc.Items[i] as DataRowView).Row.ItemArray[0].ToString() == cc.Value.ToString())
+                    if ((t.Items[i] as DataRowView).Row.ItemArray[0].ToString() == t.Value.ToString())
                     {
                         cmbChucVu.SelectedIndex = i;
                         break;
@@ -81,7 +81,7 @@ namespace CHQLDoNoiThat.FormsManager
                 if (dataGridViewNhanVien.CurrentRow.Cells["avatar"].Value == DBNull.Value)
                 {
                     avt = Array.Empty<byte>();
-                    pictureBoxNhanVien.Image = new Bitmap(@"C:\no_avt.png");
+                    pictureBoxNhanVien.Image = Properties.Resources.no_avt;
                 }
                 else
                 {
@@ -180,6 +180,7 @@ namespace CHQLDoNoiThat.FormsManager
             }
             disable_edit();
             update_data();
+            txtPassword.Texts = "";
             btnThem.Enabled = true;
             btnVohieuhoa.Enabled = true;
             btnSua.Enabled = true;
@@ -205,8 +206,8 @@ namespace CHQLDoNoiThat.FormsManager
             else
             {
                 MessageBox.Show("Vô hiệu hóa nhân viên thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                update_data();
             }
-            update_data();
         }
 
         private void update_data()
@@ -288,7 +289,7 @@ namespace CHQLDoNoiThat.FormsManager
             txtDiaChi.Texts = "";
             txtEmail.Texts = "";
 
-            datePickerControlNgaySinh.Enabled = true;
+            //datePickerControlNgaySinh.Enabled = true;
             cmbGioiTinh.SelectedIndex = -1;
             cmbChucVu.SelectedIndex = -1;
             cmbTinhTrang.SelectedIndex = -1;

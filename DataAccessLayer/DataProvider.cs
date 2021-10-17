@@ -10,10 +10,12 @@ namespace DataAccessLayer
 {
     public class DataProvider
     {
+        private static string serverName = @"DESKTOP-ET08Q48\SQLEXPRESS";
+        private static string dbName = @"DBMS_NoiThat";
+        private static string connectionString = @"Server=" + serverName + ";Initial Catalog=" + dbName + ";Integrated Security=True;";
+
         SqlConnection sqlConnection;
-        
         SqlDataAdapter dataAdapter;
-        string connectionString = @"Server=DESKTOP-ET08Q48\SQLEXPRESS;Initial Catalog=aaaa;Integrated Security=True;";
 
         public DataProvider()
         {

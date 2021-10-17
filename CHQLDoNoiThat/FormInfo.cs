@@ -128,9 +128,18 @@ namespace CHQLDoNoiThat
                     MessageBox.Show("Không tìm thấy chức vụ " + error, "Lỗi tải thông tin chức vụ");
                 label11.Text = "Tình trạng: Đang hoạt động";
 
-                pictureBoxNhanVien.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBoxNhanVien.Image = Utils.ByteToImage(account.Avatar);
-                avt = account.Avatar;
+                if (account.Avatar.Length != 0)
+                {
+                    pictureBoxNhanVien.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBoxNhanVien.Image = Utils.ByteToImage(account.Avatar);
+                    avt = account.Avatar;
+                }
+                else
+                {
+                    pictureBoxNhanVien.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBoxNhanVien.Image = Properties.Resources.no_avt;
+                    avt = Array.Empty<byte>();
+                }
             }
         }
     }

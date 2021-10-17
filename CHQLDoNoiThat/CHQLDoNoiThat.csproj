@@ -285,5 +285,16 @@
       <Name>DataBusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_avt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\armchair_64px.png" />
+    <Content Include="images\bill_24px.png" />
+    <Content Include="images\inventory_flow_32px.png" />
+    <Content Include="images\logout_rounded_left_30px.png" />
+    <Content Include="images\order_history_30px.png" />
+    <Content Include="images\user_40px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

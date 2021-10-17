@@ -17,8 +17,6 @@ namespace CHQLDoNoiThat
         public LoginForm()
         {
             InitializeComponent();
-
-            //this.Shown += (object sender, EventArgs e) => btnLogin_Click(null, null);
         }
         private void btnLogin_MouseHover(object sender, EventArgs e)
         {
@@ -44,12 +42,6 @@ namespace CHQLDoNoiThat
         {
             string email = txtUser.Text;
             string passwd = txtPassword.Text;
-
-            /*if (String.IsNullOrEmpty(email))
-            {
-                email = "1@.";//txtUser.Text;
-                passwd = "1";// txtPassword.Text;
-            }*/
 
             string error = "";
             DBL_Account dbl = new DBL_Account();
