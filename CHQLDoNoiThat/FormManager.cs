@@ -72,18 +72,6 @@ namespace CHQLDoNoiThat
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

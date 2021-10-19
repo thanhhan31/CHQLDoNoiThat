@@ -151,6 +151,12 @@
     <Compile Include="FormsStaff\FormInventoty.Designer.cs">
       <DependentUpon>FormInventoty.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsStaff\FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsStaff\FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     <EmbeddedResource Include="FormsStaff\FormInventoty.resx">
       <DependentUpon>FormInventoty.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsStaff\FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +242,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBusiness\DataBusinessLayer.csproj">
+      <Project>{24886607-50cf-430a-8780-a7ff593dc5d6}</Project>
+      <Name>DataBusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bill_30px.png" />
@@ -278,23 +293,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wink_100px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataBusiness\DataBusinessLayer.csproj">
-      <Project>{24886607-50cf-430a-8780-a7ff593dc5d6}</Project>
-      <Name>DataBusinessLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\no_avt.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\armchair_64px.png" />
-    <Content Include="images\bill_24px.png" />
-    <Content Include="images\inventory_flow_32px.png" />
-    <Content Include="images\logout_rounded_left_30px.png" />
-    <Content Include="images\order_history_30px.png" />
-    <Content Include="images\user_40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

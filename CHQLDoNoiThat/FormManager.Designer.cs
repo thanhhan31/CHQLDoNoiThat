@@ -38,7 +38,6 @@ namespace CHQLDoNoiThat
             this.lblTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTenDangNhap = new System.Windows.Forms.Label();
@@ -103,7 +102,7 @@ namespace CHQLDoNoiThat
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 589);
             this.panel1.TabIndex = 1;
@@ -162,7 +161,6 @@ namespace CHQLDoNoiThat
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnClose);
-            this.flowLayoutPanel1.Controls.Add(this.btnMaximize);
             this.flowLayoutPanel1.Controls.Add(this.btnMinimize);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -186,26 +184,12 @@ namespace CHQLDoNoiThat
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnMaximize
-            // 
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(59, 0);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(26, 28);
-            this.btnMaximize.TabIndex = 22;
-            this.btnMaximize.Text = "O";
-            this.btnMaximize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
             // btnMinimize
             // 
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(29, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(59, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(26, 28);
@@ -279,7 +263,7 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanelMenu.Controls.Add(this.btnLoaiSanPham_FManager, 0, 1);
             this.tableLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMenu.Location = new System.Drawing.Point(2, 67);
-            this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
             this.tableLayoutPanelMenu.RowCount = 7;
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -455,7 +439,7 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -470,11 +454,10 @@ namespace CHQLDoNoiThat
             this.ClientSize = new System.Drawing.Size(975, 650);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManager_FormClosed);
             this.Load += new System.EventHandler(this.FormManager_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanelDesktop.ResumeLayout(false);
@@ -497,7 +480,6 @@ namespace CHQLDoNoiThat
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label btnClose;
-        private System.Windows.Forms.Label btnMaximize;
         private System.Windows.Forms.Label btnMinimize;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnLichSuHoaDon_FManager;

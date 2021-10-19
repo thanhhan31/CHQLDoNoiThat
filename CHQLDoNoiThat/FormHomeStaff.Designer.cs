@@ -32,9 +32,10 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTaoHoaDon_FNhanVien = new System.Windows.Forms.Button();
             this.btnLichSuHoaDon_FNhanVien = new System.Windows.Forms.Button();
             this.btnKho_FNhanVien = new System.Windows.Forms.Button();
-            this.btnTaoHoaDon_FNhanVien = new System.Windows.Forms.Button();
+            this.btnSanPham_FNhanVien = new System.Windows.Forms.Button();
             this.lblTenDangNhap = new System.Windows.Forms.Label();
             this.lblDangXuat = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,7 +47,6 @@ namespace CHQLDoNoiThat
             this.lblTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new System.Windows.Forms.Label();
-            this.btnMaximize = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -96,9 +96,10 @@ namespace CHQLDoNoiThat
             // 
             this.tableLayoutPanelMenu.ColumnCount = 1;
             this.tableLayoutPanelMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMenu.Controls.Add(this.btnLichSuHoaDon_FNhanVien, 0, 2);
-            this.tableLayoutPanelMenu.Controls.Add(this.btnKho_FNhanVien, 0, 1);
             this.tableLayoutPanelMenu.Controls.Add(this.btnTaoHoaDon_FNhanVien, 0, 0);
+            this.tableLayoutPanelMenu.Controls.Add(this.btnLichSuHoaDon_FNhanVien, 0, 3);
+            this.tableLayoutPanelMenu.Controls.Add(this.btnKho_FNhanVien, 0, 2);
+            this.tableLayoutPanelMenu.Controls.Add(this.btnSanPham_FNhanVien, 0, 1);
             this.tableLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMenu.Location = new System.Drawing.Point(0, 65);
             this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(0);
@@ -111,50 +112,6 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanelMenu.Size = new System.Drawing.Size(195, 520);
             this.tableLayoutPanelMenu.TabIndex = 0;
-            // 
-            // btnLichSuHoaDon_FNhanVien
-            // 
-            this.btnLichSuHoaDon_FNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLichSuHoaDon_FNhanVien.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnLichSuHoaDon_FNhanVien.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLichSuHoaDon_FNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnLichSuHoaDon_FNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichSuHoaDon_FNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichSuHoaDon_FNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnLichSuHoaDon_FNhanVien.Image = global::CHQLDoNoiThat.Properties.Resources.order_history_30px;
-            this.btnLichSuHoaDon_FNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichSuHoaDon_FNhanVien.Location = new System.Drawing.Point(0, 235);
-            this.btnLichSuHoaDon_FNhanVien.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLichSuHoaDon_FNhanVien.Name = "btnLichSuHoaDon_FNhanVien";
-            this.btnLichSuHoaDon_FNhanVien.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnLichSuHoaDon_FNhanVien.Size = new System.Drawing.Size(195, 49);
-            this.btnLichSuHoaDon_FNhanVien.TabIndex = 21;
-            this.btnLichSuHoaDon_FNhanVien.Text = "   Lịch sử hóa đơn";
-            this.btnLichSuHoaDon_FNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLichSuHoaDon_FNhanVien.UseVisualStyleBackColor = true;
-            this.btnLichSuHoaDon_FNhanVien.Click += new System.EventHandler(this.btnLichSuHoaDon_FNhanVien_Click);
-            // 
-            // btnKho_FNhanVien
-            // 
-            this.btnKho_FNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKho_FNhanVien.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnKho_FNhanVien.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnKho_FNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnKho_FNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKho_FNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKho_FNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnKho_FNhanVien.Image = global::CHQLDoNoiThat.Properties.Resources.inventory_flow_32px;
-            this.btnKho_FNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKho_FNhanVien.Location = new System.Drawing.Point(0, 131);
-            this.btnKho_FNhanVien.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKho_FNhanVien.Name = "btnKho_FNhanVien";
-            this.btnKho_FNhanVien.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnKho_FNhanVien.Size = new System.Drawing.Size(195, 49);
-            this.btnKho_FNhanVien.TabIndex = 20;
-            this.btnKho_FNhanVien.Text = "   Kho";
-            this.btnKho_FNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKho_FNhanVien.UseVisualStyleBackColor = true;
-            this.btnKho_FNhanVien.Click += new System.EventHandler(this.btnKho_FNhanVien_Click);
             // 
             // btnTaoHoaDon_FNhanVien
             // 
@@ -177,6 +134,72 @@ namespace CHQLDoNoiThat
             this.btnTaoHoaDon_FNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTaoHoaDon_FNhanVien.UseVisualStyleBackColor = true;
             this.btnTaoHoaDon_FNhanVien.Click += new System.EventHandler(this.btnTaoHoaDon_FNhanVien_Click);
+            // 
+            // btnLichSuHoaDon_FNhanVien
+            // 
+            this.btnLichSuHoaDon_FNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLichSuHoaDon_FNhanVien.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLichSuHoaDon_FNhanVien.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLichSuHoaDon_FNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnLichSuHoaDon_FNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichSuHoaDon_FNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichSuHoaDon_FNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnLichSuHoaDon_FNhanVien.Image = global::CHQLDoNoiThat.Properties.Resources.order_history_30px;
+            this.btnLichSuHoaDon_FNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichSuHoaDon_FNhanVien.Location = new System.Drawing.Point(0, 339);
+            this.btnLichSuHoaDon_FNhanVien.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLichSuHoaDon_FNhanVien.Name = "btnLichSuHoaDon_FNhanVien";
+            this.btnLichSuHoaDon_FNhanVien.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnLichSuHoaDon_FNhanVien.Size = new System.Drawing.Size(195, 49);
+            this.btnLichSuHoaDon_FNhanVien.TabIndex = 21;
+            this.btnLichSuHoaDon_FNhanVien.Text = "   Lịch sử hóa đơn";
+            this.btnLichSuHoaDon_FNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLichSuHoaDon_FNhanVien.UseVisualStyleBackColor = true;
+            this.btnLichSuHoaDon_FNhanVien.Click += new System.EventHandler(this.btnLichSuHoaDon_FNhanVien_Click);
+            // 
+            // btnKho_FNhanVien
+            // 
+            this.btnKho_FNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKho_FNhanVien.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnKho_FNhanVien.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnKho_FNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnKho_FNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKho_FNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKho_FNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnKho_FNhanVien.Image = global::CHQLDoNoiThat.Properties.Resources.inventory_flow_32px;
+            this.btnKho_FNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKho_FNhanVien.Location = new System.Drawing.Point(0, 235);
+            this.btnKho_FNhanVien.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKho_FNhanVien.Name = "btnKho_FNhanVien";
+            this.btnKho_FNhanVien.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnKho_FNhanVien.Size = new System.Drawing.Size(195, 49);
+            this.btnKho_FNhanVien.TabIndex = 20;
+            this.btnKho_FNhanVien.Text = "   Kho";
+            this.btnKho_FNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKho_FNhanVien.UseVisualStyleBackColor = true;
+            this.btnKho_FNhanVien.Click += new System.EventHandler(this.btnKho_FNhanVien_Click);
+            // 
+            // btnSanPham_FNhanVien
+            // 
+            this.btnSanPham_FNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSanPham_FNhanVien.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSanPham_FNhanVien.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSanPham_FNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnSanPham_FNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSanPham_FNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSanPham_FNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnSanPham_FNhanVien.Image = global::CHQLDoNoiThat.Properties.Resources.product_24px;
+            this.btnSanPham_FNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSanPham_FNhanVien.Location = new System.Drawing.Point(2, 131);
+            this.btnSanPham_FNhanVien.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnSanPham_FNhanVien.Name = "btnSanPham_FNhanVien";
+            this.btnSanPham_FNhanVien.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnSanPham_FNhanVien.Size = new System.Drawing.Size(193, 49);
+            this.btnSanPham_FNhanVien.TabIndex = 23;
+            this.btnSanPham_FNhanVien.Text = "   Sản phẩm";
+            this.btnSanPham_FNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSanPham_FNhanVien.UseVisualStyleBackColor = true;
+            this.btnSanPham_FNhanVien.Click += new System.EventHandler(this.btnSanPham_FNhanVien_Click);
             // 
             // lblTenDangNhap
             // 
@@ -312,7 +335,6 @@ namespace CHQLDoNoiThat
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnClose);
-            this.flowLayoutPanel1.Controls.Add(this.btnMaximize);
             this.flowLayoutPanel1.Controls.Add(this.btnMinimize);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -336,26 +358,12 @@ namespace CHQLDoNoiThat
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnMaximize
-            // 
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(59, 0);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(26, 28);
-            this.btnMaximize.TabIndex = 22;
-            this.btnMaximize.Text = "O";
-            this.btnMaximize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
             // btnMinimize
             // 
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(29, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(59, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(26, 28);
@@ -404,7 +412,6 @@ namespace CHQLDoNoiThat
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label btnMinimize;
-        private System.Windows.Forms.Label btnMaximize;
         private System.Windows.Forms.Label btnClose;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenu;
         private System.Windows.Forms.Button btnLichSuHoaDon_FNhanVien;
@@ -413,5 +420,6 @@ namespace CHQLDoNoiThat
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSanPham_FNhanVien;
     }
 }

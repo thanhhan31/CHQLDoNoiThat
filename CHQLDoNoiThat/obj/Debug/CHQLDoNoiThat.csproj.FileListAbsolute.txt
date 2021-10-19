@@ -29,3 +29,4 @@ C:\Users\Nancy\source\repos\CHQLDoNoiThat\CHQLDoNoiThat\bin\Debug\DataAccessLaye
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\CHQLDoNoiThat\bin\Debug\DataBusiness.pdb
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\CHQLDoNoiThat\bin\Debug\DataAccessLayer.pdb
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\CHQLDoNoiThat\obj\Debug\CHQLDoNoiThat.csproj.CopyComplete
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\CHQLDoNoiThat\obj\Debug\CHQLDoNoiThat.FormsStaff.FormProduct.resources

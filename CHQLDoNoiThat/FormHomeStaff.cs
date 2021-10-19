@@ -74,23 +74,17 @@ namespace CHQLDoNoiThat
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+		
+		private void btnSanPham_FNhanVien_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new FormsStaff.FormProduct(), sender);
+        }
+		
         private void btnTaoHoaDon_FNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);

@@ -62,11 +62,11 @@ namespace CHQLDoNoiThat.FormsStaff
             "Tồn kho"});
             this.cmbTinhTrang.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cmbTinhTrang.ListTextColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.Location = new System.Drawing.Point(654, 74);
+            this.cmbTinhTrang.Location = new System.Drawing.Point(654, 65);
             this.cmbTinhTrang.MinimumSize = new System.Drawing.Size(130, 30);
             this.cmbTinhTrang.Name = "cmbTinhTrang";
             this.cmbTinhTrang.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbTinhTrang.Size = new System.Drawing.Size(171, 30);
+            this.cmbTinhTrang.Size = new System.Drawing.Size(171, 39);
             this.cmbTinhTrang.TabIndex = 39;
             this.cmbTinhTrang.Texts = "";
             // 
