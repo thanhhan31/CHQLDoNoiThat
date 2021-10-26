@@ -35,6 +35,7 @@ namespace CHQLDoNoiThat.FormsManager
 
         private void FormProduct_Load(object sender, EventArgs e)
         {
+            update_data();
             pictureBoxSanPham.SizeMode = PictureBoxSizeMode.StretchImage;
             dataGridViewSanPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewSanPham.MultiSelect = false;
@@ -43,7 +44,6 @@ namespace CHQLDoNoiThat.FormsManager
             (dataGridViewSanPham.Columns["idCategory"] as DataGridViewComboBoxColumn).ValueMember = "id";
             (dataGridViewSanPham.Columns["idCategory"] as DataGridViewComboBoxColumn).DisplayMember = "name";
                         
-            update_data();
             DataGridViewSanPham_CellClick(null, null);
 
             cmbCategory.ValueMember = "id";

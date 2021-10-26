@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace DataAccessLayer
 {
     public class DataProvider
     {
-        private static string serverName = @"DESKTOP-ET08Q48\SQLEXPRESS";
+        private static string serverName = @"DESKTOP-MD1KB28\SQLEXPRESS";
         private static string dbName = @"DBMS_NoiThat";
         private static string connectionString = @"Server=" + serverName + ";Initial Catalog=" + dbName + ";Integrated Security=True;";
 
