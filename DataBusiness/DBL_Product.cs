@@ -26,6 +26,13 @@ namespace DataBusiness
                 CommandType.StoredProcedure,
                 ref error);
         }
+        public DataSet get_products_name(ref string error)
+        {
+            return dataProvider.ExecuteQueryDataSet(
+                "SELECT * FROM dbo.fn_get_product_name()",
+                CommandType.Text,
+                ref error);
+        }
 
         public DataSet employee_get_view_product(ref string error)
         {

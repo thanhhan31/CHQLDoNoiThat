@@ -37,6 +37,36 @@ namespace DataBusiness
                 CommandType.Text,
                 ref error);
         }
+        public DataSet employee_get_inventories_by_pid(string id, ref string error)
+        {
+            if (id == "")
+                return employee_get_view_inventories(ref error);
+            else
+            {
+                return dataProvider.ExecuteQueryDataSet(
+                    "SELECT * FROM dbo.fn_nv_get_inventories_by_pid(@id)",
+                    CommandType.Text,
+                    ref error,
+                    new SqlParameter("@id", id)
+                    );
+
+            }
+        }
+        public DataSet admin_get_inventories_by_pid(string id, ref string error)
+        {
+            if (id == "")
+                return admin_get_view_inventories(ref error);
+            else
+            {
+                return dataProvider.ExecuteQueryDataSet(
+                    "SELECT * FROM dbo.fn_ql_get_inventories_by_pid(@id)",
+                    CommandType.Text,
+                    ref error,
+                    new SqlParameter("@id", id)
+                    );
+
+            }
+        }
 
         public bool add_inventory(string id, string idProduct, int quantity, 
             decimal originalPrice, decimal profit, decimal vat, DateTime importDate, ref string error)

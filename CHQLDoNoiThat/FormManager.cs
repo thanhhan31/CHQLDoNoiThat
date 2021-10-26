@@ -75,6 +75,7 @@ namespace CHQLDoNoiThat
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnNhanVien_FManager_Click(object sender, EventArgs e)
