@@ -393,9 +393,10 @@ ON PRODUCTS.id = productLotInf.productId
 GO
 
 CREATE VIEW V_NV_INVENTORIES AS --only waiting to sell lot
-SELECT	INVENTORIES.id AS lotId,
+SELECT INVENTORIES.id AS lotId,
 		CATEGORIES.name AS productCategory,
 		PRODUCTS.name AS productName,
+		PRODUCTS.id AS productId,
 		PRODUCTS.image AS productImg,
 		INVENTORIES.quantity AS lotQuantity, 
 		INVENTORIES.originalPrice * (1 + INVENTORIES.profit/100 + INVENTORIES.vat/100) AS sellPrice,
@@ -405,11 +406,11 @@ INNER JOIN PRODUCTS ON INVENTORIES.idProduct = PRODUCTS.id
 INNER JOIN CATEGORIES ON PRODUCTS.idCategory = CATEGORIES.id
 WHERE PRODUCTS.active = 1 AND INVENTORIES.waiting = 1
 GO
-
 CREATE VIEW V_QL_INVENTORIES AS
-SELECT	INVENTORIES.id AS lotId,
+SELECT INVENTORIES.id AS lotId,
 		CATEGORIES.name AS productCategory,
-		PRODUCTS.name AS productName,
+		PRODUCTS.id AS productId,
+		INVENTORIES.importDate AS importDate,
 		PRODUCTS.image AS productImg,
 		CASE WHEN PRODUCTS.active = 0 THEN 'Product disabled' ELSE 'Product enabled' END AS productStatus,
 		INVENTORIES.quantity AS lotQuantity, 
@@ -787,6 +788,24 @@ BEGIN
 END
 GO
 
+-- FUNTION LẤY TÊN SẢN PHẨM
+CREATE FUNCTION fn_get_product_name()
+Returns table
+	return select id, name from products;
+GO
+
+-- FUNTION NHÂN VIÊN TÌM LÔ SẢN PHẨM THEO ID SẢN PHẨM
+CREATE FUNCTION fn_nv_get_inventories_by_pid(@id char(5))
+Returns table
+	return select * from V_NV_INVENTORIES WHERE V_NV_INVENTORIES.productId = @id;
+GO
+
+-- FUNTION QUẢN LÝ TÌM LÔ SẢN PHẨM THEO ID SẢN PHẨM
+CREATE FUNCTION fn_ql_get_inventories_by_pid(@id char(5))
+Returns table
+	return select * from V_QL_INVENTORIES WHERE V_QL_INVENTORIES.productId = @id;
+GO
+
 INSERT TYPEACCS (id, name) VALUES (N'1    ', N'Nhân viên')
 INSERT TYPEACCS (id, name) VALUES (N'2    ', N'Quản lí')
 
@@ -794,3 +813,6 @@ INSERT INTO ACCOUNTS(id, name, dob, gender, phone, idNo,
 			address, email, password, avatar, idType, active) 
 VALUES('QL001', 'Quản Thị Lí', '2000-1-1', 'Nam', '0954325198', '854369548', 
 	'TP. HCM', '@.', CONVERT(CHAR(64),HashBytes('sha2_256', '1' + '@.'),2), null, 2, 1) --username: @. | password: 1
+
+
+
