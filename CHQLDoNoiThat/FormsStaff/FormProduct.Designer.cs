@@ -30,21 +30,27 @@ namespace CHQLDoNoiThat.FormsStaff
         private void InitializeComponent()
         {
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
-            this.cmbTinhTrang = new CHQLDoNoiThat.ComboBoxControl();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSoLuong = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.label3 = new System.Windows.Forms.Label();
             this.txtGiaBan = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
+            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productImg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productLotId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productLotDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
-            this.txtLoaiSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.label6 = new System.Windows.Forms.Label();
             this.txtId = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtLoaiSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.pictureBoxSanPham = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
             this.panel3.SuspendLayout();
@@ -55,39 +61,6 @@ namespace CHQLDoNoiThat.FormsStaff
             // 
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
-            // 
-            // cmbTinhTrang
-            // 
-            this.cmbTinhTrang.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbTinhTrang.BorderColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.BorderSize = 1;
-            this.cmbTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbTinhTrang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTinhTrang.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.IconColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.Items.AddRange(new object[] {
-            "Còn hàng",
-            "Hết hàng"});
-            this.cmbTinhTrang.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cmbTinhTrang.ListTextColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.Location = new System.Drawing.Point(716, 157);
-            this.cmbTinhTrang.MinimumSize = new System.Drawing.Size(130, 30);
-            this.cmbTinhTrang.Name = "cmbTinhTrang";
-            this.cmbTinhTrang.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbTinhTrang.Size = new System.Drawing.Size(224, 39);
-            this.cmbTinhTrang.TabIndex = 30;
-            this.cmbTinhTrang.Texts = "";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(610, 166);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 28);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Tình trạng";
             // 
             // label4
             // 
@@ -150,12 +123,86 @@ namespace CHQLDoNoiThat.FormsStaff
             this.dataGridViewSanPham.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productId,
+            this.productCategory,
+            this.productName,
+            this.productImg,
+            this.productPrice,
+            this.productQuantity,
+            this.productLotId,
+            this.productLotDate});
             this.dataGridViewSanPham.Location = new System.Drawing.Point(14, 290);
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
             this.dataGridViewSanPham.RowHeadersWidth = 51;
             this.dataGridViewSanPham.RowTemplate.Height = 24;
             this.dataGridViewSanPham.Size = new System.Drawing.Size(994, 401);
             this.dataGridViewSanPham.TabIndex = 13;
+            // 
+            // productId
+            // 
+            this.productId.DataPropertyName = "productId";
+            this.productId.HeaderText = "Mã sản phẩm";
+            this.productId.MinimumWidth = 6;
+            this.productId.Name = "productId";
+            this.productId.Width = 125;
+            // 
+            // productCategory
+            // 
+            this.productCategory.DataPropertyName = "productCategory";
+            this.productCategory.HeaderText = "Loại sản phẩm";
+            this.productCategory.MinimumWidth = 6;
+            this.productCategory.Name = "productCategory";
+            this.productCategory.Width = 125;
+            // 
+            // productName
+            // 
+            this.productName.DataPropertyName = "productName";
+            this.productName.HeaderText = "Tên sản phẩm";
+            this.productName.MinimumWidth = 6;
+            this.productName.Name = "productName";
+            this.productName.Width = 125;
+            // 
+            // productImg
+            // 
+            this.productImg.DataPropertyName = "productImg";
+            this.productImg.HeaderText = "productImg";
+            this.productImg.MinimumWidth = 6;
+            this.productImg.Name = "productImg";
+            this.productImg.Visible = false;
+            this.productImg.Width = 125;
+            // 
+            // productPrice
+            // 
+            this.productPrice.DataPropertyName = "productPrice";
+            this.productPrice.HeaderText = "Giá bán";
+            this.productPrice.MinimumWidth = 6;
+            this.productPrice.Name = "productPrice";
+            this.productPrice.Width = 125;
+            // 
+            // productQuantity
+            // 
+            this.productQuantity.DataPropertyName = "productQuantity";
+            this.productQuantity.HeaderText = "Số lượng hiện có";
+            this.productQuantity.MinimumWidth = 6;
+            this.productQuantity.Name = "productQuantity";
+            this.productQuantity.Width = 125;
+            // 
+            // productLotId
+            // 
+            this.productLotId.DataPropertyName = "productLotId";
+            this.productLotId.HeaderText = "Mã lô sản phẩm";
+            this.productLotId.MinimumWidth = 6;
+            this.productLotId.Name = "productLotId";
+            this.productLotId.Width = 125;
+            // 
+            // productLotDate
+            // 
+            this.productLotDate.DataPropertyName = "productLotDate";
+            this.productLotDate.HeaderText = "Ngày nhập lô";
+            this.productLotDate.MinimumWidth = 6;
+            this.productLotDate.Name = "productLotDate";
+            this.productLotDate.Width = 125;
             // 
             // label2
             // 
@@ -207,23 +254,6 @@ namespace CHQLDoNoiThat.FormsStaff
             this.lblIdLoaiSanPham.TabIndex = 8;
             this.lblIdLoaiSanPham.Text = "Loại sản phẩm";
             // 
-            // txtLoaiSanPham
-            // 
-            this.txtLoaiSanPham.BorderColor = System.Drawing.Color.SteelBlue;
-            this.txtLoaiSanPham.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtLoaiSanPham.BorderSize = 2;
-            this.txtLoaiSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtLoaiSanPham.Location = new System.Drawing.Point(180, 93);
-            this.txtLoaiSanPham.Multiline = false;
-            this.txtLoaiSanPham.Name = "txtLoaiSanPham";
-            this.txtLoaiSanPham.Padding = new System.Windows.Forms.Padding(7);
-            this.txtLoaiSanPham.PasswordChar = false;
-            this.txtLoaiSanPham.Size = new System.Drawing.Size(225, 39);
-            this.txtLoaiSanPham.TabIndex = 0;
-            this.txtLoaiSanPham.Texts = "";
-            this.txtLoaiSanPham.UnderlinedStyle = true;
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -256,8 +286,7 @@ namespace CHQLDoNoiThat.FormsStaff
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.cmbTinhTrang);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.txtLoaiSanPham);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txtSoLuong);
             this.panel3.Controls.Add(this.label3);
@@ -268,12 +297,28 @@ namespace CHQLDoNoiThat.FormsStaff
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txtTenSanPham);
             this.panel3.Controls.Add(this.lblIdLoaiSanPham);
-            this.panel3.Controls.Add(this.txtLoaiSanPham);
             this.panel3.Location = new System.Drawing.Point(14, 21);
             this.panel3.Margin = new System.Windows.Forms.Padding(5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(994, 222);
             this.panel3.TabIndex = 12;
+            // 
+            // txtLoaiSanPham
+            // 
+            this.txtLoaiSanPham.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtLoaiSanPham.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtLoaiSanPham.BorderSize = 2;
+            this.txtLoaiSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtLoaiSanPham.Location = new System.Drawing.Point(180, 89);
+            this.txtLoaiSanPham.Multiline = false;
+            this.txtLoaiSanPham.Name = "txtLoaiSanPham";
+            this.txtLoaiSanPham.Padding = new System.Windows.Forms.Padding(7);
+            this.txtLoaiSanPham.PasswordChar = false;
+            this.txtLoaiSanPham.Size = new System.Drawing.Size(225, 39);
+            this.txtLoaiSanPham.TabIndex = 80;
+            this.txtLoaiSanPham.Texts = "";
+            this.txtLoaiSanPham.UnderlinedStyle = true;
             // 
             // pictureBoxSanPham
             // 
@@ -296,6 +341,7 @@ namespace CHQLDoNoiThat.FormsStaff
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProduct";
             this.Text = "Sản phẩm";
+            this.Load += new System.EventHandler(this.FormProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -308,10 +354,16 @@ namespace CHQLDoNoiThat.FormsStaff
 
         private ElipseToolDemo.ElipseControl elipseControl1;
         private System.Windows.Forms.DataGridView dataGridViewSanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productImg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productLotId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productLotDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
-        private ComboBoxControl cmbTinhTrang;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private CustomControls.TextBoxControl txtSoLuong;
         private System.Windows.Forms.Label label3;

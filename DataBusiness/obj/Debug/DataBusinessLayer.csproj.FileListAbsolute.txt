@@ -7,6 +7,7 @@ C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLay
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
+<<<<<<< HEAD
 C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.dll
 C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.pdb
 C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.dll
@@ -16,3 +17,14 @@ C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataBusiness\obj\Debug\Data
 C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
 C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
 C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
+=======
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.dll
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.pdb
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.dll
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.pdb
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
+C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
+>>>>>>> bbc98f8f3d99400454cec05d5e89c276dd653028

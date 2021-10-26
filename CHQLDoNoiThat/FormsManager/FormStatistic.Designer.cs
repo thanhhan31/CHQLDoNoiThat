@@ -30,10 +30,8 @@ namespace CHQLDoNoiThat.FormsManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNhanVienXacSacNhat = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTongDanhThu = new System.Windows.Forms.Label();
+            this.lblTienChi = new System.Windows.Forms.Label();
+            this.lblTienThu = new System.Windows.Forms.Label();
             this.lblNgayHomNay = new System.Windows.Forms.Label();
             this.lblNgayBatDau = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +40,9 @@ namespace CHQLDoNoiThat.FormsManager
             this.comboBoxControlThongKeTheo = new CHQLDoNoiThat.ComboBoxControl();
             this.label6 = new System.Windows.Forms.Label();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
+            this.lblLoiNhuan = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -49,10 +50,11 @@ namespace CHQLDoNoiThat.FormsManager
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblNhanVienXacSacNhat);
+            this.panel1.Controls.Add(this.lblLoiNhuan);
+            this.panel1.Controls.Add(this.lblTienChi);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lblTongDanhThu);
+            this.panel1.Controls.Add(this.lblTienThu);
             this.panel1.Controls.Add(this.lblNgayHomNay);
             this.panel1.Controls.Add(this.lblNgayBatDau);
             this.panel1.Controls.Add(this.label2);
@@ -64,43 +66,25 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel1.Size = new System.Drawing.Size(897, 659);
             this.panel1.TabIndex = 0;
             // 
-            // lblNhanVienXacSacNhat
+            // lblTienChi
             // 
-            this.lblNhanVienXacSacNhat.AutoSize = true;
-            this.lblNhanVienXacSacNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhanVienXacSacNhat.Location = new System.Drawing.Point(159, 503);
-            this.lblNhanVienXacSacNhat.Name = "lblNhanVienXacSacNhat";
-            this.lblNhanVienXacSacNhat.Size = new System.Drawing.Size(240, 24);
-            this.lblNhanVienXacSacNhat.TabIndex = 8;
-            this.lblNhanVienXacSacNhat.Text = "Nhân viên xuất sắc nhất:";
+            this.lblTienChi.AutoSize = true;
+            this.lblTienChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTienChi.Location = new System.Drawing.Point(234, 403);
+            this.lblTienChi.Name = "lblTienChi";
+            this.lblTienChi.Size = new System.Drawing.Size(92, 24);
+            this.lblTienChi.TabIndex = 8;
+            this.lblTienChi.Text = "Tiền chi:";
             // 
-            // label5
+            // lblTienThu
             // 
-            this.label5.Image = global::CHQLDoNoiThat.Properties.Resources.crown_100px;
-            this.label5.Location = new System.Drawing.Point(50, 444);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 95);
-            this.label5.TabIndex = 7;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Image = global::CHQLDoNoiThat.Properties.Resources.money_100px;
-            this.label4.Location = new System.Drawing.Point(50, 287);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 94);
-            this.label4.TabIndex = 6;
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTongDanhThu
-            // 
-            this.lblTongDanhThu.AutoSize = true;
-            this.lblTongDanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongDanhThu.Location = new System.Drawing.Point(234, 325);
-            this.lblTongDanhThu.Name = "lblTongDanhThu";
-            this.lblTongDanhThu.Size = new System.Drawing.Size(165, 24);
-            this.lblTongDanhThu.TabIndex = 5;
-            this.lblTongDanhThu.Text = "Tổng doanh thu:";
+            this.lblTienThu.AutoSize = true;
+            this.lblTienThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTienThu.Location = new System.Drawing.Point(234, 316);
+            this.lblTienThu.Name = "lblTienThu";
+            this.lblTienThu.Size = new System.Drawing.Size(93, 24);
+            this.lblTienThu.TabIndex = 5;
+            this.lblTienThu.Text = "Tiền thu:";
             // 
             // lblNgayHomNay
             // 
@@ -193,6 +177,34 @@ namespace CHQLDoNoiThat.FormsManager
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
             // 
+            // lblLoiNhuan
+            // 
+            this.lblLoiNhuan.AutoSize = true;
+            this.lblLoiNhuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiNhuan.Location = new System.Drawing.Point(217, 492);
+            this.lblLoiNhuan.Name = "lblLoiNhuan";
+            this.lblLoiNhuan.Size = new System.Drawing.Size(109, 24);
+            this.lblLoiNhuan.TabIndex = 9;
+            this.lblLoiNhuan.Text = "Lợi nhuận:";
+            // 
+            // label5
+            // 
+            this.label5.Image = global::CHQLDoNoiThat.Properties.Resources.profit_48px;
+            this.label5.Location = new System.Drawing.Point(63, 422);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(148, 125);
+            this.label5.TabIndex = 7;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Image = global::CHQLDoNoiThat.Properties.Resources.money_100px;
+            this.label4.Location = new System.Drawing.Point(88, 286);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 86);
+            this.label4.TabIndex = 6;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -223,9 +235,10 @@ namespace CHQLDoNoiThat.FormsManager
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTongDanhThu;
+        private System.Windows.Forms.Label lblTienThu;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblNhanVienXacSacNhat;
+        private System.Windows.Forms.Label lblTienChi;
         private ElipseToolDemo.ElipseControl elipseControl1;
+        private System.Windows.Forms.Label lblLoiNhuan;
     }
 }

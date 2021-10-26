@@ -44,6 +44,8 @@ namespace CHQLDoNoiThat.FormsManager
             this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
             this.txtIdLoaiSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLoaiSanPham)).BeginInit();
@@ -92,6 +94,9 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewLoaiSanPham.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewLoaiSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewLoaiSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLoaiSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name});
             this.dataGridViewLoaiSanPham.Location = new System.Drawing.Point(12, 83);
             this.dataGridViewLoaiSanPham.Name = "dataGridViewLoaiSanPham";
             this.dataGridViewLoaiSanPham.RowHeadersWidth = 51;
@@ -134,6 +139,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.btnLuu.TabStop = false;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnTaiLai
             // 
@@ -169,6 +175,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.btnXoa.TabStop = false;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -186,6 +193,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.btnSua.TabStop = false;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -203,6 +211,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.btnThem.TabStop = false;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label1
             // 
@@ -265,6 +274,22 @@ namespace CHQLDoNoiThat.FormsManager
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã loại sản phẩm";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 150;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên loại sản phẩm";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 200;
+            // 
             // FormCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,6 +301,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.Name = "FormCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loại sản phẩm";
+            this.Load += new System.EventHandler(this.FormCategory_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLoaiSanPham)).EndInit();
@@ -301,5 +327,7 @@ namespace CHQLDoNoiThat.FormsManager
         private ElipseToolDemo.ElipseControl elipseControl1;
         private System.Windows.Forms.Button btnTaiLai;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }
