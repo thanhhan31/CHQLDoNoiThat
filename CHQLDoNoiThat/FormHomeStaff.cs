@@ -31,7 +31,7 @@ namespace CHQLDoNoiThat
             panel1.Dispose();
             if (activeForm != null)
             {
-                activeForm.Close();                
+                activeForm.Close();
             }
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -47,9 +47,9 @@ namespace CHQLDoNoiThat
 
         private void ActivateButton(object btnSender)
         {
-            if(btnSender != null)
+            if (btnSender != null)
             {
-                if(currentButton != (Button)btnSender)
+                if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
@@ -60,9 +60,9 @@ namespace CHQLDoNoiThat
 
         private void DisableButton()
         {
-            foreach(Control previousBtn in tableLayoutPanelMenu.Controls)
+            foreach (Control previousBtn in tableLayoutPanelMenu.Controls)
             {
-                if(previousBtn.GetType() == typeof(Button))
+                if (previousBtn.GetType() == typeof(Button))
                 {
                     previousBtn.BackColor = Color.SteelBlue;
                 }
@@ -78,17 +78,17 @@ namespace CHQLDoNoiThat
         {
             this.Close();
         }
-		
-		private void btnSanPham_FNhanVien_Click(object sender, EventArgs e)
+
+        private void btnSanPham_FNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             OpenChildForm(new FormsStaff.FormProduct(), sender);
         }
-		
+
         private void btnTaoHoaDon_FNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormsStaff.FormBill(), sender);
+            OpenChildForm(new FormsStaff.FormBill(uid), sender);
         }
 
         private void btnKho_FNhanVien_Click(object sender, EventArgs e)

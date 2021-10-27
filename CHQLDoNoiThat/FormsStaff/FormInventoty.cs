@@ -63,6 +63,9 @@ namespace CHQLDoNoiThat.FormsStaff
         private void dataGridViewKho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridViewKho.CurrentRow;
+            if (row == null)
+                return;
+
             txtTenSanPham.Texts = row.Cells["name"].Value.ToString();
             txtId.Texts = row.Cells["id"].Value.ToString();
             txtSoLuong.Texts = row.Cells["quatity"].Value.ToString();

@@ -35,6 +35,8 @@ namespace CHQLDoNoiThat.FormsManager
 
         private void DataGridViewLoaiSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dataGridViewLoaiSanPham.CurrentCell == null)
+                return;
             if (dataGridViewLoaiSanPham.CurrentCell.RowIndex >= 0)
             {
                 var r = dataGridViewLoaiSanPham.CurrentCell.RowIndex;

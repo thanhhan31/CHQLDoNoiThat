@@ -105,7 +105,7 @@ namespace CHQLDoNoiThat
         private void btnTaoHoaDon_FManager_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormsManager.FormBill(), sender);
+            OpenChildForm(new FormsManager.FormBill(uid), sender);
         }
 
         private void btnLichSuHoaDon_FManager_Click(object sender, EventArgs e)

@@ -1,21 +1,11 @@
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.dll
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
-C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-<<<<<<< HEAD
-C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.dll
-C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
-C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
-C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
-C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
-C:\Users\phamp\Source\Repos\thanhhan31\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-=======
-C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.dll
-C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
-C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
-C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
-C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
-C:\Users\Foxi\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
->>>>>>> bbc98f8f3d99400454cec05d5e89c276dd653028
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
