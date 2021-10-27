@@ -46,6 +46,7 @@ namespace CHQLDoNoiThat.FormsManager
             dataGridViewSanPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewSanPham.MultiSelect = false;
             dataGridViewSanPham.AllowUserToAddRows = false;
+            dataGridViewSanPham.AllowUserToDeleteRows = false;
             dataGridViewSanPham.ReadOnly = true;
             (dataGridViewSanPham.Columns["idCategory"] as DataGridViewComboBoxColumn).ValueMember = "id";
             (dataGridViewSanPham.Columns["idCategory"] as DataGridViewComboBoxColumn).DisplayMember = "name";
@@ -151,7 +152,7 @@ namespace CHQLDoNoiThat.FormsManager
                 if (dataGridViewSanPham.CurrentRow.Cells["productImg"].Value == DBNull.Value)
                 {
                     image = Array.Empty<byte>();
-                    pictureBoxSanPham.Image = Properties.Resources.no_avt;
+                    pictureBoxSanPham.Image = Properties.Resources.no_img;
                 }
                 else
                 {

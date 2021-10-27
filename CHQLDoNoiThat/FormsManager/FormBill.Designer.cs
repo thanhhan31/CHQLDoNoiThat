@@ -49,10 +49,8 @@ namespace CHQLDoNoiThat.FormsManager
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
-            this.elipseControl2 = new ElipseToolDemo.ElipseControl();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.cmbLoaiSanPham = new CHQLDoNoiThat.ComboBoxControl();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +63,8 @@ namespace CHQLDoNoiThat.FormsManager
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbLoaiSanPham = new CHQLDoNoiThat.ComboBoxControl();
+            this.elipseControl2 = new ElipseToolDemo.ElipseControl();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChiTietHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
@@ -218,6 +218,8 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             // dataGridViewChiTietHoaDon
             // 
+            this.dataGridViewChiTietHoaDon.AllowUserToAddRows = false;
+            this.dataGridViewChiTietHoaDon.AllowUserToDeleteRows = false;
             this.dataGridViewChiTietHoaDon.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewChiTietHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -228,10 +230,12 @@ namespace CHQLDoNoiThat.FormsManager
             this.quantity_});
             this.dataGridViewChiTietHoaDon.Location = new System.Drawing.Point(28, 25);
             this.dataGridViewChiTietHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewChiTietHoaDon.MultiSelect = false;
             this.dataGridViewChiTietHoaDon.Name = "dataGridViewChiTietHoaDon";
             this.dataGridViewChiTietHoaDon.ReadOnly = true;
             this.dataGridViewChiTietHoaDon.RowHeadersWidth = 51;
             this.dataGridViewChiTietHoaDon.RowTemplate.Height = 24;
+            this.dataGridViewChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewChiTietHoaDon.Size = new System.Drawing.Size(705, 251);
             this.dataGridViewChiTietHoaDon.TabIndex = 21;
             this.dataGridViewChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewChiTietHoaDon_CellClick);
@@ -320,11 +324,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTenSanPham.Size = new System.Drawing.Size(172, 20);
             this.txtTenSanPham.TabIndex = 8;
             // 
-            // elipseControl2
-            // 
-            this.elipseControl2.CornerRadius = 30;
-            this.elipseControl2.TargetControl = this;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -349,32 +348,10 @@ namespace CHQLDoNoiThat.FormsManager
             this.label10.TabIndex = 7;
             this.label10.Text = "Tên sản phẩm";
             // 
-            // cmbLoaiSanPham
-            // 
-            this.cmbLoaiSanPham.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cmbLoaiSanPham.BackColor = System.Drawing.Color.White;
-            this.cmbLoaiSanPham.BorderColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.BorderSize = 1;
-            this.cmbLoaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbLoaiSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.IconColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.ListBackColor = System.Drawing.Color.White;
-            this.cmbLoaiSanPham.ListTextColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.Location = new System.Drawing.Point(2, 2);
-            this.cmbLoaiSanPham.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbLoaiSanPham.MinimumSize = new System.Drawing.Size(181, 32);
-            this.cmbLoaiSanPham.Name = "cmbLoaiSanPham";
-            this.cmbLoaiSanPham.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbLoaiSanPham.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbLoaiSanPham.Size = new System.Drawing.Size(181, 32);
-            this.cmbLoaiSanPham.TabIndex = 0;
-            this.cmbLoaiSanPham.Texts = "Loại sản phẩm";
-            this.cmbLoaiSanPham.OnSelectedIndexChanged += new System.EventHandler(this.cmbLoaiSanPham_OnSelectedIndexChanged);
-            this.cmbLoaiSanPham.Load += new System.EventHandler(this.cmbLoaiSanPham_Load);
-            // 
             // dataGridViewSanPham
             // 
+            this.dataGridViewSanPham.AllowUserToAddRows = false;
+            this.dataGridViewSanPham.AllowUserToDeleteRows = false;
             this.dataGridViewSanPham.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -386,10 +363,12 @@ namespace CHQLDoNoiThat.FormsManager
             this.quantity});
             this.dataGridViewSanPham.Location = new System.Drawing.Point(2, 41);
             this.dataGridViewSanPham.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSanPham.MultiSelect = false;
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
             this.dataGridViewSanPham.ReadOnly = true;
             this.dataGridViewSanPham.RowHeadersWidth = 51;
             this.dataGridViewSanPham.RowTemplate.Height = 24;
+            this.dataGridViewSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSanPham.Size = new System.Drawing.Size(453, 221);
             this.dataGridViewSanPham.TabIndex = 22;
             this.dataGridViewSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSanPham_CellClick);
@@ -416,6 +395,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.image.ReadOnly = true;
             this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.image.Visible = false;
             // 
             // sellPrice
             // 
@@ -433,8 +413,8 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -461,8 +441,8 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -529,6 +509,34 @@ namespace CHQLDoNoiThat.FormsManager
             this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 618);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // cmbLoaiSanPham
+            // 
+            this.cmbLoaiSanPham.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cmbLoaiSanPham.BackColor = System.Drawing.Color.White;
+            this.cmbLoaiSanPham.BorderColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.BorderSize = 1;
+            this.cmbLoaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbLoaiSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.IconColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.ListBackColor = System.Drawing.Color.White;
+            this.cmbLoaiSanPham.ListTextColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.Location = new System.Drawing.Point(2, 2);
+            this.cmbLoaiSanPham.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbLoaiSanPham.MinimumSize = new System.Drawing.Size(181, 32);
+            this.cmbLoaiSanPham.Name = "cmbLoaiSanPham";
+            this.cmbLoaiSanPham.Padding = new System.Windows.Forms.Padding(1);
+            this.cmbLoaiSanPham.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbLoaiSanPham.Size = new System.Drawing.Size(181, 32);
+            this.cmbLoaiSanPham.TabIndex = 0;
+            this.cmbLoaiSanPham.Texts = "Loại sản phẩm";
+            this.cmbLoaiSanPham.OnSelectedIndexChanged += new System.EventHandler(this.cmbLoaiSanPham_OnSelectedIndexChanged);
+            // 
+            // elipseControl2
+            // 
+            this.elipseControl2.CornerRadius = 30;
+            this.elipseControl2.TargetControl = this;
+            // 
             // FormBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -587,14 +595,14 @@ namespace CHQLDoNoiThat.FormsManager
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity_;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewImageColumn image;
         private System.Windows.Forms.DataGridViewTextBoxColumn sellPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity_;
     }
 }

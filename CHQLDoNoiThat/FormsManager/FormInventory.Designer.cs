@@ -46,7 +46,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.cmbTenSanPham = new CHQLDoNoiThat.ComboBoxControl();
             this.btnTaiLai = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.cmbTinhTrang = new CHQLDoNoiThat.ComboBoxControl();
             this.label10 = new System.Windows.Forms.Label();
             this.datePickerControlNgayNhap = new CHQLDoNoiThat.DatePickerControl();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,6 +65,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
             this.cmbTenSanPham_Loc = new CHQLDoNoiThat.ComboBoxControl();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
+            this.txtTinhTrang = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKho)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +106,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewKho.RowTemplate.Height = 24;
             this.dataGridViewKho.Size = new System.Drawing.Size(736, 267);
             this.dataGridViewKho.TabIndex = 13;
-            this.dataGridViewKho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKho_CellClick);
             // 
             // id
             // 
@@ -185,10 +184,10 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtTinhTrang);
             this.panel3.Controls.Add(this.cmbTenSanPham);
             this.panel3.Controls.Add(this.btnTaiLai);
             this.panel3.Controls.Add(this.btnLuu);
-            this.panel3.Controls.Add(this.cmbTinhTrang);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.datePickerControlNgayNhap);
             this.panel3.Controls.Add(this.label8);
@@ -271,26 +270,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // cmbTinhTrang
-            // 
-            this.cmbTinhTrang.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbTinhTrang.BorderColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.BorderSize = 1;
-            this.cmbTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbTinhTrang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTinhTrang.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.IconColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cmbTinhTrang.ListTextColor = System.Drawing.Color.SteelBlue;
-            this.cmbTinhTrang.Location = new System.Drawing.Point(534, 60);
-            this.cmbTinhTrang.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbTinhTrang.MinimumSize = new System.Drawing.Size(98, 24);
-            this.cmbTinhTrang.Name = "cmbTinhTrang";
-            this.cmbTinhTrang.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbTinhTrang.Size = new System.Drawing.Size(139, 24);
-            this.cmbTinhTrang.TabIndex = 39;
-            this.cmbTinhTrang.Texts = "";
             // 
             // label10
             // 
@@ -576,6 +555,25 @@ namespace CHQLDoNoiThat.FormsManager
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
             // 
+            // txtTinhTrang
+            // 
+            this.txtTinhTrang.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtTinhTrang.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTinhTrang.BorderSize = 2;
+            this.txtTinhTrang.Enabled = false;
+            this.txtTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTinhTrang.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtTinhTrang.Location = new System.Drawing.Point(534, 54);
+            this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTinhTrang.Multiline = false;
+            this.txtTinhTrang.Name = "txtTinhTrang";
+            this.txtTinhTrang.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTinhTrang.PasswordChar = false;
+            this.txtTinhTrang.Size = new System.Drawing.Size(194, 31);
+            this.txtTinhTrang.TabIndex = 42;
+            this.txtTinhTrang.Texts = "";
+            this.txtTinhTrang.UnderlinedStyle = true;
+            // 
             // FormInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,7 +617,6 @@ namespace CHQLDoNoiThat.FormsManager
         private CustomControls.TextBoxControl txtVat;
         private CustomControls.TextBoxControl txtLoiNhuan;
         private DatePickerControl datePickerControlNgayNhap;
-        private ComboBoxControl cmbTinhTrang;
         private System.Windows.Forms.Label label10;
         private ElipseToolDemo.ElipseControl elipseControl1;
         private System.Windows.Forms.Button btnLuu;
@@ -637,5 +634,6 @@ namespace CHQLDoNoiThat.FormsManager
         private System.Windows.Forms.DataGridViewTextBoxColumn productStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn lotStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn impDate;
+        private CustomControls.TextBoxControl txtTinhTrang;
     }
 }

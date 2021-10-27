@@ -71,7 +71,7 @@ namespace CHQLDoNoiThat.FormsStaff
                 if (dataGridViewSanPham.CurrentRow.Cells["productImg"].Value == DBNull.Value)
                 {
                     image = Array.Empty<byte>();
-                    pictureBoxSanPham.Image = Properties.Resources.no_avt;
+                    pictureBoxSanPham.Image = Properties.Resources.no_img;
                 }
                 else
                 {
@@ -90,6 +90,15 @@ namespace CHQLDoNoiThat.FormsStaff
             txtSoLuong.Enabled = false;
 
             dataGridViewSanPham.CellClick += DataGridViewSanPham_CellClick;
+        }
+
+        private void txtTimTenSanPham_TextChanged(object sender, EventArgs e)
+        {
+            string filter = txtTimTenSanPham.Texts;
+            if (!String.IsNullOrEmpty(filter))
+                (dataGridViewSanPham.DataSource as DataTable).DefaultView.RowFilter = string.Format("productName LIKE '*{0}*'", filter);
+            else
+                (dataGridViewSanPham.DataSource as DataTable).DefaultView.RowFilter = "";
         }
     }
 }

@@ -60,13 +60,13 @@ namespace CHQLDoNoiThat.FormsStaff
             this.nameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbLoaiSanPham = new CHQLDoNoiThat.ComboBoxControl();
+            this.elipseControl2 = new ElipseToolDemo.ElipseControl();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.image = new System.Windows.Forms.DataGridViewImageColumn();
             this.sellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbLoaiSanPham = new CHQLDoNoiThat.ComboBoxControl();
-            this.elipseControl2 = new ElipseToolDemo.ElipseControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -111,8 +111,8 @@ namespace CHQLDoNoiThat.FormsStaff
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -150,7 +150,7 @@ namespace CHQLDoNoiThat.FormsStaff
             this.btnThemSanPham.TabStop = false;
             this.btnThemSanPham.Text = "Thêm vào hóa đơn";
             this.btnThemSanPham.UseVisualStyleBackColor = false;
-            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_TaoHoaDon_Click);
+            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
             // 
             // panel6
             // 
@@ -222,7 +222,7 @@ namespace CHQLDoNoiThat.FormsStaff
             this.btnTaiLai.TabStop = false;
             this.btnTaiLai.Text = "Tải lại";
             this.btnTaiLai.UseVisualStyleBackColor = false;
-            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_TaoHoaDon_Click);
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // label6
             // 
@@ -296,6 +296,8 @@ namespace CHQLDoNoiThat.FormsStaff
             // 
             // dataGridViewSanPham
             // 
+            this.dataGridViewSanPham.AllowUserToAddRows = false;
+            this.dataGridViewSanPham.AllowUserToDeleteRows = false;
             this.dataGridViewSanPham.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -307,6 +309,7 @@ namespace CHQLDoNoiThat.FormsStaff
             this.quantity});
             this.dataGridViewSanPham.Location = new System.Drawing.Point(2, 41);
             this.dataGridViewSanPham.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSanPham.MultiSelect = false;
             this.dataGridViewSanPham.Name = "dataGridViewSanPham";
             this.dataGridViewSanPham.ReadOnly = true;
             this.dataGridViewSanPham.RowHeadersWidth = 51;
@@ -315,14 +318,15 @@ namespace CHQLDoNoiThat.FormsStaff
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewSanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewSanPham.RowTemplate.Height = 24;
+            this.dataGridViewSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSanPham.Size = new System.Drawing.Size(453, 221);
             this.dataGridViewSanPham.TabIndex = 22;
             this.dataGridViewSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSanPham_CellClick);
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -420,6 +424,8 @@ namespace CHQLDoNoiThat.FormsStaff
             // 
             // dataGridViewChiTietHoaDon
             // 
+            this.dataGridViewChiTietHoaDon.AllowUserToAddRows = false;
+            this.dataGridViewChiTietHoaDon.AllowUserToDeleteRows = false;
             this.dataGridViewChiTietHoaDon.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewChiTietHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -430,6 +436,7 @@ namespace CHQLDoNoiThat.FormsStaff
             this.quantity_});
             this.dataGridViewChiTietHoaDon.Location = new System.Drawing.Point(28, 25);
             this.dataGridViewChiTietHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewChiTietHoaDon.MultiSelect = false;
             this.dataGridViewChiTietHoaDon.Name = "dataGridViewChiTietHoaDon";
             this.dataGridViewChiTietHoaDon.ReadOnly = true;
             this.dataGridViewChiTietHoaDon.RowHeadersWidth = 51;
@@ -438,9 +445,10 @@ namespace CHQLDoNoiThat.FormsStaff
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridViewChiTietHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewChiTietHoaDon.RowTemplate.Height = 24;
+            this.dataGridViewChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewChiTietHoaDon.Size = new System.Drawing.Size(715, 251);
             this.dataGridViewChiTietHoaDon.TabIndex = 21;
-            this.dataGridViewChiTietHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewChiTietHoaDon_CellContentClick);
+            this.dataGridViewChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewChiTietHoaDon_CellClick);
             // 
             // idProduct
             // 
@@ -474,43 +482,6 @@ namespace CHQLDoNoiThat.FormsStaff
             this.quantity_.Name = "quantity_";
             this.quantity_.ReadOnly = true;
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã sản phẩm";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Sản phẩm";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // image
-            // 
-            this.image.DataPropertyName = "image";
-            this.image.HeaderText = "Hình ảnh";
-            this.image.Name = "image";
-            this.image.ReadOnly = true;
-            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // sellPrice
-            // 
-            this.sellPrice.DataPropertyName = "sellPrice";
-            this.sellPrice.HeaderText = "Giá bán";
-            this.sellPrice.Name = "sellPrice";
-            this.sellPrice.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
             // cmbLoaiSanPham
             // 
             this.cmbLoaiSanPham.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -533,12 +504,49 @@ namespace CHQLDoNoiThat.FormsStaff
             this.cmbLoaiSanPham.TabIndex = 0;
             this.cmbLoaiSanPham.Texts = "Loại sản phẩm";
             this.cmbLoaiSanPham.OnSelectedIndexChanged += new System.EventHandler(this.cmbLoaiSanPham_OnSelectedIndexChanged);
-            this.cmbLoaiSanPham.Load += new System.EventHandler(this.cmbLoaiSpanPham_Load);
             // 
             // elipseControl2
             // 
             this.elipseControl2.CornerRadius = 30;
             this.elipseControl2.TargetControl = this;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã sản phẩm";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Sản phẩm";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // image
+            // 
+            this.image.DataPropertyName = "image";
+            this.image.HeaderText = "Hình ảnh";
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.image.Visible = false;
+            // 
+            // sellPrice
+            // 
+            this.sellPrice.DataPropertyName = "sellPrice";
+            this.sellPrice.HeaderText = "Giá bán";
+            this.sellPrice.Name = "sellPrice";
+            this.sellPrice.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
             // 
             // FormBill
             // 

@@ -14,3 +14,4 @@ C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLa
 C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache

@@ -41,6 +41,5 @@ namespace DataBusiness
                 new SqlParameter("@quantity", quantity)
                 );
         }
-
     }
 }

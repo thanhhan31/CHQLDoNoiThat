@@ -93,6 +93,7 @@ namespace CHQLDoNoiThat.FormsManager
 
             dataGridViewKho.CellClick -= dataGridViewKho_CellClick;
         }
+
         private void update_data()
         {
             string err = "";
@@ -137,7 +138,7 @@ namespace CHQLDoNoiThat.FormsManager
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            String err = "";
+            string err = "";
             if (selected_mode == 1)
             {
                 if (!check_null()) return;
@@ -217,7 +218,7 @@ namespace CHQLDoNoiThat.FormsManager
             txtId.Texts = row.Cells["id"].Value.ToString();
             txtVat.Texts = row.Cells["vat"].Value.ToString();
             txtSoLuong.Texts = row.Cells["quatity"].Value.ToString();
-            cmbTinhTrang.Texts = row.Cells["lotStatus"].Value.ToString();
+            txtTinhTrang.Texts = row.Cells["lotStatus"].Value.ToString();
             datePickerControlNgayNhap.Value = (DateTime)(row.Cells["impDate"].Value);
             
             foreach (var i in cmbTenSanPham.Items)
@@ -252,6 +253,7 @@ namespace CHQLDoNoiThat.FormsManager
             txtGiaGoc.Texts = "";
             txtLoiNhuan.Texts = "";
             txtVat.Texts = "";
+            txtTinhTrang.Texts = "";
             datePickerControlNgayNhap.Value = DateTime.Now;
         }
         private bool check_null()
@@ -267,7 +269,7 @@ namespace CHQLDoNoiThat.FormsManager
         private void cmbTenSanPham_Loc_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             string err = "";
-            var pid = ((DataRowView)(cmbTenSanPham_Loc.SelectedItem)).Row.ItemArray[0];
+            var pid = ((DataRowView)cmbTenSanPham_Loc.SelectedItem).Row.ItemArray[0];
             if (pid != null)
                 pid = pid.ToString();
             dbl_i = new DBL_Inventory();

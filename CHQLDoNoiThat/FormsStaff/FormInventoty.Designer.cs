@@ -33,6 +33,12 @@ namespace CHQLDoNoiThat.FormsStaff
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewKho = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cateName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellPrcie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.impDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,14 +46,8 @@ namespace CHQLDoNoiThat.FormsStaff
             this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
             this.cmbTenSanPham = new CHQLDoNoiThat.ComboBoxControl();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.txtTenSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cateName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellPrcie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.impDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKho)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -56,12 +56,13 @@ namespace CHQLDoNoiThat.FormsStaff
             // 
             this.datePickerControlNgayNhap.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.datePickerControlNgayNhap.BorderSize = 0;
+            this.datePickerControlNgayNhap.Enabled = false;
             this.datePickerControlNgayNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.datePickerControlNgayNhap.Location = new System.Drawing.Point(490, 13);
-            this.datePickerControlNgayNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datePickerControlNgayNhap.Margin = new System.Windows.Forms.Padding(2);
             this.datePickerControlNgayNhap.MinimumSize = new System.Drawing.Size(4, 35);
             this.datePickerControlNgayNhap.Name = "datePickerControlNgayNhap";
-            this.datePickerControlNgayNhap.Size = new System.Drawing.Size(208, 35);
+            this.datePickerControlNgayNhap.Size = new System.Drawing.Size(216, 35);
             this.datePickerControlNgayNhap.SkinColor = System.Drawing.Color.SteelBlue;
             this.datePickerControlNgayNhap.TabIndex = 37;
             this.datePickerControlNgayNhap.TextColor = System.Drawing.Color.White;
@@ -82,12 +83,12 @@ namespace CHQLDoNoiThat.FormsStaff
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(268, 201);
+            this.label6.Location = new System.Drawing.Point(227, 197);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(258, 30);
+            this.label6.Size = new System.Drawing.Size(337, 30);
             this.label6.TabIndex = 29;
-            this.label6.Text = "Danh sách sản phẩm trong kho";
+            this.label6.Text = "Danh sách lô sản phẩm chờ bán trong kho";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewKho
@@ -104,13 +105,50 @@ namespace CHQLDoNoiThat.FormsStaff
             this.impDate});
             this.dataGridViewKho.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewKho.Location = new System.Drawing.Point(10, 243);
-            this.dataGridViewKho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewKho.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewKho.Name = "dataGridViewKho";
             this.dataGridViewKho.RowHeadersWidth = 51;
             this.dataGridViewKho.RowTemplate.Height = 24;
             this.dataGridViewKho.Size = new System.Drawing.Size(729, 353);
             this.dataGridViewKho.TabIndex = 28;
             this.dataGridViewKho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKho_CellClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "lotId";
+            this.id.HeaderText = "Mã lô";
+            this.id.Name = "id";
+            // 
+            // cateName
+            // 
+            this.cateName.DataPropertyName = "productCategory";
+            this.cateName.HeaderText = "Loại sản phẩm";
+            this.cateName.Name = "cateName";
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "productName";
+            this.name.HeaderText = "Tên sản phẩm";
+            this.name.Name = "name";
+            // 
+            // quatity
+            // 
+            this.quatity.DataPropertyName = "lotQuantity";
+            this.quatity.HeaderText = "Số lượng";
+            this.quatity.Name = "quatity";
+            // 
+            // sellPrcie
+            // 
+            this.sellPrcie.DataPropertyName = "sellPrice";
+            this.sellPrcie.HeaderText = "Giá bán";
+            this.sellPrcie.Name = "sellPrcie";
+            // 
+            // impDate
+            // 
+            this.impDate.DataPropertyName = "lotImportDate";
+            this.impDate.HeaderText = "Ngày nhập";
+            this.impDate.Name = "impDate";
             // 
             // label2
             // 
@@ -129,10 +167,11 @@ namespace CHQLDoNoiThat.FormsStaff
             this.txtId.BorderColor = System.Drawing.Color.SteelBlue;
             this.txtId.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtId.BorderSize = 2;
+            this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtId.Location = new System.Drawing.Point(119, 8);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Multiline = false;
             this.txtId.Name = "txtId";
             this.txtId.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -159,15 +198,16 @@ namespace CHQLDoNoiThat.FormsStaff
             this.txtSoLuong.BorderColor = System.Drawing.Color.SteelBlue;
             this.txtSoLuong.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtSoLuong.BorderSize = 2;
+            this.txtSoLuong.Enabled = false;
             this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtSoLuong.Location = new System.Drawing.Point(490, 53);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoLuong.Multiline = false;
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSoLuong.PasswordChar = false;
-            this.txtSoLuong.Size = new System.Drawing.Size(190, 31);
+            this.txtSoLuong.Size = new System.Drawing.Size(216, 31);
             this.txtSoLuong.TabIndex = 9;
             this.txtSoLuong.Texts = "";
             this.txtSoLuong.UnderlinedStyle = true;
@@ -222,21 +262,17 @@ namespace CHQLDoNoiThat.FormsStaff
             this.panel3.Controls.Add(this.lblIdLoaiSanPham);
             this.panel3.Controls.Add(this.txtTenSanPham);
             this.panel3.Location = new System.Drawing.Point(10, 31);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(729, 152);
             this.panel3.TabIndex = 27;
-            // 
-            // elipseControl1
-            // 
-            this.elipseControl1.CornerRadius = 30;
-            this.elipseControl1.TargetControl = this;
             // 
             // txtTenSanPham
             // 
             this.txtTenSanPham.BorderColor = System.Drawing.Color.SteelBlue;
             this.txtTenSanPham.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtTenSanPham.BorderSize = 2;
+            this.txtTenSanPham.Enabled = false;
             this.txtTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSanPham.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtTenSanPham.Location = new System.Drawing.Point(119, 53);
@@ -250,41 +286,10 @@ namespace CHQLDoNoiThat.FormsStaff
             this.txtTenSanPham.Texts = "";
             this.txtTenSanPham.UnderlinedStyle = true;
             // 
-            // id
+            // elipseControl1
             // 
-            this.id.DataPropertyName = "lotId";
-            this.id.HeaderText = "Mã lô";
-            this.id.Name = "id";
-            // 
-            // cateName
-            // 
-            this.cateName.DataPropertyName = "productCategory";
-            this.cateName.HeaderText = "Loại sản phẩm";
-            this.cateName.Name = "cateName";
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "productName";
-            this.name.HeaderText = "Tên sản phẩm";
-            this.name.Name = "name";
-            // 
-            // quatity
-            // 
-            this.quatity.DataPropertyName = "lotQuantity";
-            this.quatity.HeaderText = "Số lượng";
-            this.quatity.Name = "quatity";
-            // 
-            // sellPrcie
-            // 
-            this.sellPrcie.DataPropertyName = "sellPrice";
-            this.sellPrcie.HeaderText = "Giá bán";
-            this.sellPrcie.Name = "sellPrcie";
-            // 
-            // impDate
-            // 
-            this.impDate.DataPropertyName = "lotImportDate";
-            this.impDate.HeaderText = "Ngày nhập";
-            this.impDate.Name = "impDate";
+            this.elipseControl1.CornerRadius = 30;
+            this.elipseControl1.TargetControl = this;
             // 
             // FormInventoty
             // 
@@ -297,7 +302,7 @@ namespace CHQLDoNoiThat.FormsStaff
             this.Controls.Add(this.cmbTenSanPham);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormInventoty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kho";
