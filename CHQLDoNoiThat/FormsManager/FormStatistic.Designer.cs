@@ -30,26 +30,35 @@ namespace CHQLDoNoiThat.FormsManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_now = new System.Windows.Forms.Label();
+            this.dataGridViewStatistic = new System.Windows.Forms.DataGridView();
+            this.lblLoiNhuan = new System.Windows.Forms.Label();
             this.lblTienChi = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblTienThu = new System.Windows.Forms.Label();
             this.lblNgayHomNay = new System.Windows.Forms.Label();
             this.lblNgayBatDau = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBoxControlThongKeTheo = new CHQLDoNoiThat.ComboBoxControl();
             this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxControlThongKeTheo = new CHQLDoNoiThat.ComboBoxControl();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
-            this.lblLoiNhuan = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistic)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbl_now);
+            this.panel1.Controls.Add(this.dataGridViewStatistic);
             this.panel1.Controls.Add(this.lblLoiNhuan);
             this.panel1.Controls.Add(this.lblTienChi);
             this.panel1.Controls.Add(this.label5);
@@ -61,28 +70,88 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Location = new System.Drawing.Point(54, 32);
+            this.panel1.Location = new System.Drawing.Point(40, 26);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(897, 659);
+            this.panel1.Size = new System.Drawing.Size(673, 535);
             this.panel1.TabIndex = 0;
+            // 
+            // lbl_now
+            // 
+            this.lbl_now.AutoSize = true;
+            this.lbl_now.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_now.Location = new System.Drawing.Point(186, 323);
+            this.lbl_now.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_now.Name = "lbl_now";
+            this.lbl_now.Size = new System.Drawing.Size(73, 20);
+            this.lbl_now.TabIndex = 11;
+            this.lbl_now.Text = "(hiện tại)";
+            // 
+            // dataGridViewStatistic
+            // 
+            this.dataGridViewStatistic.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewStatistic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStatistic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.year,
+            this.chi,
+            this.thu,
+            this.loi});
+            this.dataGridViewStatistic.GridColor = System.Drawing.Color.DarkGray;
+            this.dataGridViewStatistic.Location = new System.Drawing.Point(50, 94);
+            this.dataGridViewStatistic.Name = "dataGridViewStatistic";
+            this.dataGridViewStatistic.Size = new System.Drawing.Size(585, 212);
+            this.dataGridViewStatistic.TabIndex = 10;
+            // 
+            // lblLoiNhuan
+            // 
+            this.lblLoiNhuan.AutoSize = true;
+            this.lblLoiNhuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoiNhuan.Location = new System.Drawing.Point(162, 480);
+            this.lblLoiNhuan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLoiNhuan.Name = "lblLoiNhuan";
+            this.lblLoiNhuan.Size = new System.Drawing.Size(86, 18);
+            this.lblLoiNhuan.TabIndex = 9;
+            this.lblLoiNhuan.Text = "Lợi nhuận:";
             // 
             // lblTienChi
             // 
             this.lblTienChi.AutoSize = true;
             this.lblTienChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTienChi.Location = new System.Drawing.Point(234, 403);
+            this.lblTienChi.Location = new System.Drawing.Point(411, 388);
+            this.lblTienChi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTienChi.Name = "lblTienChi";
-            this.lblTienChi.Size = new System.Drawing.Size(92, 24);
+            this.lblTienChi.Size = new System.Drawing.Size(72, 18);
             this.lblTienChi.TabIndex = 8;
             this.lblTienChi.Text = "Tiền chi:";
+            // 
+            // label5
+            // 
+            this.label5.Image = global::CHQLDoNoiThat.Properties.Resources.profit_48px;
+            this.label5.Location = new System.Drawing.Point(47, 439);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 87);
+            this.label5.TabIndex = 7;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Image = global::CHQLDoNoiThat.Properties.Resources.money_100px;
+            this.label4.Location = new System.Drawing.Point(51, 347);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 92);
+            this.label4.TabIndex = 6;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTienThu
             // 
             this.lblTienThu.AutoSize = true;
             this.lblTienThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTienThu.Location = new System.Drawing.Point(234, 316);
+            this.lblTienThu.Location = new System.Drawing.Point(162, 388);
+            this.lblTienThu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTienThu.Name = "lblTienThu";
-            this.lblTienThu.Size = new System.Drawing.Size(93, 24);
+            this.lblTienThu.Size = new System.Drawing.Size(73, 18);
             this.lblTienThu.TabIndex = 5;
             this.lblTienThu.Text = "Tiền thu:";
             // 
@@ -90,29 +159,32 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.lblNgayHomNay.AutoSize = true;
             this.lblNgayHomNay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHomNay.Location = new System.Drawing.Point(548, 127);
+            this.lblNgayHomNay.Location = new System.Drawing.Point(450, 324);
+            this.lblNgayHomNay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNgayHomNay.Name = "lblNgayHomNay";
-            this.lblNgayHomNay.Size = new System.Drawing.Size(205, 24);
+            this.lblNgayHomNay.Size = new System.Drawing.Size(20, 18);
             this.lblNgayHomNay.TabIndex = 4;
-            this.lblNgayHomNay.Text = "(trả về ngày kết thúc)";
+            this.lblNgayHomNay.Text = "()";
             // 
             // lblNgayBatDau
             // 
             this.lblNgayBatDau.AutoSize = true;
             this.lblNgayBatDau.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayBatDau.Location = new System.Drawing.Point(218, 125);
+            this.lblNgayBatDau.Location = new System.Drawing.Point(319, 323);
+            this.lblNgayBatDau.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNgayBatDau.Name = "lblNgayBatDau";
-            this.lblNgayBatDau.Size = new System.Drawing.Size(198, 25);
+            this.lblNgayBatDau.Size = new System.Drawing.Size(21, 20);
             this.lblNgayBatDau.TabIndex = 3;
-            this.lblNgayBatDau.Text = "(trả về ngày bắt đầu)";
+            this.lblNgayBatDau.Text = "()";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(451, 126);
+            this.label2.Location = new System.Drawing.Point(411, 323);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 25);
+            this.label2.Size = new System.Drawing.Size(35, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "đến";
             // 
@@ -120,9 +192,10 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(152, 125);
+            this.label1.Location = new System.Drawing.Point(287, 323);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 25);
+            this.label1.Size = new System.Drawing.Size(28, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Từ";
             // 
@@ -132,10 +205,23 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel2.Controls.Add(this.comboBoxControlThongKeTheo);
             this.panel2.Controls.Add(this.label6);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 3);
+            this.panel2.Location = new System.Drawing.Point(0, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(897, 82);
+            this.panel2.Size = new System.Drawing.Size(673, 67);
             this.panel2.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(138, 22);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(194, 21);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Thống kê doanh thu theo";
             // 
             // comboBoxControlThongKeTheo
             // 
@@ -147,77 +233,70 @@ namespace CHQLDoNoiThat.FormsManager
             this.comboBoxControlThongKeTheo.ForeColor = System.Drawing.Color.SteelBlue;
             this.comboBoxControlThongKeTheo.IconColor = System.Drawing.Color.SteelBlue;
             this.comboBoxControlThongKeTheo.Items.AddRange(new object[] {
-            "Tuần",
             "Tháng",
             "Quý",
             "Năm"});
             this.comboBoxControlThongKeTheo.ListBackColor = System.Drawing.Color.White;
             this.comboBoxControlThongKeTheo.ListTextColor = System.Drawing.Color.SteelBlue;
-            this.comboBoxControlThongKeTheo.Location = new System.Drawing.Point(456, 23);
-            this.comboBoxControlThongKeTheo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.comboBoxControlThongKeTheo.Location = new System.Drawing.Point(342, 19);
+            this.comboBoxControlThongKeTheo.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxControlThongKeTheo.MinimumSize = new System.Drawing.Size(150, 24);
             this.comboBoxControlThongKeTheo.Name = "comboBoxControlThongKeTheo";
             this.comboBoxControlThongKeTheo.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxControlThongKeTheo.Size = new System.Drawing.Size(214, 35);
+            this.comboBoxControlThongKeTheo.Size = new System.Drawing.Size(160, 28);
             this.comboBoxControlThongKeTheo.TabIndex = 13;
             this.comboBoxControlThongKeTheo.Texts = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(184, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 28);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Thống kê doanh thu theo";
+            this.comboBoxControlThongKeTheo.OnSelectedIndexChanged += new System.EventHandler(this.comboBoxControlThongKeTheo_OnSelectedIndexChanged);
             // 
             // elipseControl1
             // 
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
             // 
-            // lblLoiNhuan
+            // year
             // 
-            this.lblLoiNhuan.AutoSize = true;
-            this.lblLoiNhuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoiNhuan.Location = new System.Drawing.Point(217, 492);
-            this.lblLoiNhuan.Name = "lblLoiNhuan";
-            this.lblLoiNhuan.Size = new System.Drawing.Size(109, 24);
-            this.lblLoiNhuan.TabIndex = 9;
-            this.lblLoiNhuan.Text = "Lợi nhuận:";
+            this.year.DataPropertyName = "year";
+            this.year.HeaderText = "Năm";
+            this.year.Name = "year";
+            this.year.Width = 70;
             // 
-            // label5
+            // chi
             // 
-            this.label5.Image = global::CHQLDoNoiThat.Properties.Resources.profit_48px;
-            this.label5.Location = new System.Drawing.Point(63, 422);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 125);
-            this.label5.TabIndex = 7;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chi.DataPropertyName = "chi";
+            this.chi.HeaderText = "Chi tiêu";
+            this.chi.Name = "chi";
+            this.chi.Width = 150;
             // 
-            // label4
+            // thu
             // 
-            this.label4.Image = global::CHQLDoNoiThat.Properties.Resources.money_100px;
-            this.label4.Location = new System.Drawing.Point(88, 286);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 86);
-            this.label4.TabIndex = 6;
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.thu.DataPropertyName = "thu";
+            this.thu.HeaderText = "Doanh thu";
+            this.thu.Name = "thu";
+            this.thu.Width = 150;
+            // 
+            // loi
+            // 
+            this.loi.DataPropertyName = "loiNhuan";
+            this.loi.HeaderText = "Lợi nhuận";
+            this.loi.Name = "loi";
+            this.loi.Width = 150;
             // 
             // FormStatistic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1040, 760);
+            this.ClientSize = new System.Drawing.Size(780, 618);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormStatistic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê";
+            this.Load += new System.EventHandler(this.FormStatistic_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistic)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -231,7 +310,6 @@ namespace CHQLDoNoiThat.FormsManager
         private ComboBoxControl comboBoxControlThongKeTheo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblNgayHomNay;
-        private System.Windows.Forms.Label lblNgayBatDau;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -240,5 +318,12 @@ namespace CHQLDoNoiThat.FormsManager
         private System.Windows.Forms.Label lblTienChi;
         private ElipseToolDemo.ElipseControl elipseControl1;
         private System.Windows.Forms.Label lblLoiNhuan;
+        private System.Windows.Forms.DataGridView dataGridViewStatistic;
+        private System.Windows.Forms.Label lblNgayBatDau;
+        private System.Windows.Forms.Label lbl_now;
+        private System.Windows.Forms.DataGridViewTextBoxColumn year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loi;
     }
 }

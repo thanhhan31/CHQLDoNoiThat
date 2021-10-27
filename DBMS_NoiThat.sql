@@ -393,9 +393,10 @@ ON PRODUCTS.id = productLotInf.productId
 GO
 
 CREATE VIEW V_NV_INVENTORIES AS --only waiting to sell lot
-SELECT	INVENTORIES.id AS lotId,
+SELECT INVENTORIES.id AS lotId,
 		CATEGORIES.name AS productCategory,
 		PRODUCTS.name AS productName,
+		PRODUCTS.id AS productId,
 		PRODUCTS.image AS productImg,
 		INVENTORIES.quantity AS lotQuantity, 
 		INVENTORIES.originalPrice * (1 + INVENTORIES.profit/100 + INVENTORIES.vat/100) AS sellPrice,
@@ -405,11 +406,11 @@ INNER JOIN PRODUCTS ON INVENTORIES.idProduct = PRODUCTS.id
 INNER JOIN CATEGORIES ON PRODUCTS.idCategory = CATEGORIES.id
 WHERE PRODUCTS.active = 1 AND INVENTORIES.waiting = 1
 GO
-
 CREATE VIEW V_QL_INVENTORIES AS
-SELECT	INVENTORIES.id AS lotId,
+SELECT INVENTORIES.id AS lotId,
 		CATEGORIES.name AS productCategory,
-		PRODUCTS.name AS productName,
+		PRODUCTS.id AS productId,
+		INVENTORIES.importDate AS importDate,
 		PRODUCTS.image AS productImg,
 		CASE WHEN PRODUCTS.active = 0 THEN 'Product disabled' ELSE 'Product enabled' END AS productStatus,
 		INVENTORIES.quantity AS lotQuantity, 
@@ -673,6 +674,81 @@ AS
 	DELETE FROM PRODUCTS WHERE id=@id
 GO
 
+-- PROCEDURE THỐNG KÊ TẤT CẢ NĂM
+CREATE PROCEDURE sp_revenue_allyear
+AS
+BEGIN
+	select ISNULL(thuTable.year, chiTable.year) as year,
+	       ISNULL(tienThu, 0) as thu,
+		ISNULL(tienChi,0) as chi, 
+		loiNhuan = ISNULL(tienThu, 0) - ISNULL(tienChi, 0) 
+	from 
+		(SELECT Year(createDate) as year,
+			SUM(price*quantity) as tienThu
+		FROM BILLs b inner join BILLDETAILS bd on b.id = bd.idBill
+		group by Year(createDate)) as thuTable 
+		FULL JOIN 
+		(SELECT Year(importDate) as year,
+			 SUM(originalprice*quantity*(1+vat/100)) as tienChi
+		FROM INVENTORIES
+		group by Year(importDate)) as chiTable
+		ON thuTable.year = chiTable.year
+	ORDER BY year DESC
+END
+GO
+
+-- PROCEDURE THỐNG KÊ TẤT CẢ THÁNG CỦA TẤT CẢ NĂM
+CREATE PROCEDURE sp_revenue_allmonth
+AS
+BEGIN
+	select ISNULL(thuTable.year, chiTable.year) as year,
+		ISNULL(thuTable.month, chiTable.month) as month,
+		ISNULL(tienThu, 0) as thu,
+		ISNULL(tienChi,0) as chi, 
+		loiNhuan = ISNULL(tienThu, 0) - ISNULL(tienChi, 0) 
+	from 
+		(SELECT Year(createDate) as year,
+			Month(createDate) as month,
+			SUM(price*quantity) as tienThu
+		FROM BILLs b inner join BILLDETAILS bd on b.id = bd.idBill
+		group by Year(createDate), Month(createDate)) as thuTable 
+		FULL JOIN 
+		(SELECT Year(importDate) as year,
+			Month(importDate) as month,
+			SUM(originalprice*quantity*(1+vat/100)) as tienChi
+		FROM INVENTORIES
+		group by Year(importDate), Month(importDate)) as chiTable
+		ON thuTable.year = chiTable.year and thuTable.month = chiTable.month
+	ORDER BY year DESC, month DESC
+END
+GO
+
+-- PROCEDURE THỐNG KÊ THEO TẤT CẢ QUÝ CỦA TẤT CẢ NĂM
+CREATE PROCEDURE sp_revenue_allquarter
+AS
+BEGIN
+	select ISNULL(thuTable.year, chiTable.year) as year,
+		ISNULL(thuTable.quarter, chiTable.quarter) as quarter,
+	       ISNULL(tienThu, 0) as thu,
+		ISNULL(tienChi,0) as chi, 
+		loiNhuan = ISNULL(tienThu, 0) - ISNULL(tienChi, 0)
+	from 
+		(SELECT Year(createDate) as year,
+			DATEPART(QUARTER,createDate) as quarter,
+			SUM(price*quantity) as tienThu
+		FROM BILLs b inner join BILLDETAILS bd on b.id = bd.idBill
+		group by Year(createDate), DATEPART(QUARTER,createDate)) as thuTable 
+		FULL JOIN 
+		(SELECT Year(importDate) as year,
+			DATEPART(QUARTER,importDate) as quarter,
+			SUM(originalprice*quantity*(1+vat/100)) as tienChi
+		FROM INVENTORIES
+		group by Year(importDate), DATEPART(QUARTER,importDate)) as chiTable
+		ON thuTable.year = chiTable.year and thuTable.quarter = chiTable.quarter
+	ORDER BY year DESC, quarter DESC
+END
+GO
+
 
 --Function Login
 CREATE FUNCTION fnLogin (@email varchar(200), @password varchar(100))
@@ -763,7 +839,7 @@ BEGIN
 END
 GO
 
--- FUNCTION THỐNG KÊ DOANH THU
+-- FUNCTION THỐNG KÊ DOANH THU THEO MỘT KHOẢNG THỜI GIAN
 CREATE FUNCTION fn_revenue_report(@startDate DATE = NULL, @endDate DATE = NULL)
 RETURNS @result TABLE (thu DECIMAL(19,5), chi DECIMAL(19,5), doanhThu DECIMAL(19,5))
 BEGIN
@@ -787,6 +863,24 @@ BEGIN
 END
 GO
 
+-- FUNTION LẤY TÊN SẢN PHẨM
+CREATE FUNCTION fn_get_product_name()
+Returns table
+	return select id, name from products;
+GO
+
+-- FUNTION NHÂN VIÊN TÌM LÔ SẢN PHẨM THEO ID SẢN PHẨM
+CREATE FUNCTION fn_nv_get_inventories_by_pid(@id char(5))
+Returns table
+	return select * from V_NV_INVENTORIES WHERE V_NV_INVENTORIES.productId = @id;
+GO
+
+-- FUNTION QUẢN LÝ TÌM LÔ SẢN PHẨM THEO ID SẢN PHẨM
+CREATE FUNCTION fn_ql_get_inventories_by_pid(@id char(5))
+Returns table
+	return select * from V_QL_INVENTORIES WHERE V_QL_INVENTORIES.productId = @id;
+GO
+
 INSERT TYPEACCS (id, name) VALUES (N'1    ', N'Nhân viên')
 INSERT TYPEACCS (id, name) VALUES (N'2    ', N'Quản lí')
 
@@ -794,3 +888,6 @@ INSERT INTO ACCOUNTS(id, name, dob, gender, phone, idNo,
 			address, email, password, avatar, idType, active) 
 VALUES('QL001', 'Quản Thị Lí', '2000-1-1', 'Nam', '0954325198', '854369548', 
 	'TP. HCM', '@.', CONVERT(CHAR(64),HashBytes('sha2_256', '1' + '@.'),2), null, 2, 1) --username: @. | password: 1
+
+
+
