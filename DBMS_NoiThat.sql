@@ -385,10 +385,12 @@ SELECT	PRODUCTS.id AS productId,
 		productLotInf.lotId AS productLotId,
 		productLotInf.lotDate AS productLotDate
 FROM PRODUCTS
-INNER JOIN 
+LEFT OUTER JOIN 
 	(SELECT PRODUCTS.id AS productId, INVENTORIES.id AS lotId, INVENTORIES.importDate AS lotDate
-	FROM PRODUCTS
-	LEFT OUTER JOIN INVENTORIES ON PRODUCTS.id = INVENTORIES.idProduct) AS productLotInf
+	FROM INVENTORIES 
+	INNER JOIN  PRODUCTS
+	ON PRODUCTS.id = INVENTORIES.idProduct
+	WHERE INVENTORIES.isSelling = 1) AS productLotInf
 ON PRODUCTS.id = productLotInf.productId
 GO
 
@@ -412,15 +414,15 @@ SELECT INVENTORIES.id AS lotId,
 		PRODUCTS.id AS productId,
 		INVENTORIES.importDate AS importDate,
 		PRODUCTS.image AS productImg,
-		CASE WHEN PRODUCTS.active = 0 THEN 'Product disabled' ELSE 'Product enabled' END AS productStatus,
+		CASE WHEN PRODUCTS.active = 0 THEN N'Sản phẩm đã vô hiệu hóa' ELSE N'Sản phẩm đang bán' END AS productStatus,
 		INVENTORIES.quantity AS lotQuantity, 
 		INVENTORIES.originalPrice AS originalPrice,
 		INVENTORIES.originalPrice * (1 + INVENTORIES.profit/100 + INVENTORIES.vat/100) AS sellPrice,
 		INVENTORIES.profit AS profit,
 		INVENTORIES.vat AS vat,
-		CASE WHEN (INVENTORIES.waiting = 1 AND INVENTORIES.isSelling = 0) THEN 'WAITING TO SELL' 
-			WHEN (INVENTORIES.waiting = 0 AND INVENTORIES.isSelling = 1) THEN 'SELLING'
-			ELSE 'SOLD OUT' END AS lotStatus
+		CASE WHEN (INVENTORIES.waiting = 1 AND INVENTORIES.isSelling = 0) THEN N'Lô đang chờ bán' 
+			WHEN (INVENTORIES.waiting = 0 AND INVENTORIES.isSelling = 1) THEN N'Lô đang bán'
+			ELSE N'Lô đã bán hết' END AS lotStatus
 FROM INVENTORIES
 INNER JOIN PRODUCTS ON INVENTORIES.idProduct = PRODUCTS.id
 INNER JOIN CATEGORIES ON PRODUCTS.idCategory = CATEGORIES.id

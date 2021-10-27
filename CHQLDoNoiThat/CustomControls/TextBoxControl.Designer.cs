@@ -38,7 +38,7 @@ namespace CHQLDoNoiThat.CustomControls
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(7, 7);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 15);
+            this.textBox1.Size = new System.Drawing.Size(236, 13);
             this.textBox1.TabIndex = 0;
             // 
             // TextBoxControl

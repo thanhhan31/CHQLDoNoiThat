@@ -33,6 +33,12 @@ namespace CHQLDoNoiThat.FormsManager
             }
         }
 
+        private void btnXoaAnhSanPham_Click(object sender, EventArgs e)
+        {
+            pictureBoxSanPham.Image = null;
+            image = Array.Empty<byte>();
+        }
+
         private void FormProduct_Load(object sender, EventArgs e)
         {
             update_data();
@@ -90,6 +96,7 @@ namespace CHQLDoNoiThat.FormsManager
             txtId.Enabled = true;
             txtTenSanPham.Enabled = true;
             btnTaiAnhSanPham.Enabled = true;
+            btnXoaAnhSanPham.Enabled = true;
             btnLuu.Enabled = true;
             dataGridViewSanPham.CellClick -= DataGridViewSanPham_CellClick;
         }
@@ -100,6 +107,7 @@ namespace CHQLDoNoiThat.FormsManager
             txtId.Enabled = false;
             txtTenSanPham.Enabled = false;
             btnTaiAnhSanPham.Enabled = false;
+            btnXoaAnhSanPham.Enabled = false;
             btnLuu.Enabled = false;
             dataGridViewSanPham.CellClick += DataGridViewSanPham_CellClick;
         }
@@ -262,6 +270,15 @@ namespace CHQLDoNoiThat.FormsManager
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             
+        }
+
+        private void txtTimTenSanPham_TextChanged(object sender, EventArgs e)
+        {
+            string filter = txtTimTenSanPham.Texts;
+            if (!String.IsNullOrEmpty(filter))
+                (dataGridViewSanPham.DataSource as DataTable).DefaultView.RowFilter = string.Format("productName LIKE '*{0}*'", filter);
+            else
+                (dataGridViewSanPham.DataSource as DataTable).DefaultView.RowFilter = "";
         }
     }
 }

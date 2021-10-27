@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace CHQLDoNoiThat.CustomControls
 {
+    [DefaultEvent("TextChanged")]
     public partial class TextBoxControl : UserControl
     {
+        [Browsable(true)]
+        [Category("Property Changed")]
+        public event EventHandler TextChanged;        
+
         //Fields
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 2;
@@ -22,6 +27,14 @@ namespace CHQLDoNoiThat.CustomControls
         public TextBoxControl()
         {
             InitializeComponent();
+            textBox1.TextChanged += new EventHandler(textBox1_TextChanged);
+            textBox1.Click += new EventHandler(textBox1_Click);
+            textBox1.TextChanged += new EventHandler(textBox1_TextChanged);
+            textBox1.Enter += new EventHandler(textBox1_Enter);
+            textBox1.KeyPress += new KeyPressEventHandler(textBox1_KeyPress);
+            textBox1.Leave += new EventHandler(textBox1_Leave);
+            textBox1.MouseEnter += new EventHandler(textBox1_MouseEnter);
+            textBox1.MouseLeave += new EventHandler(textBox1_MouseLeave);
         }
 
         //Private methods
@@ -39,7 +52,7 @@ namespace CHQLDoNoiThat.CustomControls
         }
 
         //Properties
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public Color BorderColor
         {
             get { return borderColor; }
@@ -49,7 +62,7 @@ namespace CHQLDoNoiThat.CustomControls
                 this.Invalidate();
             }
         }
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public int BorderSize
         {
             get { return borderSize; }
@@ -60,7 +73,7 @@ namespace CHQLDoNoiThat.CustomControls
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public bool UnderlinedStyle
         {
             get { return underlinedStyle; }
@@ -71,21 +84,21 @@ namespace CHQLDoNoiThat.CustomControls
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public bool PasswordChar
         {
             get { return textBox1.UseSystemPasswordChar; }
             set { textBox1.UseSystemPasswordChar = value; }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public bool Multiline
         {
             get { return textBox1.Multiline; }
             set { textBox1.Multiline = value; }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public override Color BackColor
         {
             get { return base.BackColor; }
@@ -96,7 +109,7 @@ namespace CHQLDoNoiThat.CustomControls
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public override Color ForeColor
         {
             get { return base.ForeColor; }
@@ -107,7 +120,7 @@ namespace CHQLDoNoiThat.CustomControls
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public override Font Font
         {
             get { return base.Font; }
@@ -120,14 +133,14 @@ namespace CHQLDoNoiThat.CustomControls
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public string Texts
         {
             get { return textBox1.Text; }
             set { textBox1.Text = value; }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Custom control property")]
         public Color BorderFocusColor
         {
             get { return borderFocusColor; }
@@ -180,25 +193,13 @@ namespace CHQLDoNoiThat.CustomControls
             this.Invalidate();
         }
 
-        [DefaultEvent("_TextChanged")]
-        public partial class RJTextBox : UserControl
-        {
-
-            //Default Event
-            public event EventHandler _TextChanged;
-
-            //TextBox-> TextChanged event
-            private void textBox1_TextChanged(object sender, EventArgs e)
-            {
-                if (_TextChanged != null)
-                    _TextChanged.Invoke(sender, e);
-            }
-        }
-
         //TextBox events
-        /// <summary>
-        /// textbox events attached to user control events
-        /// </summary>
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (TextChanged != null)
+                TextChanged.Invoke(sender, e);
+        }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
