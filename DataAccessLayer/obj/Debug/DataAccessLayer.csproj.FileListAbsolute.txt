@@ -3,3 +3,9 @@ C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLa
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\H\Desktop\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
