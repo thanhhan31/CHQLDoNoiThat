@@ -134,7 +134,7 @@ namespace CHQLDoNoiThat.FormsManager
                     }
                 }
             }
-            if (correctRow != null)
+            if (correctRow.Index != -1)
             {
                 date["thu"] = correctRow.Cells["thu"].Value.ToString();
                 date["chi"] = correctRow.Cells["chi"].Value.ToString();
