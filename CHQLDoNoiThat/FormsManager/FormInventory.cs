@@ -208,6 +208,10 @@ namespace CHQLDoNoiThat.FormsManager
         private void dataGridViewKho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridViewKho.CurrentRow;
+
+            if (row == null)
+                return;
+
             txtGiaGoc.Texts = row.Cells["oriPrice"].Value.ToString();
             txtLoiNhuan.Texts = row.Cells["profit"].Value.ToString();
             txtId.Texts = row.Cells["id"].Value.ToString();

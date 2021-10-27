@@ -116,6 +116,8 @@ namespace CHQLDoNoiThat.FormsManager
 
         private void DataGridViewSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dataGridViewSanPham.CurrentCell == null)
+                return;
             if (dataGridViewSanPham.CurrentCell.RowIndex >= 0)
             {
                 var r = dataGridViewSanPham.CurrentCell.RowIndex;
