@@ -48,6 +48,7 @@
     <Compile Include="DBL_Category.cs" />
     <Compile Include="DBL_Inventory.cs" />
     <Compile Include="DBL_Product.cs" />
+    <Compile Include="DBL_Statistic.cs" />
     <Compile Include="DBL_TypeAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

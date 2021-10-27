@@ -14,8 +14,6 @@ namespace CHQLDoNoiThat.FormsManager
     public partial class FormStatistic : Form
     {
         DBL_Statistic dbl_s = new DBL_Statistic();
-
-
         public FormStatistic()
         {
             InitializeComponent();
@@ -82,7 +80,6 @@ namespace CHQLDoNoiThat.FormsManager
             comboBoxControlThongKeTheo.SelectedIndex = 2;
             dataGridViewStatistic.ReadOnly = true;
             dataGridViewStatistic.AllowUserToAddRows = false;
-            dataGridViewStatistic.index
         }
         private Dictionary<string,string> getCurrent(string kw)
         {

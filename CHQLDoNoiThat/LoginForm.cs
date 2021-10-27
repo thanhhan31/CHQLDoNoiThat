@@ -85,7 +85,7 @@ namespace CHQLDoNoiThat
                 {
                     MessageBox.Show(error, "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }   
+            }
         }
     }
 }

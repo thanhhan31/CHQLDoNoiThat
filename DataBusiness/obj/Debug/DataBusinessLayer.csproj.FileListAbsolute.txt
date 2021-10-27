@@ -16,3 +16,12 @@ C:\Users\H\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj
 C:\Users\H\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
 C:\Users\H\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
 C:\Users\H\Desktop\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.dll
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.pdb
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.dll
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.pdb
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
+C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
