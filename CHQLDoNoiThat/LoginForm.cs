@@ -47,6 +47,11 @@ namespace CHQLDoNoiThat
             string error = "";
             DBL_Account dbl = new DBL_Account();
             DataSet userinf = dbl.login(email, passwd, ref error);
+            if(userinf == null)
+            {
+                MessageBox.Show("Không có dữ liệu", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }    
             bool login_as_employee = radioButton2.Checked;
             if (userinf.Tables[0].Rows.Count == 1)
             {

@@ -18,12 +18,19 @@ namespace CHQLDoNoiThat.FormsManager
         {
             InitializeComponent();
         }
+        private void FormStatistic_Load(object sender, EventArgs e)
+        {
+            comboBoxControlThongKeTheo.SelectedIndex = 2;
+            dataGridViewStatistic.ReadOnly = true;
+            dataGridViewStatistic.AllowUserToAddRows = false;
+            dataGridViewStatistic.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewStatistic.MultiSelect = false;
 
+        }
         private void comboBoxControlThongKeTheo_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             string choose = comboBoxControlThongKeTheo.Texts;
             string err = "";
-            var current = new Dictionary<string, string>();
             if(choose == "Năm")
             {
                 DataSet ds = dbl_s.statistic_allyear(ref err);
@@ -33,10 +40,6 @@ namespace CHQLDoNoiThat.FormsManager
                     return;
                 }
                 dataGridViewStatistic.DataSource = ds.Tables[0];
-                current = getCurrent("year");
-                lblNgayBatDau.Text = current["start"];
-                lblNgayHomNay.Text = current["end"];
-                lbl_now.Text = "Năm nay";
             }
             else if(choose =="Tháng")
             {
@@ -47,10 +50,6 @@ namespace CHQLDoNoiThat.FormsManager
                     return;
                 }
                 dataGridViewStatistic.DataSource = ds.Tables[0];
-                current = getCurrent("month");
-                lblNgayBatDau.Text = current["start"];
-                lblNgayHomNay.Text = current["end"];
-                lbl_now.Text = "Tháng này";
                 dataGridViewStatistic.Columns["month"].HeaderText = "Tháng";
                 dataGridViewStatistic.Columns["month"].DisplayIndex = 1;
             }
@@ -63,91 +62,70 @@ namespace CHQLDoNoiThat.FormsManager
                     return;
                 }
                 dataGridViewStatistic.DataSource = ds.Tables[0];
-                current = getCurrent("quarter");
-                lblNgayBatDau.Text = current["start"];
-                lblNgayHomNay.Text = current["end"];
-                lbl_now.Text = "Quý này("+ current["index"]+")";
                 dataGridViewStatistic.Columns["quarter"].HeaderText = "Quý";
                 dataGridViewStatistic.Columns["quarter"].DisplayIndex = 1;
             }
-            lblTienChi.Text = "Tiền chi: " + current["chi"];
-            lblTienThu.Text = "Tiền thu: " + current["thu"];
-            lblLoiNhuan.Text = "Lợi nhuận: " + current["loi"];
         }
 
-        private void FormStatistic_Load(object sender, EventArgs e)
+        private void btnThongKe_Click(object sender, EventArgs e)
         {
-            comboBoxControlThongKeTheo.SelectedIndex = 2;
-            dataGridViewStatistic.ReadOnly = true;
-            dataGridViewStatistic.AllowUserToAddRows = false;
+            String err = "";
+            DataSet ds = dbl_s.statistic_custom(datePickerControlNgayBatDau.Value, datePickerControlNgayKetThuc.Value, ref err);
+            var result = ds.Tables[0].Rows[0];
+            lblTienThu.Text = "Tiền thu: " + result["thu"].ToString();
+            lblTienChi.Text = "Tiền chi: " + result["chi"].ToString();
+            lblLoiNhuan.Text = "Lợi nhuận: " + result["doanhThu"].ToString();
         }
-        private Dictionary<string,string> getCurrent(string kw)
+
+        private void dataGridViewStatistic_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Dictionary<string, string> date = new Dictionary<string, string>();
-            DataGridViewRow correctRow = new DataGridViewRow();
-            if (kw == "year")
+            var choose = comboBoxControlThongKeTheo.Texts;
+            var row = dataGridViewStatistic.CurrentRow;
+            DateTime startDate = DateTime.Now, endDate = DateTime.Now;
+
+            if (choose == "Năm")
             {
-                int year = DateTime.Now.Year;
-                date["start"] = "1/1/" + year.ToString();
-                date["index"] = year.ToString();
-                foreach (DataGridViewRow i in dataGridViewStatistic.Rows)
-                {
-                    if (i.Cells["year"].Value.ToString() == year.ToString())
-                    {
-                        correctRow = i;
-                        break;
-                    }
-                }
-                
+                int thisYear = DateTime.Now.Year;
+                int year = (int)row.Cells["year"].Value;
+                startDate = DateTime.Parse("1/1/" + year);
+                if (year == thisYear)
+                    endDate = DateTime.Now;
+                else
+                    endDate = DateTime.Parse("31/12/" + year);
             }
-            else if(kw == "month")
+            else if(choose =="Tháng")
             {
-                int year = DateTime.Now.Year;
-                int month = DateTime.Now.Month;
-                date["start"] = string.Format("1/{0}/{1}", month, year);
-                date["index"] = month.ToString();
-                foreach (DataGridViewRow i in dataGridViewStatistic.Rows)
-                {
-                    if (i.Cells["year"].Value.ToString() == year.ToString() &&
-                        i.Cells["month"].Value.ToString() == month.ToString())
-                    {
-                        correctRow = i;
-                        break;
-                    }
-                }
-            }   
-            else if(kw == "quarter")
+                int thisYear = DateTime.Now.Year;
+                int thisMonth = DateTime.Now.Month;
+                int year = (int)row.Cells["year"].Value;
+                int month = (int)row.Cells["month"].Value;
+                startDate = DateTime.Parse(string.Format("1/{0}/{1}",month,year));
+                if (year == thisYear && month == thisMonth)
+                    endDate = DateTime.Now;
+                else
+                    endDate = DateTime.Parse(string.Format("{0}/{1}/{2}",
+                        DateTime.DaysInMonth(year, month), month, year));
+            }
+            else if(choose == "Quý")
             {
-                int year = DateTime.Now.Year;
-                int month = DateTime.Now.Month;
-                int quarter = (month + 2) / 3;
+                int thisYear = DateTime.Now.Year;
+                int thisQuarter = (DateTime.Now.Month + 2) / 3;
+                int year = (int)row.Cells["year"].Value;
+                int quarter = (int)row.Cells["quarter"].Value;
                 int startMonth = (quarter - 1) * 3 + 1;
-                date["start"] = string.Format("1/{0}/{1}", startMonth, year);
-                date["index"] = quarter.ToString();
-                foreach (DataGridViewRow i in dataGridViewStatistic.Rows)
-                {
-                    if (i.Cells["year"].Value.ToString() == year.ToString()&&
-                        i.Cells["quarter"].Value.ToString() == quarter.ToString())
-                    {
-                        correctRow = i;
-                        break;
-                    }
-                }
+
+                startDate = DateTime.Parse(string.Format("1/{0}/{1}", startMonth, year));
+                if (year == thisYear && quarter == thisQuarter )
+                    endDate = DateTime.Now;
+                else
+                    endDate = DateTime.Parse(string.Format("{0}/{1}/{2}",
+                        DateTime.DaysInMonth(year,startMonth + 2), startMonth+2, year));
             }
-            if (correctRow.Index != -1)
-            {
-                date["thu"] = correctRow.Cells["thu"].Value.ToString();
-                date["chi"] = correctRow.Cells["chi"].Value.ToString();
-                date["loi"] = correctRow.Cells["loi"].Value.ToString();
-            }
-            else
-            {
-                date["thu"] = "0";
-                date["chi"] = "0";
-                date["loi"] = "0";
-            }
-            date["end"] = DateTime.Now.ToString("dd/MM/yyyy");
-            return date;
+            datePickerControlNgayBatDau.Value = startDate;
+            datePickerControlNgayKetThuc.Value = endDate;
+            lblTienThu.Text = "Tiền thu: " + row.Cells["thu"].Value.ToString();
+            lblTienChi.Text = "Tiền chi: " + row.Cells["chi"].Value.ToString();
+            lblLoiNhuan.Text = "Lợi nhuận: " + row.Cells["loi"].Value.ToString();
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using DataAccessLayer;
+using System;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace DataBusiness
 {
@@ -30,6 +32,15 @@ namespace DataBusiness
                 "sp_revenue_allquarter",
                 CommandType.StoredProcedure,
                 ref error);
+        }
+        public DataSet statistic_custom(DateTime startDate, DateTime endDate,  ref string error)
+        {
+            return dataProvider.ExecuteQueryDataSet(
+                "select * from dbo.fn_revenue_report(@startDate, @endDate)",
+                CommandType.Text,
+                ref error,
+                new SqlParameter("@startDate", startDate),
+                new SqlParameter("@endDate", endDate));
         }
     }
 }
