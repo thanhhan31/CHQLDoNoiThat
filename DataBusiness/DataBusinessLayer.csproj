@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountObject.cs" />
+    <Compile Include="CartItem.cs" />
     <Compile Include="DBL_Account.cs" />
     <Compile Include="DBL_Bill.cs" />
     <Compile Include="DBL_BillDetail.cs" />

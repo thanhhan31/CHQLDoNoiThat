@@ -14,6 +14,8 @@ namespace CHQLDoNoiThat.FormsManager
     public partial class FormBill : Form
     {
         private string id_employee;
+        private List<CartItem> cartitems;
+
         public FormBill(string id_employee)
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace CHQLDoNoiThat.FormsManager
             disable_thanhToan();
             disable_xoa_cthd();
             lblTongTien.Text = "Tổng tiền: 0";
+            cartitems = new List<CartItem>();
         }
 
         private void disable_edit()
@@ -164,6 +167,7 @@ namespace CHQLDoNoiThat.FormsManager
                         }
                         r.Cells["quantity_"].Value = total_quantity.ToString();
                         da_co = true;
+                        cartitems.Find(c => c.ProductId == r.Cells["idProduct"].Value.ToString()).Quantity = total_quantity;
                     }
                 }
             }
@@ -179,6 +183,7 @@ namespace CHQLDoNoiThat.FormsManager
                     selectedRow.Cells["name"].Value,
                     selectedRow.Cells["sellPrice"].Value,
                     txtSoLuong.Text);
+                cartitems.Add(new CartItem(selectedRow.Cells["id"].Value.ToString(), int.Parse(txtSoLuong.Text)));
             }
 
             enable_thanhToan();
@@ -238,9 +243,10 @@ namespace CHQLDoNoiThat.FormsManager
 
             string idBill = genarateIdBill(ds_bill.Tables[0].Rows.Count);
 
-            if (!dbl_bill.add_bill(idBill,
-                id_employee,
-                ref error))
+            if (!dbl_bill.add_bill(
+                    idBill,
+                    id_employee,
+                    ref error))
             {
                 if (!String.IsNullOrEmpty(error))
                 {
@@ -250,28 +256,27 @@ namespace CHQLDoNoiThat.FormsManager
             }
             else
             {
-                MessageBox.Show("Thêm hóa đơn thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            error = "";
-            DBL_BillDetail dbl_billDetail = new DBL_BillDetail();
-            foreach (DataGridViewRow r in dataGridViewChiTietHoaDon.Rows)
-            {
-                if (r.Cells[0].Value == null)
-                    break;
-
-                if (!dbl_billDetail.add_billdetail(idBill,
-                    r.Cells["idProduct"].Value.ToString(),
-                    int.Parse(r.Cells["quantity_"].Value.ToString()),
-                    ref error))
+                error = "";
+                DBL_BillDetail dbl_billDetail = new DBL_BillDetail();
+                if (!dbl_billDetail.add_billdetail(idBill, cartitems, ref error))
                 {
-                    if (!String.IsNullOrEmpty(error))
+                    MessageBox.Show(error, "Lỗi khi thêm mới chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (!dbl_bill.delete_bill(idBill, ref error))
                     {
-                        MessageBox.Show(error, "Lỗi khi thêm mới chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        if (!dbl_bill.delete_bill(idBill, ref error)) //retry
+                        {
+                            MessageBox.Show(error, "Lỗi không thể hủy bỏ hóa đơn " + idBill, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Thêm hóa đơn thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
+            cartitems.Clear();
             dataGridViewChiTietHoaDon.Rows.Clear();
             btnTaiLai_Click(null, null);
         }

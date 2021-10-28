@@ -1,8 +1,5 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -50,7 +47,7 @@ namespace DataAccessLayer
 
         public bool ExecuteNonQuery(string command, CommandType ct, ref string error, params SqlParameter[] parameters)
         {
-            bool result = false;
+            bool result = true;
             try
             {
                 sqlConnection.Open();
@@ -64,12 +61,49 @@ namespace DataAccessLayer
                     error = "Không có thay đổi nào được lưu xuống cơ sở dữ liệu";
                     result = false;
                 }
-                else
-                    result = true;
             }
             catch (Exception e)
             {
-                error = e.Message;
+                result = false;
+                error = e.Message + "(" + e.Source + ")";
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return result;
+        }
+
+        public bool ExecuteNonQuery(string command, CommandType ct, ref string error, List<List<SqlParameter>> paramList)
+        {
+            bool result = true;
+            try
+            {
+                sqlConnection.Open();
+                SqlTransaction transaction = sqlConnection.BeginTransaction();
+
+                foreach (var i in paramList)
+                {
+                    SqlCommand sqlCommand = new SqlCommand(command, sqlConnection, transaction);
+                    sqlCommand.CommandType = ct;
+                    foreach (var p in i)
+                        sqlCommand.Parameters.Add(p);
+                    if (sqlCommand.ExecuteNonQuery() == 0)
+                    {
+                        error = "Không có thay đổi nào được lưu xuống cơ sở dữ liệu";
+                        result = false;
+                        break;
+                    }
+                }
+                if (result)
+                    transaction.Commit();
+                else
+                    transaction.Rollback();
+            }
+            catch (Exception e)
+            {
+                result = false;
+                error = e.Message + "(" + e.Source + ")";
             }
             finally
             {
