@@ -30,25 +30,25 @@ namespace CHQLDoNoiThat.FormsManager
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_now = new System.Windows.Forms.Label();
             this.dataGridViewStatistic = new System.Windows.Forms.DataGridView();
+            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblLoiNhuan = new System.Windows.Forms.Label();
             this.lblTienChi = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTienThu = new System.Windows.Forms.Label();
-            this.lblNgayHomNay = new System.Windows.Forms.Label();
-            this.lblNgayBatDau = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.datePickerControlNgayKetThuc = new CHQLDoNoiThat.DatePickerControl();
+            this.datePickerControlNgayBatDau = new CHQLDoNoiThat.DatePickerControl();
             this.comboBoxControlThongKeTheo = new CHQLDoNoiThat.ComboBoxControl();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
-            this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistic)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,15 +57,15 @@ namespace CHQLDoNoiThat.FormsManager
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lbl_now);
+            this.panel1.Controls.Add(this.btnThongKe);
+            this.panel1.Controls.Add(this.datePickerControlNgayKetThuc);
+            this.panel1.Controls.Add(this.datePickerControlNgayBatDau);
             this.panel1.Controls.Add(this.dataGridViewStatistic);
             this.panel1.Controls.Add(this.lblLoiNhuan);
             this.panel1.Controls.Add(this.lblTienChi);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.lblTienThu);
-            this.panel1.Controls.Add(this.lblNgayHomNay);
-            this.panel1.Controls.Add(this.lblNgayBatDau);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
@@ -75,17 +75,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(673, 535);
             this.panel1.TabIndex = 0;
-            // 
-            // lbl_now
-            // 
-            this.lbl_now.AutoSize = true;
-            this.lbl_now.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_now.Location = new System.Drawing.Point(186, 323);
-            this.lbl_now.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_now.Name = "lbl_now";
-            this.lbl_now.Size = new System.Drawing.Size(73, 20);
-            this.lbl_now.TabIndex = 11;
-            this.lbl_now.Text = "(hiện tại)";
             // 
             // dataGridViewStatistic
             // 
@@ -101,6 +90,35 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewStatistic.Name = "dataGridViewStatistic";
             this.dataGridViewStatistic.Size = new System.Drawing.Size(585, 212);
             this.dataGridViewStatistic.TabIndex = 10;
+            this.dataGridViewStatistic.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStatistic_CellClick);
+            // 
+            // year
+            // 
+            this.year.DataPropertyName = "year";
+            this.year.HeaderText = "Năm";
+            this.year.Name = "year";
+            this.year.Width = 70;
+            // 
+            // chi
+            // 
+            this.chi.DataPropertyName = "chi";
+            this.chi.HeaderText = "Chi tiêu";
+            this.chi.Name = "chi";
+            this.chi.Width = 150;
+            // 
+            // thu
+            // 
+            this.thu.DataPropertyName = "thu";
+            this.thu.HeaderText = "Doanh thu";
+            this.thu.Name = "thu";
+            this.thu.Width = 150;
+            // 
+            // loi
+            // 
+            this.loi.DataPropertyName = "loiNhuan";
+            this.loi.HeaderText = "Lợi nhuận";
+            this.loi.Name = "loi";
+            this.loi.Width = 150;
             // 
             // lblLoiNhuan
             // 
@@ -117,7 +135,7 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.lblTienChi.AutoSize = true;
             this.lblTienChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTienChi.Location = new System.Drawing.Point(411, 388);
+            this.lblTienChi.Location = new System.Drawing.Point(430, 393);
             this.lblTienChi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTienChi.Name = "lblTienChi";
             this.lblTienChi.Size = new System.Drawing.Size(72, 18);
@@ -137,7 +155,7 @@ namespace CHQLDoNoiThat.FormsManager
             // label4
             // 
             this.label4.Image = global::CHQLDoNoiThat.Properties.Resources.money_100px;
-            this.label4.Location = new System.Drawing.Point(51, 347);
+            this.label4.Location = new System.Drawing.Point(51, 352);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 92);
@@ -148,40 +166,18 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.lblTienThu.AutoSize = true;
             this.lblTienThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTienThu.Location = new System.Drawing.Point(162, 388);
+            this.lblTienThu.Location = new System.Drawing.Point(175, 393);
             this.lblTienThu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTienThu.Name = "lblTienThu";
             this.lblTienThu.Size = new System.Drawing.Size(73, 18);
             this.lblTienThu.TabIndex = 5;
             this.lblTienThu.Text = "Tiền thu:";
             // 
-            // lblNgayHomNay
-            // 
-            this.lblNgayHomNay.AutoSize = true;
-            this.lblNgayHomNay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayHomNay.Location = new System.Drawing.Point(450, 324);
-            this.lblNgayHomNay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNgayHomNay.Name = "lblNgayHomNay";
-            this.lblNgayHomNay.Size = new System.Drawing.Size(20, 18);
-            this.lblNgayHomNay.TabIndex = 4;
-            this.lblNgayHomNay.Text = "()";
-            // 
-            // lblNgayBatDau
-            // 
-            this.lblNgayBatDau.AutoSize = true;
-            this.lblNgayBatDau.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayBatDau.Location = new System.Drawing.Point(319, 323);
-            this.lblNgayBatDau.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNgayBatDau.Name = "lblNgayBatDau";
-            this.lblNgayBatDau.Size = new System.Drawing.Size(21, 20);
-            this.lblNgayBatDau.TabIndex = 3;
-            this.lblNgayBatDau.Text = "()";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(411, 323);
+            this.label2.Location = new System.Drawing.Point(280, 323);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 20);
@@ -192,7 +188,7 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(287, 323);
+            this.label1.Location = new System.Drawing.Point(50, 323);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 20);
@@ -222,6 +218,52 @@ namespace CHQLDoNoiThat.FormsManager
             this.label6.Size = new System.Drawing.Size(194, 21);
             this.label6.TabIndex = 12;
             this.label6.Text = "Thống kê doanh thu theo";
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.AutoSize = true;
+            this.btnThongKe.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.Location = new System.Drawing.Point(543, 315);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(0);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(88, 32);
+            this.btnThongKe.TabIndex = 41;
+            this.btnThongKe.TabStop = false;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // datePickerControlNgayKetThuc
+            // 
+            this.datePickerControlNgayKetThuc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.datePickerControlNgayKetThuc.BorderSize = 0;
+            this.datePickerControlNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerControlNgayKetThuc.Location = new System.Drawing.Point(319, 314);
+            this.datePickerControlNgayKetThuc.Margin = new System.Windows.Forms.Padding(2);
+            this.datePickerControlNgayKetThuc.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerControlNgayKetThuc.Name = "datePickerControlNgayKetThuc";
+            this.datePickerControlNgayKetThuc.Size = new System.Drawing.Size(194, 35);
+            this.datePickerControlNgayKetThuc.SkinColor = System.Drawing.Color.SteelBlue;
+            this.datePickerControlNgayKetThuc.TabIndex = 39;
+            this.datePickerControlNgayKetThuc.TextColor = System.Drawing.Color.White;
+            // 
+            // datePickerControlNgayBatDau
+            // 
+            this.datePickerControlNgayBatDau.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.datePickerControlNgayBatDau.BorderSize = 0;
+            this.datePickerControlNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerControlNgayBatDau.Location = new System.Drawing.Point(82, 314);
+            this.datePickerControlNgayBatDau.Margin = new System.Windows.Forms.Padding(2);
+            this.datePickerControlNgayBatDau.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerControlNgayBatDau.Name = "datePickerControlNgayBatDau";
+            this.datePickerControlNgayBatDau.Size = new System.Drawing.Size(194, 35);
+            this.datePickerControlNgayBatDau.SkinColor = System.Drawing.Color.SteelBlue;
+            this.datePickerControlNgayBatDau.TabIndex = 38;
+            this.datePickerControlNgayBatDau.TextColor = System.Drawing.Color.White;
             // 
             // comboBoxControlThongKeTheo
             // 
@@ -253,34 +295,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
             // 
-            // year
-            // 
-            this.year.DataPropertyName = "year";
-            this.year.HeaderText = "Năm";
-            this.year.Name = "year";
-            this.year.Width = 70;
-            // 
-            // chi
-            // 
-            this.chi.DataPropertyName = "chi";
-            this.chi.HeaderText = "Chi tiêu";
-            this.chi.Name = "chi";
-            this.chi.Width = 150;
-            // 
-            // thu
-            // 
-            this.thu.DataPropertyName = "thu";
-            this.thu.HeaderText = "Doanh thu";
-            this.thu.Name = "thu";
-            this.thu.Width = 150;
-            // 
-            // loi
-            // 
-            this.loi.DataPropertyName = "loiNhuan";
-            this.loi.HeaderText = "Lợi nhuận";
-            this.loi.Name = "loi";
-            this.loi.Width = 150;
-            // 
             // FormStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,7 +323,6 @@ namespace CHQLDoNoiThat.FormsManager
         private System.Windows.Forms.Panel panel2;
         private ComboBoxControl comboBoxControlThongKeTheo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblNgayHomNay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -319,11 +332,12 @@ namespace CHQLDoNoiThat.FormsManager
         private ElipseToolDemo.ElipseControl elipseControl1;
         private System.Windows.Forms.Label lblLoiNhuan;
         private System.Windows.Forms.DataGridView dataGridViewStatistic;
-        private System.Windows.Forms.Label lblNgayBatDau;
-        private System.Windows.Forms.Label lbl_now;
         private System.Windows.Forms.DataGridViewTextBoxColumn year;
         private System.Windows.Forms.DataGridViewTextBoxColumn chi;
         private System.Windows.Forms.DataGridViewTextBoxColumn thu;
         private System.Windows.Forms.DataGridViewTextBoxColumn loi;
+        private DatePickerControl datePickerControlNgayKetThuc;
+        private DatePickerControl datePickerControlNgayBatDau;
+        private System.Windows.Forms.Button btnThongKe;
     }
 }
