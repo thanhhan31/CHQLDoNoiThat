@@ -35,6 +35,17 @@ namespace CHQLDoNoiThat.FormsManager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewKho = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.productCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oriPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lotStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.impDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtTinhTrang = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.cmbTenSanPham = new CHQLDoNoiThat.ComboBoxControl();
@@ -59,17 +70,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
             this.cmbTenSanPham_Loc = new CHQLDoNoiThat.ComboBoxControl();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.productCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oriPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lotStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.impDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKho)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -140,6 +140,96 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewKho.Size = new System.Drawing.Size(981, 329);
             this.dataGridViewKho.TabIndex = 13;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "lotId";
+            this.id.HeaderText = "Mã lô";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 125;
+            // 
+            // productName
+            // 
+            this.productName.DataPropertyName = "productId";
+            this.productName.HeaderText = "Tên sản phẩm";
+            this.productName.MinimumWidth = 6;
+            this.productName.Name = "productName";
+            this.productName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.productName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.productName.Width = 150;
+            // 
+            // productCate
+            // 
+            this.productCate.DataPropertyName = "productCategory";
+            this.productCate.HeaderText = "Loại sản phẩm";
+            this.productCate.MinimumWidth = 6;
+            this.productCate.Name = "productCate";
+            this.productCate.Width = 150;
+            // 
+            // sellPrice
+            // 
+            this.sellPrice.DataPropertyName = "sellPrice";
+            this.sellPrice.HeaderText = "Giá bán";
+            this.sellPrice.MinimumWidth = 6;
+            this.sellPrice.Name = "sellPrice";
+            this.sellPrice.Width = 125;
+            // 
+            // oriPrice
+            // 
+            this.oriPrice.DataPropertyName = "originalPrice";
+            this.oriPrice.HeaderText = "Giá gốc";
+            this.oriPrice.MinimumWidth = 6;
+            this.oriPrice.Name = "oriPrice";
+            this.oriPrice.Width = 125;
+            // 
+            // profit
+            // 
+            this.profit.DataPropertyName = "profit";
+            this.profit.HeaderText = "Lợi nhuận";
+            this.profit.MinimumWidth = 6;
+            this.profit.Name = "profit";
+            this.profit.Width = 120;
+            // 
+            // vat
+            // 
+            this.vat.DataPropertyName = "vat";
+            this.vat.HeaderText = "Thuế";
+            this.vat.MinimumWidth = 6;
+            this.vat.Name = "vat";
+            this.vat.Width = 125;
+            // 
+            // quatity
+            // 
+            this.quatity.DataPropertyName = "lotQuantity";
+            this.quatity.HeaderText = "Số lượng";
+            this.quatity.MinimumWidth = 6;
+            this.quatity.Name = "quatity";
+            this.quatity.Width = 120;
+            // 
+            // productStatus
+            // 
+            this.productStatus.DataPropertyName = "productStatus";
+            this.productStatus.HeaderText = "Trạng thái sản phẩm";
+            this.productStatus.MinimumWidth = 6;
+            this.productStatus.Name = "productStatus";
+            this.productStatus.Width = 200;
+            // 
+            // lotStatus
+            // 
+            this.lotStatus.DataPropertyName = "lotStatus";
+            this.lotStatus.HeaderText = "Trạng thái lô";
+            this.lotStatus.MinimumWidth = 6;
+            this.lotStatus.Name = "lotStatus";
+            this.lotStatus.Width = 150;
+            // 
+            // impDate
+            // 
+            this.impDate.DataPropertyName = "importDate";
+            this.impDate.HeaderText = "Ngày nhập";
+            this.impDate.MinimumWidth = 6;
+            this.impDate.Name = "impDate";
+            this.impDate.Width = 150;
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -166,7 +256,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel3.Controls.Add(this.txtSoLuong);
             this.panel3.Controls.Add(this.lblIdLoaiSanPham);
             this.panel3.Location = new System.Drawing.Point(13, 33);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(981, 254);
             this.panel3.TabIndex = 12;
@@ -183,7 +273,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTinhTrang.Multiline = false;
             this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTinhTrang.Padding = new System.Windows.Forms.Padding(7);
             this.txtTinhTrang.PasswordChar = false;
             this.txtTinhTrang.Size = new System.Drawing.Size(259, 39);
             this.txtTinhTrang.TabIndex = 42;
@@ -308,7 +398,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtVat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtVat.Multiline = false;
             this.txtVat.Name = "txtVat";
-            this.txtVat.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtVat.Padding = new System.Windows.Forms.Padding(7);
             this.txtVat.PasswordChar = false;
             this.txtVat.Size = new System.Drawing.Size(145, 39);
             this.txtVat.TabIndex = 31;
@@ -326,7 +416,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtLoiNhuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLoiNhuan.Multiline = false;
             this.txtLoiNhuan.Name = "txtLoiNhuan";
-            this.txtLoiNhuan.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtLoiNhuan.Padding = new System.Windows.Forms.Padding(7);
             this.txtLoiNhuan.PasswordChar = false;
             this.txtLoiNhuan.Size = new System.Drawing.Size(145, 39);
             this.txtLoiNhuan.TabIndex = 30;
@@ -355,7 +445,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtGiaGoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGiaGoc.Multiline = false;
             this.txtGiaGoc.Name = "txtGiaGoc";
-            this.txtGiaGoc.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtGiaGoc.Padding = new System.Windows.Forms.Padding(7);
             this.txtGiaGoc.PasswordChar = false;
             this.txtGiaGoc.Size = new System.Drawing.Size(145, 39);
             this.txtGiaGoc.TabIndex = 27;
@@ -395,7 +485,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Multiline = false;
             this.txtId.Name = "txtId";
-            this.txtId.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtId.Padding = new System.Windows.Forms.Padding(7);
             this.txtId.PasswordChar = false;
             this.txtId.Size = new System.Drawing.Size(163, 39);
             this.txtId.TabIndex = 22;
@@ -478,7 +568,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoLuong.Multiline = false;
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSoLuong.Padding = new System.Windows.Forms.Padding(7);
             this.txtSoLuong.PasswordChar = false;
             this.txtSoLuong.Size = new System.Drawing.Size(163, 39);
             this.txtSoLuong.TabIndex = 9;
@@ -525,94 +615,6 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "lotId";
-            this.id.HeaderText = "Mã lô";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            // 
-            // productName
-            // 
-            this.productName.DataPropertyName = "productId";
-            this.productName.HeaderText = "Tên sản phẩm";
-            this.productName.MinimumWidth = 6;
-            this.productName.Name = "productName";
-            this.productName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.productName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.productName.Width = 150;
-            // 
-            // productCate
-            // 
-            this.productCate.DataPropertyName = "productCategory";
-            this.productCate.HeaderText = "Loại sản phẩm";
-            this.productCate.MinimumWidth = 6;
-            this.productCate.Name = "productCate";
-            this.productCate.Width = 150;
-            // 
-            // sellPrice
-            // 
-            this.sellPrice.DataPropertyName = "sellPrice";
-            this.sellPrice.HeaderText = "Giá bán";
-            this.sellPrice.MinimumWidth = 6;
-            this.sellPrice.Name = "sellPrice";
-            this.sellPrice.Width = 125;
-            // 
-            // oriPrice
-            // 
-            this.oriPrice.DataPropertyName = "originalPrice";
-            this.oriPrice.HeaderText = "Giá gốc";
-            this.oriPrice.MinimumWidth = 6;
-            this.oriPrice.Name = "oriPrice";
-            this.oriPrice.Width = 125;
-            // 
-            // profit
-            // 
-            this.profit.DataPropertyName = "profit";
-            this.profit.HeaderText = "Lợi nhuận";
-            this.profit.MinimumWidth = 6;
-            this.profit.Name = "profit";
-            this.profit.Width = 120;
-            // 
-            // vat
-            // 
-            this.vat.DataPropertyName = "vat";
-            this.vat.HeaderText = "Thuế";
-            this.vat.MinimumWidth = 6;
-            this.vat.Name = "vat";
-            // 
-            // quatity
-            // 
-            this.quatity.DataPropertyName = "lotQuantity";
-            this.quatity.HeaderText = "Số lượng";
-            this.quatity.MinimumWidth = 6;
-            this.quatity.Name = "quatity";
-            this.quatity.Width = 120;
-            // 
-            // productStatus
-            // 
-            this.productStatus.DataPropertyName = "productStatus";
-            this.productStatus.HeaderText = "Trạng thái sản phẩm";
-            this.productStatus.MinimumWidth = 6;
-            this.productStatus.Name = "productStatus";
-            this.productStatus.Width = 200;
-            // 
-            // lotStatus
-            // 
-            this.lotStatus.DataPropertyName = "lotStatus";
-            this.lotStatus.HeaderText = "Trạng thái lô";
-            this.lotStatus.MinimumWidth = 6;
-            this.lotStatus.Name = "lotStatus";
-            this.lotStatus.Width = 150;
-            // 
-            // impDate
-            // 
-            this.impDate.DataPropertyName = "importDate";
-            this.impDate.HeaderText = "Ngày nhập";
-            this.impDate.MinimumWidth = 6;
-            this.impDate.Name = "impDate";
-            this.impDate.Width = 150;
             // 
             // FormInventory
             // 

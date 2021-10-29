@@ -33,43 +33,28 @@ namespace CHQLDoNoiThat.FormsStaff
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.datePickerControlNgayNhap = new CHQLDoNoiThat.DatePickerControl();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewKho = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtId = new CHQLDoNoiThat.CustomControls.TextBoxControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSoLuong = new CHQLDoNoiThat.CustomControls.TextBoxControl();
-            this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
-            this.cmbTenSanPham = new CHQLDoNoiThat.ComboBoxControl();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtTenSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
-            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cateName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quatity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellPrcie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.impDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.datePickerControlNgayNhap = new CHQLDoNoiThat.DatePickerControl();
+            this.txtId = new CHQLDoNoiThat.CustomControls.TextBoxControl();
+            this.txtSoLuong = new CHQLDoNoiThat.CustomControls.TextBoxControl();
+            this.txtTenSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
+            this.cmbTenSanPham = new CHQLDoNoiThat.ComboBoxControl();
+            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKho)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // datePickerControlNgayNhap
-            // 
-            this.datePickerControlNgayNhap.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.datePickerControlNgayNhap.BorderSize = 0;
-            this.datePickerControlNgayNhap.Enabled = false;
-            this.datePickerControlNgayNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerControlNgayNhap.Location = new System.Drawing.Point(653, 16);
-            this.datePickerControlNgayNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.datePickerControlNgayNhap.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerControlNgayNhap.Name = "datePickerControlNgayNhap";
-            this.datePickerControlNgayNhap.Size = new System.Drawing.Size(287, 35);
-            this.datePickerControlNgayNhap.SkinColor = System.Drawing.Color.SteelBlue;
-            this.datePickerControlNgayNhap.TabIndex = 37;
-            this.datePickerControlNgayNhap.TextColor = System.Drawing.Color.White;
             // 
             // label9
             // 
@@ -144,6 +129,54 @@ namespace CHQLDoNoiThat.FormsStaff
             this.dataGridViewKho.TabIndex = 28;
             this.dataGridViewKho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKho_CellClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "lotId";
+            this.id.HeaderText = "Mã lô";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 125;
+            // 
+            // cateName
+            // 
+            this.cateName.DataPropertyName = "productCategory";
+            this.cateName.HeaderText = "Loại sản phẩm";
+            this.cateName.MinimumWidth = 6;
+            this.cateName.Name = "cateName";
+            this.cateName.Width = 150;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "productName";
+            this.name.HeaderText = "Tên sản phẩm";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 200;
+            // 
+            // quatity
+            // 
+            this.quatity.DataPropertyName = "lotQuantity";
+            this.quatity.HeaderText = "Số lượng";
+            this.quatity.MinimumWidth = 6;
+            this.quatity.Name = "quatity";
+            this.quatity.Width = 125;
+            // 
+            // sellPrcie
+            // 
+            this.sellPrcie.DataPropertyName = "sellPrice";
+            this.sellPrcie.HeaderText = "Giá bán";
+            this.sellPrcie.MinimumWidth = 6;
+            this.sellPrcie.Name = "sellPrcie";
+            this.sellPrcie.Width = 125;
+            // 
+            // impDate
+            // 
+            this.impDate.DataPropertyName = "lotImportDate";
+            this.impDate.HeaderText = "Ngày nhập";
+            this.impDate.MinimumWidth = 6;
+            this.impDate.Name = "impDate";
+            this.impDate.Width = 125;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -154,6 +187,61 @@ namespace CHQLDoNoiThat.FormsStaff
             this.label2.Size = new System.Drawing.Size(30, 28);
             this.label2.TabIndex = 23;
             this.label2.Text = "Id";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(504, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 28);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Số lượng";
+            // 
+            // lblIdLoaiSanPham
+            // 
+            this.lblIdLoaiSanPham.AutoSize = true;
+            this.lblIdLoaiSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblIdLoaiSanPham.Location = new System.Drawing.Point(13, 73);
+            this.lblIdLoaiSanPham.Name = "lblIdLoaiSanPham";
+            this.lblIdLoaiSanPham.Size = new System.Drawing.Size(139, 28);
+            this.lblIdLoaiSanPham.TabIndex = 8;
+            this.lblIdLoaiSanPham.Text = "Tên sản phẩm";
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.datePickerControlNgayNhap);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.txtId);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.txtSoLuong);
+            this.panel3.Controls.Add(this.lblIdLoaiSanPham);
+            this.panel3.Controls.Add(this.txtTenSanPham);
+            this.panel3.Location = new System.Drawing.Point(13, 38);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(972, 187);
+            this.panel3.TabIndex = 27;
+            // 
+            // datePickerControlNgayNhap
+            // 
+            this.datePickerControlNgayNhap.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.datePickerControlNgayNhap.BorderSize = 0;
+            this.datePickerControlNgayNhap.Enabled = false;
+            this.datePickerControlNgayNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerControlNgayNhap.Location = new System.Drawing.Point(653, 16);
+            this.datePickerControlNgayNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.datePickerControlNgayNhap.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerControlNgayNhap.Name = "datePickerControlNgayNhap";
+            this.datePickerControlNgayNhap.Size = new System.Drawing.Size(287, 35);
+            this.datePickerControlNgayNhap.SkinColor = System.Drawing.Color.SteelBlue;
+            this.datePickerControlNgayNhap.TabIndex = 37;
+            this.datePickerControlNgayNhap.TextColor = System.Drawing.Color.White;
             // 
             // txtId
             // 
@@ -167,23 +255,12 @@ namespace CHQLDoNoiThat.FormsStaff
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Multiline = false;
             this.txtId.Name = "txtId";
-            this.txtId.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtId.Padding = new System.Windows.Forms.Padding(7);
             this.txtId.PasswordChar = false;
             this.txtId.Size = new System.Drawing.Size(253, 39);
             this.txtId.TabIndex = 22;
             this.txtId.Texts = "";
             this.txtId.UnderlinedStyle = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(504, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 28);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Số lượng";
             // 
             // txtSoLuong
             // 
@@ -197,23 +274,31 @@ namespace CHQLDoNoiThat.FormsStaff
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoLuong.Multiline = false;
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSoLuong.Padding = new System.Windows.Forms.Padding(7);
             this.txtSoLuong.PasswordChar = false;
             this.txtSoLuong.Size = new System.Drawing.Size(288, 39);
             this.txtSoLuong.TabIndex = 9;
             this.txtSoLuong.Texts = "";
             this.txtSoLuong.UnderlinedStyle = true;
             // 
-            // lblIdLoaiSanPham
+            // txtTenSanPham
             // 
-            this.lblIdLoaiSanPham.AutoSize = true;
-            this.lblIdLoaiSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblIdLoaiSanPham.Location = new System.Drawing.Point(13, 73);
-            this.lblIdLoaiSanPham.Name = "lblIdLoaiSanPham";
-            this.lblIdLoaiSanPham.Size = new System.Drawing.Size(139, 28);
-            this.lblIdLoaiSanPham.TabIndex = 8;
-            this.lblIdLoaiSanPham.Text = "Tên sản phẩm";
+            this.txtTenSanPham.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtTenSanPham.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTenSanPham.BorderSize = 2;
+            this.txtTenSanPham.Enabled = false;
+            this.txtTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSanPham.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtTenSanPham.Location = new System.Drawing.Point(159, 65);
+            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTenSanPham.Multiline = false;
+            this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.Padding = new System.Windows.Forms.Padding(7);
+            this.txtTenSanPham.PasswordChar = false;
+            this.txtTenSanPham.Size = new System.Drawing.Size(253, 39);
+            this.txtTenSanPham.TabIndex = 0;
+            this.txtTenSanPham.Texts = "";
+            this.txtTenSanPham.UnderlinedStyle = true;
             // 
             // cmbTenSanPham
             // 
@@ -240,95 +325,10 @@ namespace CHQLDoNoiThat.FormsStaff
             this.cmbTenSanPham.Texts = "Tên sản phẩm";
             this.cmbTenSanPham.OnSelectedIndexChanged += new System.EventHandler(this.cmbTenSanPham_OnSelectedIndexChanged);
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.datePickerControlNgayNhap);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtId);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.txtSoLuong);
-            this.panel3.Controls.Add(this.lblIdLoaiSanPham);
-            this.panel3.Controls.Add(this.txtTenSanPham);
-            this.panel3.Location = new System.Drawing.Point(13, 38);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(972, 187);
-            this.panel3.TabIndex = 27;
-            // 
-            // txtTenSanPham
-            // 
-            this.txtTenSanPham.BorderColor = System.Drawing.Color.SteelBlue;
-            this.txtTenSanPham.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtTenSanPham.BorderSize = 2;
-            this.txtTenSanPham.Enabled = false;
-            this.txtTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSanPham.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtTenSanPham.Location = new System.Drawing.Point(159, 65);
-            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTenSanPham.Multiline = false;
-            this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.txtTenSanPham.PasswordChar = false;
-            this.txtTenSanPham.Size = new System.Drawing.Size(253, 39);
-            this.txtTenSanPham.TabIndex = 0;
-            this.txtTenSanPham.Texts = "";
-            this.txtTenSanPham.UnderlinedStyle = true;
-            // 
             // elipseControl1
             // 
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "lotId";
-            this.id.HeaderText = "Mã lô";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // cateName
-            // 
-            this.cateName.DataPropertyName = "productCategory";
-            this.cateName.HeaderText = "Loại sản phẩm";
-            this.cateName.MinimumWidth = 6;
-            this.cateName.Name = "cateName";
-            this.cateName.Width = 150;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "productName";
-            this.name.HeaderText = "Tên sản phẩm";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            // 
-            // quatity
-            // 
-            this.quatity.DataPropertyName = "lotQuantity";
-            this.quatity.HeaderText = "Số lượng";
-            this.quatity.MinimumWidth = 6;
-            this.quatity.Name = "quatity";
-            this.quatity.Width = 125;
-            // 
-            // sellPrcie
-            // 
-            this.sellPrcie.DataPropertyName = "sellPrice";
-            this.sellPrcie.HeaderText = "Giá bán";
-            this.sellPrcie.MinimumWidth = 6;
-            this.sellPrcie.Name = "sellPrcie";
-            this.sellPrcie.Width = 125;
-            // 
-            // impDate
-            // 
-            this.impDate.DataPropertyName = "lotImportDate";
-            this.impDate.HeaderText = "Ngày nhập";
-            this.impDate.MinimumWidth = 6;
-            this.impDate.Name = "impDate";
-            this.impDate.Width = 125;
             // 
             // FormInventoty
             // 

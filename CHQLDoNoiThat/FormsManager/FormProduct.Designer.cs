@@ -55,10 +55,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTenSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTimTenSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
-            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +64,10 @@ namespace CHQLDoNoiThat.FormsManager
             this.productLotId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productLotDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTimTenSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
+            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
@@ -98,7 +98,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel3.Controls.Add(this.txtTenSanPham);
             this.panel3.Controls.Add(this.lblIdLoaiSanPham);
             this.panel3.Location = new System.Drawing.Point(13, 14);
-            this.panel3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(995, 293);
             this.panel3.TabIndex = 6;
@@ -132,7 +132,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTinhTrang.Multiline = false;
             this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTinhTrang.Padding = new System.Windows.Forms.Padding(7);
             this.txtTinhTrang.PasswordChar = false;
             this.txtTinhTrang.Size = new System.Drawing.Size(227, 39);
             this.txtTinhTrang.TabIndex = 78;
@@ -249,7 +249,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoLuong.Multiline = false;
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSoLuong.Padding = new System.Windows.Forms.Padding(7);
             this.txtSoLuong.PasswordChar = false;
             this.txtSoLuong.Size = new System.Drawing.Size(227, 39);
             this.txtSoLuong.TabIndex = 27;
@@ -278,7 +278,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtGiaBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGiaBan.Multiline = false;
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtGiaBan.Padding = new System.Windows.Forms.Padding(7);
             this.txtGiaBan.PasswordChar = false;
             this.txtGiaBan.Size = new System.Drawing.Size(227, 39);
             this.txtGiaBan.TabIndex = 25;
@@ -316,7 +316,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Multiline = false;
             this.txtId.Name = "txtId";
-            this.txtId.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtId.Padding = new System.Windows.Forms.Padding(7);
             this.txtId.PasswordChar = false;
             this.txtId.Size = new System.Drawing.Size(225, 39);
             this.txtId.TabIndex = 22;
@@ -399,7 +399,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenSanPham.Multiline = false;
             this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTenSanPham.Padding = new System.Windows.Forms.Padding(7);
             this.txtTenSanPham.PasswordChar = false;
             this.txtTenSanPham.Size = new System.Drawing.Size(225, 39);
             this.txtTenSanPham.TabIndex = 9;
@@ -469,52 +469,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewSanPham.RowTemplate.Height = 24;
             this.dataGridViewSanPham.Size = new System.Drawing.Size(995, 332);
             this.dataGridViewSanPham.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(411, 313);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(233, 37);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Danh sách sản phẩm";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(15, 319);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 28);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Tìm tên sản phẩm";
-            // 
-            // txtTimTenSanPham
-            // 
-            this.txtTimTenSanPham.BorderColor = System.Drawing.Color.SteelBlue;
-            this.txtTimTenSanPham.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtTimTenSanPham.BorderSize = 2;
-            this.txtTimTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimTenSanPham.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtTimTenSanPham.Location = new System.Drawing.Point(192, 309);
-            this.txtTimTenSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTimTenSanPham.Multiline = false;
-            this.txtTimTenSanPham.Name = "txtTimTenSanPham";
-            this.txtTimTenSanPham.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.txtTimTenSanPham.PasswordChar = false;
-            this.txtTimTenSanPham.Size = new System.Drawing.Size(225, 39);
-            this.txtTimTenSanPham.TabIndex = 25;
-            this.txtTimTenSanPham.Texts = "";
-            this.txtTimTenSanPham.UnderlinedStyle = true;
-            this.txtTimTenSanPham.TextChanged += new System.EventHandler(this.txtTimTenSanPham_TextChanged);
-            // 
-            // elipseControl1
-            // 
-            this.elipseControl1.CornerRadius = 30;
-            this.elipseControl1.TargetControl = this;
             // 
             // productId
             // 
@@ -592,6 +546,52 @@ namespace CHQLDoNoiThat.FormsManager
             this.productStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.productStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.productStatus.Width = 125;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label6.Location = new System.Drawing.Point(411, 313);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(233, 37);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Danh sách sản phẩm";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label7.Location = new System.Drawing.Point(15, 319);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(177, 28);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Tìm tên sản phẩm";
+            // 
+            // txtTimTenSanPham
+            // 
+            this.txtTimTenSanPham.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtTimTenSanPham.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTimTenSanPham.BorderSize = 2;
+            this.txtTimTenSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimTenSanPham.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtTimTenSanPham.Location = new System.Drawing.Point(192, 309);
+            this.txtTimTenSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTimTenSanPham.Multiline = false;
+            this.txtTimTenSanPham.Name = "txtTimTenSanPham";
+            this.txtTimTenSanPham.Padding = new System.Windows.Forms.Padding(7);
+            this.txtTimTenSanPham.PasswordChar = false;
+            this.txtTimTenSanPham.Size = new System.Drawing.Size(225, 39);
+            this.txtTimTenSanPham.TabIndex = 25;
+            this.txtTimTenSanPham.Texts = "";
+            this.txtTimTenSanPham.UnderlinedStyle = true;
+            this.txtTimTenSanPham.TextChanged += new System.EventHandler(this.txtTimTenSanPham_TextChanged);
+            // 
+            // elipseControl1
+            // 
+            this.elipseControl1.CornerRadius = 30;
+            this.elipseControl1.TargetControl = this;
             // 
             // FormProduct
             // 

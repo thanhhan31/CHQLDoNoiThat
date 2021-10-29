@@ -58,6 +58,11 @@ namespace CHQLDoNoiThat.FormsManager
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridViewSanPham = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.sellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbLoaiSanPham = new CHQLDoNoiThat.ComboBoxControl();
@@ -66,11 +71,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel12 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.elipseControl2 = new ElipseToolDemo.ElipseControl();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.sellPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChiTietHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSanPham)).BeginInit();
@@ -424,10 +424,58 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewSanPham.TabIndex = 22;
             this.dataGridViewSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSanPham_CellClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã sản phẩm";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 150;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Sản phẩm";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 125;
+            // 
+            // image
+            // 
+            this.image.DataPropertyName = "image";
+            this.image.HeaderText = "Hình ảnh";
+            this.image.MinimumWidth = 6;
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.image.Visible = false;
+            this.image.Width = 125;
+            // 
+            // sellPrice
+            // 
+            this.sellPrice.DataPropertyName = "sellPrice";
+            this.sellPrice.HeaderText = "Giá bán";
+            this.sellPrice.MinimumWidth = 6;
+            this.sellPrice.Name = "sellPrice";
+            this.sellPrice.ReadOnly = true;
+            this.sellPrice.Width = 125;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Width = 125;
+            // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -476,8 +524,8 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -548,54 +596,6 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.elipseControl2.CornerRadius = 30;
             this.elipseControl2.TargetControl = this;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã sản phẩm";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 150;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Sản phẩm";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 125;
-            // 
-            // image
-            // 
-            this.image.DataPropertyName = "image";
-            this.image.HeaderText = "Hình ảnh";
-            this.image.MinimumWidth = 6;
-            this.image.Name = "image";
-            this.image.ReadOnly = true;
-            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.image.Visible = false;
-            this.image.Width = 125;
-            // 
-            // sellPrice
-            // 
-            this.sellPrice.DataPropertyName = "sellPrice";
-            this.sellPrice.HeaderText = "Giá bán";
-            this.sellPrice.MinimumWidth = 6;
-            this.sellPrice.Name = "sellPrice";
-            this.sellPrice.ReadOnly = true;
-            this.sellPrice.Width = 125;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            this.quantity.Width = 125;
             // 
             // FormBill
             // 

@@ -37,6 +37,8 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel12 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridViewLoaiSanPham = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnTaiLai = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.lblIdLoaiSanPham = new System.Windows.Forms.Label();
             this.txtIdLoaiSanPham = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLoaiSanPham)).BeginInit();
@@ -138,6 +138,22 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewLoaiSanPham.RowTemplate.Height = 24;
             this.dataGridViewLoaiSanPham.Size = new System.Drawing.Size(484, 620);
             this.dataGridViewLoaiSanPham.TabIndex = 21;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã loại sản phẩm";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 200;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên loại sản phẩm";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 220;
             // 
             // panel3
             // 
@@ -308,22 +324,6 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã loại sản phẩm";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 200;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Tên loại sản phẩm";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.Width = 220;
             // 
             // FormCategory
             // 

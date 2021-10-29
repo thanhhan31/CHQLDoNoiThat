@@ -44,6 +44,10 @@ namespace CHQLDoNoiThat.FormsManager
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewCTHD = new System.Windows.Forms.DataGridView();
+            this.idProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.txtId = new CHQLDoNoiThat.CustomControls.TextBoxControl();
             this.txtTenNhanVien = new CHQLDoNoiThat.CustomControls.TextBoxControl();
@@ -51,10 +55,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.datePickerControlNgayTao = new CHQLDoNoiThat.DatePickerControl();
             this.datePickerControlLichSuHoaDon = new CHQLDoNoiThat.DatePickerControl();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
-            this.idProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLSHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCTHD)).BeginInit();
             this.SuspendLayout();
@@ -142,8 +142,8 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,10 +223,42 @@ namespace CHQLDoNoiThat.FormsManager
             this.dataGridViewCTHD.Size = new System.Drawing.Size(600, 271);
             this.dataGridViewCTHD.TabIndex = 54;
             // 
+            // idProduct
+            // 
+            this.idProduct.DataPropertyName = "id";
+            this.idProduct.HeaderText = "Mã sản phẩm";
+            this.idProduct.MinimumWidth = 6;
+            this.idProduct.Name = "idProduct";
+            this.idProduct.Width = 150;
+            // 
+            // productName
+            // 
+            this.productName.DataPropertyName = "name";
+            this.productName.HeaderText = "Tên sản phẩm";
+            this.productName.MinimumWidth = 6;
+            this.productName.Name = "productName";
+            this.productName.Width = 150;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Đơn giá";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.Width = 125;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            this.quantity.Width = 120;
+            // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,7 +282,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Multiline = false;
             this.txtId.Name = "txtId";
-            this.txtId.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtId.Padding = new System.Windows.Forms.Padding(7);
             this.txtId.PasswordChar = false;
             this.txtId.Size = new System.Drawing.Size(240, 39);
             this.txtId.TabIndex = 58;
@@ -269,7 +301,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNhanVien.Multiline = false;
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTenNhanVien.Padding = new System.Windows.Forms.Padding(7);
             this.txtTenNhanVien.PasswordChar = false;
             this.txtTenNhanVien.Size = new System.Drawing.Size(240, 39);
             this.txtTenNhanVien.TabIndex = 57;
@@ -288,7 +320,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTongTien.Multiline = false;
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTongTien.Padding = new System.Windows.Forms.Padding(7);
             this.txtTongTien.PasswordChar = false;
             this.txtTongTien.Size = new System.Drawing.Size(240, 39);
             this.txtTongTien.TabIndex = 56;
@@ -329,38 +361,6 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.elipseControl1.CornerRadius = 30;
             this.elipseControl1.TargetControl = this;
-            // 
-            // idProduct
-            // 
-            this.idProduct.DataPropertyName = "id";
-            this.idProduct.HeaderText = "Mã sản phẩm";
-            this.idProduct.MinimumWidth = 6;
-            this.idProduct.Name = "idProduct";
-            this.idProduct.Width = 150;
-            // 
-            // productName
-            // 
-            this.productName.DataPropertyName = "name";
-            this.productName.HeaderText = "Tên sản phẩm";
-            this.productName.MinimumWidth = 6;
-            this.productName.Name = "productName";
-            this.productName.Width = 150;
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "price";
-            this.price.HeaderText = "Đơn giá";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            this.price.Width = 125;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            this.quantity.Width = 120;
             // 
             // FormBillHistory
             // 
