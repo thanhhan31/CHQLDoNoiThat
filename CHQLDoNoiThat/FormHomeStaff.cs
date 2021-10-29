@@ -100,7 +100,7 @@ namespace CHQLDoNoiThat
         private void btnLichSuHoaDon_FNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormsStaff.FormBillHistory(), sender);
+            OpenChildForm(new FormsStaff.FormBillHistory(uid), sender);
 
         }
 

@@ -26,7 +26,7 @@ CREATE TABLE ACCOUNTS(
 
 	CONSTRAINT chk_phone
 	CHECK (phone like '0[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-
+	detao
 	CONSTRAINT chk_idNo
 	CHECK (idNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
 	OR idNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
@@ -871,6 +871,21 @@ Returns table
 	return select id, name from products;
 GO
 
+-- FUNCTION TÌM CHI TIẾT HÓA ĐƠN THEO HÓA ĐƠN
+CREATE FUNCTION fn_get_billDetails(@id char(5))
+returns table
+	return select p.id, p.name, bd.price, bd.quantity
+			from BILLDETAILS bd
+			INNER JOIN PRODUCTS p ON p.id=bd.idProduct
+			INNER JOIN BILLS b ON b.id=bd.idBill
+			WHERE bd.idBill = @id
+
+-- FUNTION NHÂN VIÊN XEM LỊCH SỬ HÓA ĐƠN
+CREATE FUNCTION fn_nv_get_billHistory(@id char(5))
+Returns table
+	return select * from V_NV_BILLHISTORY WHERE V_NV_BILLHISTORY.idAcc = @id;
+GO
+
 -- FUNTION NHÂN VIÊN TÌM LÔ SẢN PHẨM THEO ID SẢN PHẨM
 CREATE FUNCTION fn_nv_get_inventories_by_pid(@id char(5))
 Returns table
@@ -882,6 +897,43 @@ CREATE FUNCTION fn_ql_get_inventories_by_pid(@id char(5))
 Returns table
 	return select * from V_QL_INVENTORIES WHERE V_QL_INVENTORIES.productId = @id;
 GO
+
+-- FUNTION NHÂN VIÊN TÌM LỊCH SỬ HÓA ĐƠN THEO NGÀY
+CREATE FUNCTION fn_nv_get_billHistory_by_createDate(@createTime DATE)
+Returns table
+	return select * from V_NV_BILLHISTORY WHERE V_NV_BILLHISTORY.createTime = @createTime;
+GO
+
+-- FUNTION QUẢN LÝ TÌM LỊCH SỬ HÓA ĐƠN THEO NGÀY
+CREATE FUNCTION fn_ql_get_billHistory_by_createDate(@createTime DATE)
+Returns table
+	return select * from V_QL_BILLHISTORY WHERE V_QL_BILLHISTORY.createTime = @createTime;
+GO
+
+CREATE VIEW V_QL_BILLHISTORY AS
+SELECT
+	b.id AS id,
+	acc.name,
+	CAST(b.createDate AS date) AS createTime,
+	SUM(bd.detailPrice) AS checkOut
+FROM BILLS b 
+INNER JOIN V_BILLDETAILS bd ON b.id=bd.idBill
+INNER JOIN V_QL_ACCOUNTS acc ON b.idEmployee=acc.id
+GROUP BY b.id, acc.name, b.createDate
+GO
+
+CREATE VIEW V_NV_BILLHISTORY AS
+SELECT
+	b.id AS id,
+	acc.id AS idAcc,
+	CAST(b.createDate AS date) AS createTime,
+	SUM(bd.detailPrice) AS checkOut
+FROM BILLS b 
+INNER JOIN V_BILLDETAILS bd ON b.id=bd.idBill
+INNER JOIN ACCOUNTS acc ON b.idEmployee=acc.id
+GROUP BY b.id, acc.id, b.createDate
+GO
+
 
 INSERT TYPEACCS (id, name) VALUES (N'1    ', N'Nhân viên')
 INSERT TYPEACCS (id, name) VALUES (N'2    ', N'Quản lí')

@@ -59,11 +59,11 @@ namespace CHQLDoNoiThat.FormsManager
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbLoaiSanPham = new CHQLDoNoiThat.ComboBoxControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbLoaiSanPham = new CHQLDoNoiThat.ComboBoxControl();
             this.elipseControl2 = new ElipseToolDemo.ElipseControl();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChiTietHoaDon)).BeginInit();
@@ -439,6 +439,29 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel1.Size = new System.Drawing.Size(458, 266);
             this.panel1.TabIndex = 3;
             // 
+            // cmbLoaiSanPham
+            // 
+            this.cmbLoaiSanPham.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cmbLoaiSanPham.BackColor = System.Drawing.Color.White;
+            this.cmbLoaiSanPham.BorderColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.BorderSize = 1;
+            this.cmbLoaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbLoaiSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.IconColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.ListBackColor = System.Drawing.Color.White;
+            this.cmbLoaiSanPham.ListTextColor = System.Drawing.Color.SteelBlue;
+            this.cmbLoaiSanPham.Location = new System.Drawing.Point(2, 2);
+            this.cmbLoaiSanPham.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbLoaiSanPham.MinimumSize = new System.Drawing.Size(181, 32);
+            this.cmbLoaiSanPham.Name = "cmbLoaiSanPham";
+            this.cmbLoaiSanPham.Padding = new System.Windows.Forms.Padding(1);
+            this.cmbLoaiSanPham.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbLoaiSanPham.Size = new System.Drawing.Size(181, 32);
+            this.cmbLoaiSanPham.TabIndex = 0;
+            this.cmbLoaiSanPham.Texts = "Loại sản phẩm";
+            this.cmbLoaiSanPham.OnSelectedIndexChanged += new System.EventHandler(this.cmbLoaiSanPham_OnSelectedIndexChanged);
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -508,29 +531,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 618);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // cmbLoaiSanPham
-            // 
-            this.cmbLoaiSanPham.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cmbLoaiSanPham.BackColor = System.Drawing.Color.White;
-            this.cmbLoaiSanPham.BorderColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.BorderSize = 1;
-            this.cmbLoaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbLoaiSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLoaiSanPham.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.IconColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.ListBackColor = System.Drawing.Color.White;
-            this.cmbLoaiSanPham.ListTextColor = System.Drawing.Color.SteelBlue;
-            this.cmbLoaiSanPham.Location = new System.Drawing.Point(2, 2);
-            this.cmbLoaiSanPham.Margin = new System.Windows.Forms.Padding(0);
-            this.cmbLoaiSanPham.MinimumSize = new System.Drawing.Size(181, 32);
-            this.cmbLoaiSanPham.Name = "cmbLoaiSanPham";
-            this.cmbLoaiSanPham.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbLoaiSanPham.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbLoaiSanPham.Size = new System.Drawing.Size(181, 32);
-            this.cmbLoaiSanPham.TabIndex = 0;
-            this.cmbLoaiSanPham.Texts = "Loại sản phẩm";
-            this.cmbLoaiSanPham.OnSelectedIndexChanged += new System.EventHandler(this.cmbLoaiSanPham_OnSelectedIndexChanged);
             // 
             // elipseControl2
             // 

@@ -25,3 +25,12 @@ C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLay
 C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
 C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
 C:\Users\phamp\Source\Repos\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.dll
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\bin\Debug\DataBusiness.pdb
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.dll
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\bin\Debug\DataAccessLayer.pdb
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csprojAssemblyReference.cache
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CoreCompileInputs.cache
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusinessLayer.csproj.CopyComplete
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.dll
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataBusiness\obj\Debug\DataBusiness.pdb
