@@ -29,6 +29,10 @@ namespace CHQLDoNoiThat.FormsManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -93,13 +97,44 @@ namespace CHQLDoNoiThat.FormsManager
             // 
             this.dataGridViewLoaiSanPham.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewLoaiSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLoaiSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewLoaiSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLoaiSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.name});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewLoaiSanPham.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewLoaiSanPham.EnableHeadersVisualStyles = false;
+            this.dataGridViewLoaiSanPham.GridColor = System.Drawing.Color.SteelBlue;
+            this.dataGridViewLoaiSanPham.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridViewLoaiSanPham.Location = new System.Drawing.Point(12, 83);
             this.dataGridViewLoaiSanPham.Name = "dataGridViewLoaiSanPham";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLoaiSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewLoaiSanPham.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewLoaiSanPham.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewLoaiSanPham.RowTemplate.Height = 24;
             this.dataGridViewLoaiSanPham.Size = new System.Drawing.Size(484, 620);
             this.dataGridViewLoaiSanPham.TabIndex = 21;
@@ -280,7 +315,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.id.HeaderText = "Mã loại sản phẩm";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
-            this.id.Width = 150;
+            this.id.Width = 200;
             // 
             // name
             // 
@@ -288,7 +323,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.name.HeaderText = "Tên loại sản phẩm";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 200;
+            this.name.Width = 220;
             // 
             // FormCategory
             // 
