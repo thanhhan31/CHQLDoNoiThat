@@ -842,7 +842,7 @@ END
 GO
 
 -- FUNCTION THỐNG KÊ DOANH THU THEO MỘT KHOẢNG THỜI GIAN
-CREATE FUNCTION fn_revenue_report(@startDate DATE, @endDate DATE)
+CREATE FUNCTION fn_revenue_report(@startDate DATE = NULL, @endDate DATE = NULL)
 RETURNS @result TABLE (thu DECIMAL(19,5), chi DECIMAL(19,5), doanhThu DECIMAL(19,5))
 BEGIN
 	SET @endDate = DATEADD(day,1,@endDate)
@@ -850,12 +850,14 @@ BEGIN
 
 	SELECT @tienChi = SUM(originalprice*quantity*(1+vat/100))
 	FROM INVENTORIES 
-	WHERE importDate >= @startDate AND importDate <= @endDate;
+	WHERE (@startDate IS NULL OR importDate >= @startDate) AND
+		(@endDate IS NULL OR importDate <= @endDate);
 	IF @tienChi IS NULL SELECT @tienChi = 0;
 
 	SELECT @tienThu = SUM(price*quantity)
 	FROM BILLDETAILS bd INNER JOIN BILLS b ON bd.idBill = b.id
-	WHERE b.createDate >= @startDate AND b.createDate <= @endDate;
+	WHERE (@startDate IS NULL OR b.createDate >= @startDate) AND
+		(@endDate IS NULL OR b.createDate <= @endDate);
 	IF @tienThu IS NULL SELECT @tienThu = 0;
 
 	INSERT INTO @result VALUES(@tienThu,@tienChi,@tienThu-@tienChi);
@@ -940,5 +942,6 @@ INSERT INTO ACCOUNTS(id, name, dob, gender, phone, idNo,
 			address, email, password, avatar, idType, active) 
 VALUES('QL001', 'Quản Thị Lí', '2000-1-1', 'Nam', '0954325198', '854369548', 
 	'TP. HCM', '@.', CONVERT(CHAR(64),HashBytes('sha2_256', '1' + '@.'),2), null, 2, 1) --username: @. | password: 1
+
 
 
