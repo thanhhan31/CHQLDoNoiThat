@@ -34,6 +34,9 @@ namespace CHQLDoNoiThat.FormsManager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.datePickerControlNgayKetThuc = new CHQLDoNoiThat.DatePickerControl();
+            this.datePickerControlNgayBatDau = new CHQLDoNoiThat.DatePickerControl();
             this.dataGridViewStatistic = new System.Windows.Forms.DataGridView();
             this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,11 +50,8 @@ namespace CHQLDoNoiThat.FormsManager
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.datePickerControlNgayKetThuc = new CHQLDoNoiThat.DatePickerControl();
-            this.datePickerControlNgayBatDau = new CHQLDoNoiThat.DatePickerControl();
             this.comboBoxControlThongKeTheo = new CHQLDoNoiThat.ComboBoxControl();
+            this.label6 = new System.Windows.Forms.Label();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistic)).BeginInit();
@@ -80,37 +80,79 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel1.Size = new System.Drawing.Size(673, 535);
             this.panel1.TabIndex = 0;
             // 
+            // btnThongKe
+            // 
+            this.btnThongKe.AutoSize = true;
+            this.btnThongKe.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.Location = new System.Drawing.Point(543, 315);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(0);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(88, 32);
+            this.btnThongKe.TabIndex = 41;
+            this.btnThongKe.TabStop = false;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // datePickerControlNgayKetThuc
+            // 
+            this.datePickerControlNgayKetThuc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.datePickerControlNgayKetThuc.BorderSize = 0;
+            this.datePickerControlNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerControlNgayKetThuc.Location = new System.Drawing.Point(319, 314);
+            this.datePickerControlNgayKetThuc.Margin = new System.Windows.Forms.Padding(2);
+            this.datePickerControlNgayKetThuc.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerControlNgayKetThuc.Name = "datePickerControlNgayKetThuc";
+            this.datePickerControlNgayKetThuc.Size = new System.Drawing.Size(194, 35);
+            this.datePickerControlNgayKetThuc.SkinColor = System.Drawing.Color.SteelBlue;
+            this.datePickerControlNgayKetThuc.TabIndex = 39;
+            this.datePickerControlNgayKetThuc.TextColor = System.Drawing.Color.White;
+            // 
+            // datePickerControlNgayBatDau
+            // 
+            this.datePickerControlNgayBatDau.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.datePickerControlNgayBatDau.BorderSize = 0;
+            this.datePickerControlNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.datePickerControlNgayBatDau.Location = new System.Drawing.Point(82, 314);
+            this.datePickerControlNgayBatDau.Margin = new System.Windows.Forms.Padding(2);
+            this.datePickerControlNgayBatDau.MinimumSize = new System.Drawing.Size(4, 35);
+            this.datePickerControlNgayBatDau.Name = "datePickerControlNgayBatDau";
+            this.datePickerControlNgayBatDau.Size = new System.Drawing.Size(194, 35);
+            this.datePickerControlNgayBatDau.SkinColor = System.Drawing.Color.SteelBlue;
+            this.datePickerControlNgayBatDau.TabIndex = 38;
+            this.datePickerControlNgayBatDau.TextColor = System.Drawing.Color.White;
+            // 
             // dataGridViewStatistic
             // 
             this.dataGridViewStatistic.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewStatistic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStatistic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.year,
-            this.chi,
-            this.thu,
-            this.loi});
-            this.dataGridViewStatistic.GridColor = System.Drawing.Color.DarkGray;
-            this.dataGridViewStatistic.Location = new System.Drawing.Point(50, 94);
-            this.dataGridViewStatistic.Name = "dataGridViewStatistic";
-            this.dataGridViewStatistic.Size = new System.Drawing.Size(585, 212);
-            this.dataGridViewStatistic.TabIndex = 10;
-            this.dataGridViewStatistic.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStatistic_CellClick);
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewStatistic.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewStatistic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStatistic.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.year,
+            this.chi,
+            this.thu,
+            this.loi});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewStatistic.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewStatistic.EnableHeadersVisualStyles = false;
             this.dataGridViewStatistic.GridColor = System.Drawing.Color.SteelBlue;
+            this.dataGridViewStatistic.Location = new System.Drawing.Point(50, 94);
+            this.dataGridViewStatistic.Name = "dataGridViewStatistic";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +167,9 @@ namespace CHQLDoNoiThat.FormsManager
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridViewStatistic.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewStatistic.Size = new System.Drawing.Size(585, 212);
+            this.dataGridViewStatistic.TabIndex = 10;
+            this.dataGridViewStatistic.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStatistic_CellClick);
             // 
             // year
             // 
@@ -241,64 +286,6 @@ namespace CHQLDoNoiThat.FormsManager
             this.panel2.Size = new System.Drawing.Size(673, 67);
             this.panel2.TabIndex = 0;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(138, 22);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(194, 21);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Thống kê doanh thu theo";
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.AutoSize = true;
-            this.btnThongKe.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Location = new System.Drawing.Point(543, 315);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(0);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(88, 32);
-            this.btnThongKe.TabIndex = 41;
-            this.btnThongKe.TabStop = false;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // datePickerControlNgayKetThuc
-            // 
-            this.datePickerControlNgayKetThuc.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.datePickerControlNgayKetThuc.BorderSize = 0;
-            this.datePickerControlNgayKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerControlNgayKetThuc.Location = new System.Drawing.Point(319, 314);
-            this.datePickerControlNgayKetThuc.Margin = new System.Windows.Forms.Padding(2);
-            this.datePickerControlNgayKetThuc.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerControlNgayKetThuc.Name = "datePickerControlNgayKetThuc";
-            this.datePickerControlNgayKetThuc.Size = new System.Drawing.Size(194, 35);
-            this.datePickerControlNgayKetThuc.SkinColor = System.Drawing.Color.SteelBlue;
-            this.datePickerControlNgayKetThuc.TabIndex = 39;
-            this.datePickerControlNgayKetThuc.TextColor = System.Drawing.Color.White;
-            // 
-            // datePickerControlNgayBatDau
-            // 
-            this.datePickerControlNgayBatDau.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.datePickerControlNgayBatDau.BorderSize = 0;
-            this.datePickerControlNgayBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.datePickerControlNgayBatDau.Location = new System.Drawing.Point(82, 314);
-            this.datePickerControlNgayBatDau.Margin = new System.Windows.Forms.Padding(2);
-            this.datePickerControlNgayBatDau.MinimumSize = new System.Drawing.Size(4, 35);
-            this.datePickerControlNgayBatDau.Name = "datePickerControlNgayBatDau";
-            this.datePickerControlNgayBatDau.Size = new System.Drawing.Size(194, 35);
-            this.datePickerControlNgayBatDau.SkinColor = System.Drawing.Color.SteelBlue;
-            this.datePickerControlNgayBatDau.TabIndex = 38;
-            this.datePickerControlNgayBatDau.TextColor = System.Drawing.Color.White;
-            // 
             // comboBoxControlThongKeTheo
             // 
             this.comboBoxControlThongKeTheo.BackColor = System.Drawing.Color.White;
@@ -323,6 +310,18 @@ namespace CHQLDoNoiThat.FormsManager
             this.comboBoxControlThongKeTheo.TabIndex = 13;
             this.comboBoxControlThongKeTheo.Texts = "";
             this.comboBoxControlThongKeTheo.OnSelectedIndexChanged += new System.EventHandler(this.comboBoxControlThongKeTheo_OnSelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(138, 22);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(194, 21);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Thống kê doanh thu theo";
             // 
             // elipseControl1
             // 

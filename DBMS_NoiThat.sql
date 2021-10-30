@@ -26,7 +26,7 @@ CREATE TABLE ACCOUNTS(
 
 	CONSTRAINT chk_phone
 	CHECK (phone like '0[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-	detao
+
 	CONSTRAINT chk_idNo
 	CHECK (idNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
 	OR idNo like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
@@ -352,8 +352,6 @@ CREATE VIEW V_QL_ACCOUNTS AS
 	FROM ACCOUNTS AS acc, TYPEACCS
 	WHERE acc.idType = TYPEACCS.id
 GO
-
-
 
 CREATE VIEW V_NV_PRODUCTS AS
 SELECT	PRODUCTS.id AS productId,
@@ -751,7 +749,6 @@ BEGIN
 END
 GO
 
-
 --Function Login
 CREATE FUNCTION fnLogin (@email varchar(200), @password varchar(100))
 RETURNS TABLE
@@ -871,6 +868,30 @@ Returns table
 	return select id, name from products;
 GO
 
+CREATE VIEW V_QL_BILLHISTORY AS
+SELECT
+	b.id AS id,
+	acc.name,
+	CAST(b.createDate AS date) AS createTime,
+	SUM(bd.detailPrice) AS checkOut
+FROM BILLS b 
+INNER JOIN V_BILLDETAILS bd ON b.id=bd.idBill
+INNER JOIN V_QL_ACCOUNTS acc ON b.idEmployee=acc.id
+GROUP BY b.id, acc.name, b.createDate
+GO
+
+CREATE VIEW V_NV_BILLHISTORY AS
+SELECT
+	b.id AS id,
+	acc.id AS idAcc,
+	CAST(b.createDate AS date) AS createTime,
+	SUM(bd.detailPrice) AS checkOut
+FROM BILLS b 
+INNER JOIN V_BILLDETAILS bd ON b.id=bd.idBill
+INNER JOIN ACCOUNTS acc ON b.idEmployee=acc.id
+GROUP BY b.id, acc.id, b.createDate
+GO
+
 -- FUNCTION TÌM CHI TIẾT HÓA ĐƠN THEO HÓA ĐƠN
 CREATE FUNCTION fn_get_billDetails(@id char(5))
 returns table
@@ -879,6 +900,7 @@ returns table
 			INNER JOIN PRODUCTS p ON p.id=bd.idProduct
 			INNER JOIN BILLS b ON b.id=bd.idBill
 			WHERE bd.idBill = @id
+GO
 
 -- FUNTION NHÂN VIÊN XEM LỊCH SỬ HÓA ĐƠN
 CREATE FUNCTION fn_nv_get_billHistory(@id char(5))
@@ -910,38 +932,11 @@ Returns table
 	return select * from V_QL_BILLHISTORY WHERE V_QL_BILLHISTORY.createTime = @createTime;
 GO
 
-CREATE VIEW V_QL_BILLHISTORY AS
-SELECT
-	b.id AS id,
-	acc.name,
-	CAST(b.createDate AS date) AS createTime,
-	SUM(bd.detailPrice) AS checkOut
-FROM BILLS b 
-INNER JOIN V_BILLDETAILS bd ON b.id=bd.idBill
-INNER JOIN V_QL_ACCOUNTS acc ON b.idEmployee=acc.id
-GROUP BY b.id, acc.name, b.createDate
-GO
-
-CREATE VIEW V_NV_BILLHISTORY AS
-SELECT
-	b.id AS id,
-	acc.id AS idAcc,
-	CAST(b.createDate AS date) AS createTime,
-	SUM(bd.detailPrice) AS checkOut
-FROM BILLS b 
-INNER JOIN V_BILLDETAILS bd ON b.id=bd.idBill
-INNER JOIN ACCOUNTS acc ON b.idEmployee=acc.id
-GROUP BY b.id, acc.id, b.createDate
-GO
-
-
 INSERT TYPEACCS (id, name) VALUES (N'1    ', N'Nhân viên')
-INSERT TYPEACCS (id, name) VALUES (N'2    ', N'Quản lí')
+INSERT TYPEACCS (id, name) VALUES (N'2    ', N'Quản lý')
 
+--username: ql01@qlchnt.com | password: 1
 INSERT INTO ACCOUNTS(id, name, dob, gender, phone, idNo, 
 			address, email, password, avatar, idType, active) 
-VALUES('QL001', 'Quản Thị Lí', '2000-1-1', 'Nam', '0954325198', '854369548', 
-	'TP. HCM', '@.', CONVERT(CHAR(64),HashBytes('sha2_256', '1' + '@.'),2), null, 2, 1) --username: @. | password: 1
-
-
-
+VALUES('QL001', N'Quản Thị Lí', '2000-1-1', N'Nam', '0954325198', '854369548', 
+	'TP. HCM', 'ql01@qlchnt.com', CONVERT(CHAR(64),HashBytes('sha2_256', '1' + 'ql01@qlchnt.com'),2), null, 2, 1)

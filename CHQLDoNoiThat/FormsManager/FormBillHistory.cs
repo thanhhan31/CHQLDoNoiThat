@@ -25,12 +25,13 @@ namespace CHQLDoNoiThat.FormsManager
             string err = "";
             DataSet ds = dbl.get_view_billhistory(ref err);
             dataGridViewLSHD.DataSource = ds.Tables[0];
-            dataGridViewLSHD.AllowUserToAddRows = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridViewLSHD.CurrentRow;
+            if (row == null)
+                return;
 
             txtTongTien.Texts = row.Cells["checkOut"].Value.ToString();
             txtId.Texts = row.Cells["id"].Value.ToString();
@@ -46,11 +47,25 @@ namespace CHQLDoNoiThat.FormsManager
         {
             string err = "";
             var date = datePickerControlLichSuHoaDon.Value;
-            dbl = new DBL_Bill();
             DataSet ds = dbl.get_ql_billHistory_createDate(date, ref err);
-            dataGridViewLSHD.DataSource = ds.Tables[0];
+            if (!String.IsNullOrEmpty(err))
+            {
+                MessageBox.Show(err, "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                dataGridViewLSHD.DataSource = ds.Tables[0];
         }
 
-
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            string err = "";
+            DataSet ds = dbl.get_view_billhistory(ref err);
+            if (!String.IsNullOrEmpty(err))
+            {
+                MessageBox.Show(err, "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                dataGridViewLSHD.DataSource = ds.Tables[0];
+        }
     }
 }

@@ -69,7 +69,7 @@ namespace CHQLDoNoiThat.FormsManager
             var ds_products = dbl_products.admin_get_view_product(ref error);
             if (ds_products == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu sản phẩm");
+                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -78,7 +78,7 @@ namespace CHQLDoNoiThat.FormsManager
             var ds_categories = dbl_categories.get_categories(ref error);
             if (ds_categories == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu loại sản phẩm");
+                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

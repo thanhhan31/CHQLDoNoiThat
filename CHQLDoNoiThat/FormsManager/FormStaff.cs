@@ -217,7 +217,7 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet ds_account = dbl_account.admin_get_accounts(ref error);
             if (ds_account == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu nhân viên");
+                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -226,7 +226,7 @@ namespace CHQLDoNoiThat.FormsManager
             var ds_typeaccount = dbl_typeaccount.get_typeaccounts(ref error).Tables[0];
             if (ds_typeaccount == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu chức vụ");
+                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu chức vụ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -289,7 +289,6 @@ namespace CHQLDoNoiThat.FormsManager
             txtDiaChi.Texts = "";
             txtEmail.Texts = "";
 
-            //datePickerControlNgaySinh.Enabled = true;
             cmbGioiTinh.SelectedIndex = -1;
             cmbChucVu.SelectedIndex = -1;
             cmbTinhTrang.SelectedIndex = -1;

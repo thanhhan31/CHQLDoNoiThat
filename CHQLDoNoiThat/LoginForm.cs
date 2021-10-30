@@ -43,7 +43,6 @@ namespace CHQLDoNoiThat
             string email = txtUser.Text;
             string passwd = txtPassword.Text;
 
-
             string error = "";
             DBL_Account dbl = new DBL_Account();
             DataSet userinf = dbl.login(email, passwd, ref error);
@@ -64,7 +63,7 @@ namespace CHQLDoNoiThat
                         formHomeStaff.Show();
                         this.Hide();
                     }
-                    else if (((string)tmp[10]).Trim() == "2" && !login_as_employee) //Quản lí
+                    else if (((string)tmp[10]).Trim() == "2" && !login_as_employee) //Quản lý
                     {
                         var formManager = new FormManager((string)tmp[0], this);
                         formManager.Show();

@@ -27,7 +27,7 @@ namespace CHQLDoNoiThat
             AccountObject account = Utils.getUserInfo(uid, ref error);
             if (account == null)
             {
-                MessageBox.Show(error, "Lỗi tải thông tin nhân viên");
+                MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -53,12 +53,19 @@ namespace CHQLDoNoiThat
             {
                 if (!String.IsNullOrEmpty(error))
                 {
-                    MessageBox.Show("Lỗi: " + error, "Lỗi không thể cập nhật mật khẩu");
+                    MessageBox.Show("Lỗi: " + error, "Lỗi không thể cập nhật mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu cũ không chính xác", "Lỗi không thể cập nhật mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Cập nhật mật khẩu thành công!");
+                MessageBox.Show("Cập nhật mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMatKhauCu.Texts = "";
+                txtMatKhauMoi.Texts = "";
+                txtMatKhauMoi2.Texts = "";
             }
         }
     }

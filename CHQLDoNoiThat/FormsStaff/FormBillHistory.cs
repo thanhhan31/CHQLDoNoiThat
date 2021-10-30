@@ -30,7 +30,6 @@ namespace CHQLDoNoiThat.FormsStaff
             string err = "";
             DataSet ds = dbl.get_nv_billHistory(id_employee, ref err);
             dataGridViewLSHD.DataSource = ds.Tables[0];
-            dataGridViewLSHD.AllowUserToAddRows = false;
             dataGridViewLSHD.Columns["idAcc"].Visible = false;
             dataGridViewCTHD.ForeColor = Color.Black;
         }
@@ -38,6 +37,8 @@ namespace CHQLDoNoiThat.FormsStaff
         private void dataGridViewLSHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridViewLSHD.CurrentRow;
+            if (row == null)
+                return;
 
             txtTongTien.Texts = row.Cells["checkOut"].Value.ToString();
             txtId.Texts = row.Cells["id"].Value.ToString();
@@ -53,9 +54,25 @@ namespace CHQLDoNoiThat.FormsStaff
         {
             string err = "";
             var date = datePickerControlLichSuHoaDon.Value;
-            dbl = new DBL_Bill();
             DataSet ds = dbl.get_nv_billHistory_createDate(date, ref err);
-            dataGridViewLSHD.DataSource = ds.Tables[0];
+            if (!String.IsNullOrEmpty(err))
+            {
+                MessageBox.Show(err, "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                dataGridViewLSHD.DataSource = ds.Tables[0];
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            string err = "";
+            DataSet ds = dbl.get_nv_billHistory(id_employee, ref err);
+            if (!String.IsNullOrEmpty(err))
+            {
+                MessageBox.Show(err, "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                dataGridViewLSHD.DataSource = ds.Tables[0];
         }
     }
 }

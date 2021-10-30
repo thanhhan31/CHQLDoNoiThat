@@ -26,7 +26,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet dsi = dbl_i.employee_get_inventories_by_pid("",ref err);
             if (dsi == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu lô sản phẩm");
+                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -34,7 +34,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_pname = dbl_p.get_products_name(ref err);
             if (ds_pname == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm");
+                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataRow dr = ds_pname.Tables[0].NewRow();
@@ -46,7 +46,6 @@ namespace CHQLDoNoiThat.FormsStaff
             cmbTenSanPham.DataSource = ds_pname.Tables[0];
             cmbTenSanPham.SelectedIndex = ds_pname.Tables[0].Rows.Count-1;
 
-
             dataGridViewKho.DataSource = dsi.Tables[0];
             dataGridViewKho.Columns["productImg"].Visible = false;
             dataGridViewKho.Columns["productId"].Visible = false;
@@ -57,7 +56,6 @@ namespace CHQLDoNoiThat.FormsStaff
             dataGridViewKho.DefaultCellStyle.ForeColor = Color.Black;
             dataGridViewKho.DefaultCellStyle.BackColor = Color.White;
             dataGridViewKho_CellClick(null, null);
-     
         }
 
         private void dataGridViewKho_CellClick(object sender, DataGridViewCellEventArgs e)

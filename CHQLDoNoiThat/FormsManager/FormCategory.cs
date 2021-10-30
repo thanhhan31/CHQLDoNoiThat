@@ -49,7 +49,6 @@ namespace CHQLDoNoiThat.FormsManager
             }
         }
 
-
         private void update_data()
         {
             string error = "";
@@ -57,7 +56,7 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet ds_category = dbl_category.get_categories(ref error);
             if (ds_category == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu loại sản phẩm");
+                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

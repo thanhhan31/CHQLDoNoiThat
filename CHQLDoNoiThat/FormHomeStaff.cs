@@ -128,7 +128,7 @@ namespace CHQLDoNoiThat
             AccountObject account = Utils.getUserInfo(uid, ref error);
             if (account == null)
             {
-                MessageBox.Show(error, "Lỗi tải thông tin nhân viên");
+                MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

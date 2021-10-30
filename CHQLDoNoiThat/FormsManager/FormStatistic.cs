@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 using DataBusiness;
 
 namespace CHQLDoNoiThat.FormsManager
@@ -91,7 +92,7 @@ namespace CHQLDoNoiThat.FormsManager
                 if (year == thisYear)
                     endDate = DateTime.Now;
                 else
-                    endDate = DateTime.Parse("31/12/" + year);
+                    endDate = DateTime.ParseExact("31/12/" + year, "dd/MM/yyyy", null);
             }
             else if(choose =="Tháng")
             {
@@ -123,9 +124,13 @@ namespace CHQLDoNoiThat.FormsManager
             }
             datePickerControlNgayBatDau.Value = startDate;
             datePickerControlNgayKetThuc.Value = endDate;
-            lblTienThu.Text = "Tiền thu: " + row.Cells["thu"].Value.ToString();
-            lblTienChi.Text = "Tiền chi: " + row.Cells["chi"].Value.ToString();
-            lblLoiNhuan.Text = "Lợi nhuận: " + row.Cells["loi"].Value.ToString();
+
+            Decimal thu = (Decimal)row.Cells["thu"].Value;
+            Decimal chi = (Decimal)row.Cells["chi"].Value;
+            Decimal loi = (Decimal)row.Cells["loi"].Value;
+            lblTienThu.Text = "Tiền thu: " + thu.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
+            lblTienChi.Text = "Tiền chi: " + chi.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
+            lblLoiNhuan.Text = "Lợi nhuận: " + loi.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
         }
     }
 }

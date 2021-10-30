@@ -40,7 +40,7 @@ namespace CHQLDoNoiThat.FormsManager
 
         private void btnXoa_Kho_Click(object sender, EventArgs e)
         {
-            String err = "";
+            string err = "";
             if(!dbl_i.delete_inventory(txtId.Texts, ref err))
             {
                 MessageBox.Show(err, "Lỗi khi xóa lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -100,20 +100,20 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet dsi = dbl_i.admin_get_view_inventories(ref err);
             if (dsi == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu lô sản phẩm");
+                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             err = "";
             DataSet ds_pname_loc = dbl_p.get_products_name(ref err);
             if (ds_pname_loc == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm");
+                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataSet dsp = dbl_p.get_products_name(ref err);
             if (dsp == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm");
+                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataRow dr = ds_pname_loc.Tables[0].NewRow();

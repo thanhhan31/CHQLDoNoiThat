@@ -79,7 +79,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_product = dbl_product.get_products(ref error);
             if (ds_product == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ loại loại sản phẩm");
+                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_catefory = dbl_category.get_categories(ref error);
             if (ds_catefory == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ loại loại sản phẩm");
+                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -164,7 +164,7 @@ namespace CHQLDoNoiThat.FormsStaff
                         int total_quantity = int.Parse(r.Cells["quantity_"].Value.ToString()) + int.Parse(txtSoLuong.Text);
                         if (total_quantity > int.Parse(selectedRow.Cells["quantity"].Value.ToString()))
                         {
-                            MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ", "Thông báo");
+                            MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         r.Cells["quantity_"].Value = total_quantity.ToString();
@@ -178,7 +178,7 @@ namespace CHQLDoNoiThat.FormsStaff
             {
                 if (int.Parse(txtSoLuong.Text) > int.Parse(selectedRow.Cells["quantity"].Value.ToString()))
                 {
-                    MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ", "Thông báo");
+                    MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 dataGridViewChiTietHoaDon.Rows.Add(selectedRow.Cells["id"].Value,
@@ -239,7 +239,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_bill = dbl_bill.get_bills(ref error);
             if (ds_bill == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy được dữ liệu hóa đơn");
+                MessageBox.Show(error, "Lỗi không thể lấy được dữ liệu hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
