@@ -24,6 +24,11 @@ namespace CHQLDoNoiThat.FormsManager
         {
             string err = "";
             DataSet ds = dbl.get_view_billhistory(ref err);
+            if (ds == null)
+            {
+                MessageBox.Show(err, "Lỗi không thể lấy dữ hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             dataGridViewLSHD.DataSource = ds.Tables[0];
         }
 
