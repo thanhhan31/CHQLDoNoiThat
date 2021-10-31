@@ -70,12 +70,16 @@ namespace CHQLDoNoiThat.FormsManager
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            String err = "";
+            string err = "";
             DataSet ds = dbl_s.statistic_custom(datePickerControlNgayBatDau.Value, datePickerControlNgayKetThuc.Value, ref err);
             var result = ds.Tables[0].Rows[0];
-            lblTienThu.Text = "Tiền thu: " + result["thu"].ToString();
-            lblTienChi.Text = "Tiền chi: " + result["chi"].ToString();
-            lblLoiNhuan.Text = "Lợi nhuận: " + result["doanhThu"].ToString();
+
+            Decimal thu = (Decimal)result["thu"];
+            Decimal chi = (Decimal)result["chi"];
+            Decimal loi = (Decimal)result["doanhThu"];
+            lblTienThu.Text = "Tiền thu: " + thu.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
+            lblTienChi.Text = "Tiền chi: " + chi.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
+            lblLoiNhuan.Text = "Lợi nhuận: " + loi.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
         }
 
         private void dataGridViewStatistic_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -88,7 +92,7 @@ namespace CHQLDoNoiThat.FormsManager
             {
                 int thisYear = DateTime.Now.Year;
                 int year = (int)row.Cells["year"].Value;
-                startDate = DateTime.Parse("1/1/" + year);
+                startDate = DateTime.ParseExact("01/01/" + year, "dd/MM/yyyy", null);
                 if (year == thisYear)
                     endDate = DateTime.Now;
                 else
@@ -100,12 +104,15 @@ namespace CHQLDoNoiThat.FormsManager
                 int thisMonth = DateTime.Now.Month;
                 int year = (int)row.Cells["year"].Value;
                 int month = (int)row.Cells["month"].Value;
-                startDate = DateTime.Parse(string.Format("1/{0}/{1}",month,year));
+                startDate = DateTime.ParseExact(string.Format("01/{0:00}/{1}", month, year), "dd/MM/yyyy", null);
                 if (year == thisYear && month == thisMonth)
                     endDate = DateTime.Now;
                 else
-                    endDate = DateTime.Parse(string.Format("{0}/{1}/{2}",
-                        DateTime.DaysInMonth(year, month), month, year));
+                {
+                    string tmp = string.Format("{0:00}/{1:00}/{2}",
+                        DateTime.DaysInMonth(year, month), month, year);
+                    endDate = DateTime.ParseExact(tmp, "dd/MM/yyyy", null);
+                }
             }
             else if(choose == "Quý")
             {
@@ -115,12 +122,16 @@ namespace CHQLDoNoiThat.FormsManager
                 int quarter = (int)row.Cells["quarter"].Value;
                 int startMonth = (quarter - 1) * 3 + 1;
 
-                startDate = DateTime.Parse(string.Format("1/{0}/{1}", startMonth, year));
+                startDate = DateTime.ParseExact(string.Format("01/{0:00}/{1}", startMonth, year), "dd/MM/yyyy", null);
                 if (year == thisYear && quarter == thisQuarter )
                     endDate = DateTime.Now;
                 else
-                    endDate = DateTime.Parse(string.Format("{0}/{1}/{2}",
-                        DateTime.DaysInMonth(year,startMonth + 2), startMonth+2, year));
+                {
+                    string tmp = string.Format("{0:00}/{1:00}/{2}",
+                        DateTime.DaysInMonth(year, startMonth + 2), (startMonth + 2), year);
+                    endDate = DateTime.ParseExact(tmp, "dd/MM/yyyy", null);
+                }
+                    
             }
             datePickerControlNgayBatDau.Value = startDate;
             datePickerControlNgayKetThuc.Value = endDate;
