@@ -29,6 +29,11 @@ namespace CHQLDoNoiThat.FormsStaff
         {
             string err = "";
             DataSet ds = dbl.get_nv_billHistory(id_employee, ref err);
+            if (ds == null)
+            {
+                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             dataGridViewLSHD.DataSource = ds.Tables[0];
             dataGridViewLSHD.Columns["idAcc"].Visible = false;
             dataGridViewCTHD.ForeColor = Color.Black;
