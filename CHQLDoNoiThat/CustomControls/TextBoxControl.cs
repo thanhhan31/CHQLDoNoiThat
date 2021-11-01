@@ -15,7 +15,7 @@ namespace CHQLDoNoiThat.CustomControls
     {
         [Browsable(true)]
         [Category("Property Changed")]
-        public event EventHandler TextChanged;        
+        public event EventHandler _TextChanged;
 
         //Fields
         private Color borderColor = Color.MediumSlateBlue;
@@ -197,8 +197,8 @@ namespace CHQLDoNoiThat.CustomControls
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (TextChanged != null)
-                TextChanged.Invoke(sender, e);
+            if (_TextChanged != null)
+                _TextChanged.Invoke(sender, e);
         }
 
         private void textBox1_Click(object sender, EventArgs e)

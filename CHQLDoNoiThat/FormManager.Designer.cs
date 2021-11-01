@@ -69,13 +69,13 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanelDesktop, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(195, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(260, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(780, 650);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1040, 800);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanelDesktop
@@ -85,13 +85,13 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanelDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tableLayoutPanelDesktop.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelDesktop.Location = new System.Drawing.Point(0, 32);
+            this.tableLayoutPanelDesktop.Location = new System.Drawing.Point(0, 40);
             this.tableLayoutPanelDesktop.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelDesktop.Name = "tableLayoutPanelDesktop";
             this.tableLayoutPanelDesktop.RowCount = 2;
             this.tableLayoutPanelDesktop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 96F));
             this.tableLayoutPanelDesktop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanelDesktop.Size = new System.Drawing.Size(780, 618);
+            this.tableLayoutPanelDesktop.Size = new System.Drawing.Size(1040, 760);
             this.tableLayoutPanelDesktop.TabIndex = 0;
             // 
             // panel1
@@ -101,10 +101,10 @@ namespace CHQLDoNoiThat
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(752, 589);
+            this.panel1.Size = new System.Drawing.Size(1002, 725);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -112,10 +112,9 @@ namespace CHQLDoNoiThat
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(115, 266);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(153, 327);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(543, 41);
+            this.label2.Size = new System.Drawing.Size(689, 51);
             this.label2.TabIndex = 1;
             this.label2.Text = "Chúc bạn một ngày làm việc hiệu quả";
             // 
@@ -123,10 +122,9 @@ namespace CHQLDoNoiThat
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::CHQLDoNoiThat.Properties.Resources.wink_100px;
-            this.label1.Location = new System.Drawing.Point(236, 142);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(315, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 124);
+            this.label1.Size = new System.Drawing.Size(347, 153);
             this.label1.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -142,7 +140,7 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(780, 32);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1040, 40);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // lblTitle
@@ -153,7 +151,7 @@ namespace CHQLDoNoiThat
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(663, 32);
+            this.lblTitle.Size = new System.Drawing.Size(884, 40);
             this.lblTitle.TabIndex = 23;
             this.lblTitle.Text = "Home";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -164,10 +162,10 @@ namespace CHQLDoNoiThat
             this.flowLayoutPanel1.Controls.Add(this.btnMinimize);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(663, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(884, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(117, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(156, 40);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // btnClose
@@ -175,10 +173,9 @@ namespace CHQLDoNoiThat
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(89, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnClose.Location = new System.Drawing.Point(118, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(26, 28);
+            this.btnClose.Size = new System.Drawing.Size(35, 34);
             this.btnClose.TabIndex = 23;
             this.btnClose.Text = "X";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,10 +186,9 @@ namespace CHQLDoNoiThat
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(59, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(77, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(26, 28);
+            this.btnMinimize.Size = new System.Drawing.Size(35, 34);
             this.btnMinimize.TabIndex = 21;
             this.btnMinimize.Text = "-";
             this.btnMinimize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,19 +209,18 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(195, 650);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(260, 800);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lblTenDangNhap
             // 
-            this.lblTenDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTenDangNhap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTenDangNhap.ForeColor = System.Drawing.Color.White;
             this.lblTenDangNhap.Image = global::CHQLDoNoiThat.Properties.Resources.user_40px;
             this.lblTenDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTenDangNhap.Location = new System.Drawing.Point(2, 12);
-            this.lblTenDangNhap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTenDangNhap.Location = new System.Drawing.Point(3, 0);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(130, 41);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(254, 80);
             this.lblTenDangNhap.TabIndex = 0;
             this.lblTenDangNhap.Text = "    tendangnhap";
             this.lblTenDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,12 +233,12 @@ namespace CHQLDoNoiThat
             this.lblDangXuat.ForeColor = System.Drawing.Color.White;
             this.lblDangXuat.Image = global::CHQLDoNoiThat.Properties.Resources.logout_rounded_left_30px;
             this.lblDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDangXuat.Location = new System.Drawing.Point(2, 602);
-            this.lblDangXuat.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.lblDangXuat.Location = new System.Drawing.Point(3, 741);
+            this.lblDangXuat.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.lblDangXuat.Name = "lblDangXuat";
-            this.lblDangXuat.Padding = new System.Windows.Forms.Padding(8, 0, 0, 4);
+            this.lblDangXuat.Padding = new System.Windows.Forms.Padding(11, 0, 0, 5);
             this.lblDangXuat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDangXuat.Size = new System.Drawing.Size(141, 31);
+            this.lblDangXuat.Size = new System.Drawing.Size(188, 38);
             this.lblDangXuat.TabIndex = 16;
             this.lblDangXuat.Text = "     Đăng xuất";
             this.lblDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,8 +257,8 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanelMenu.Controls.Add(this.btnKho_FManager, 0, 3);
             this.tableLayoutPanelMenu.Controls.Add(this.btnLoaiSanPham_FManager, 0, 1);
             this.tableLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(2, 67);
-            this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(3, 82);
+            this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
             this.tableLayoutPanelMenu.RowCount = 7;
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -273,7 +268,7 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(191, 516);
+            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(254, 636);
             this.tableLayoutPanelMenu.TabIndex = 17;
             // 
             // btnThongKe_FManager
@@ -287,11 +282,11 @@ namespace CHQLDoNoiThat
             this.btnThongKe_FManager.ForeColor = System.Drawing.Color.White;
             this.btnThongKe_FManager.Image = global::CHQLDoNoiThat.Properties.Resources.statistics_26px;
             this.btnThongKe_FManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe_FManager.Location = new System.Drawing.Point(2, 452);
-            this.btnThongKe_FManager.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnThongKe_FManager.Location = new System.Drawing.Point(3, 558);
+            this.btnThongKe_FManager.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnThongKe_FManager.Name = "btnThongKe_FManager";
-            this.btnThongKe_FManager.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnThongKe_FManager.Size = new System.Drawing.Size(189, 49);
+            this.btnThongKe_FManager.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnThongKe_FManager.Size = new System.Drawing.Size(251, 60);
             this.btnThongKe_FManager.TabIndex = 24;
             this.btnThongKe_FManager.Text = "   Thống kê";
             this.btnThongKe_FManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -309,11 +304,11 @@ namespace CHQLDoNoiThat
             this.btnTaoHoaDon_FManager.ForeColor = System.Drawing.Color.White;
             this.btnTaoHoaDon_FManager.Image = global::CHQLDoNoiThat.Properties.Resources.bill_30px;
             this.btnTaoHoaDon_FManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaoHoaDon_FManager.Location = new System.Drawing.Point(0, 304);
+            this.btnTaoHoaDon_FManager.Location = new System.Drawing.Point(0, 375);
             this.btnTaoHoaDon_FManager.Margin = new System.Windows.Forms.Padding(0);
             this.btnTaoHoaDon_FManager.Name = "btnTaoHoaDon_FManager";
-            this.btnTaoHoaDon_FManager.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnTaoHoaDon_FManager.Size = new System.Drawing.Size(191, 49);
+            this.btnTaoHoaDon_FManager.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnTaoHoaDon_FManager.Size = new System.Drawing.Size(254, 60);
             this.btnTaoHoaDon_FManager.TabIndex = 24;
             this.btnTaoHoaDon_FManager.Text = "   Tạo hóa đơn";
             this.btnTaoHoaDon_FManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -331,11 +326,11 @@ namespace CHQLDoNoiThat
             this.btnLichSuHoaDon_FManager.ForeColor = System.Drawing.Color.White;
             this.btnLichSuHoaDon_FManager.Image = global::CHQLDoNoiThat.Properties.Resources.order_history_30px;
             this.btnLichSuHoaDon_FManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichSuHoaDon_FManager.Location = new System.Drawing.Point(0, 377);
+            this.btnLichSuHoaDon_FManager.Location = new System.Drawing.Point(0, 465);
             this.btnLichSuHoaDon_FManager.Margin = new System.Windows.Forms.Padding(0);
             this.btnLichSuHoaDon_FManager.Name = "btnLichSuHoaDon_FManager";
-            this.btnLichSuHoaDon_FManager.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnLichSuHoaDon_FManager.Size = new System.Drawing.Size(191, 49);
+            this.btnLichSuHoaDon_FManager.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnLichSuHoaDon_FManager.Size = new System.Drawing.Size(254, 60);
             this.btnLichSuHoaDon_FManager.TabIndex = 21;
             this.btnLichSuHoaDon_FManager.Text = "   Lịch sử hóa đơn";
             this.btnLichSuHoaDon_FManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -353,11 +348,11 @@ namespace CHQLDoNoiThat
             this.btnNhanVien_FManager.ForeColor = System.Drawing.Color.White;
             this.btnNhanVien_FManager.Image = global::CHQLDoNoiThat.Properties.Resources.staff_24px;
             this.btnNhanVien_FManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanVien_FManager.Location = new System.Drawing.Point(2, 12);
-            this.btnNhanVien_FManager.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnNhanVien_FManager.Location = new System.Drawing.Point(3, 15);
+            this.btnNhanVien_FManager.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnNhanVien_FManager.Name = "btnNhanVien_FManager";
-            this.btnNhanVien_FManager.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnNhanVien_FManager.Size = new System.Drawing.Size(189, 49);
+            this.btnNhanVien_FManager.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnNhanVien_FManager.Size = new System.Drawing.Size(251, 60);
             this.btnNhanVien_FManager.TabIndex = 19;
             this.btnNhanVien_FManager.Text = "   Nhân viên";
             this.btnNhanVien_FManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -375,11 +370,11 @@ namespace CHQLDoNoiThat
             this.btnSanPham_FManager.ForeColor = System.Drawing.Color.White;
             this.btnSanPham_FManager.Image = global::CHQLDoNoiThat.Properties.Resources.product_24px;
             this.btnSanPham_FManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSanPham_FManager.Location = new System.Drawing.Point(2, 158);
-            this.btnSanPham_FManager.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnSanPham_FManager.Location = new System.Drawing.Point(3, 195);
+            this.btnSanPham_FManager.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnSanPham_FManager.Name = "btnSanPham_FManager";
-            this.btnSanPham_FManager.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnSanPham_FManager.Size = new System.Drawing.Size(189, 49);
+            this.btnSanPham_FManager.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnSanPham_FManager.Size = new System.Drawing.Size(251, 60);
             this.btnSanPham_FManager.TabIndex = 22;
             this.btnSanPham_FManager.Text = "   Sản phẩm";
             this.btnSanPham_FManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -397,11 +392,11 @@ namespace CHQLDoNoiThat
             this.btnKho_FManager.ForeColor = System.Drawing.Color.White;
             this.btnKho_FManager.Image = global::CHQLDoNoiThat.Properties.Resources.inventory_flow_32px;
             this.btnKho_FManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKho_FManager.Location = new System.Drawing.Point(0, 231);
+            this.btnKho_FManager.Location = new System.Drawing.Point(0, 285);
             this.btnKho_FManager.Margin = new System.Windows.Forms.Padding(0);
             this.btnKho_FManager.Name = "btnKho_FManager";
-            this.btnKho_FManager.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnKho_FManager.Size = new System.Drawing.Size(191, 49);
+            this.btnKho_FManager.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnKho_FManager.Size = new System.Drawing.Size(254, 60);
             this.btnKho_FManager.TabIndex = 23;
             this.btnKho_FManager.Text = "   Kho";
             this.btnKho_FManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -419,11 +414,11 @@ namespace CHQLDoNoiThat
             this.btnLoaiSanPham_FManager.ForeColor = System.Drawing.Color.White;
             this.btnLoaiSanPham_FManager.Image = global::CHQLDoNoiThat.Properties.Resources.category_24px;
             this.btnLoaiSanPham_FManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoaiSanPham_FManager.Location = new System.Drawing.Point(2, 85);
-            this.btnLoaiSanPham_FManager.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnLoaiSanPham_FManager.Location = new System.Drawing.Point(3, 105);
+            this.btnLoaiSanPham_FManager.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnLoaiSanPham_FManager.Name = "btnLoaiSanPham_FManager";
-            this.btnLoaiSanPham_FManager.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnLoaiSanPham_FManager.Size = new System.Drawing.Size(189, 49);
+            this.btnLoaiSanPham_FManager.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnLoaiSanPham_FManager.Size = new System.Drawing.Size(251, 60);
             this.btnLoaiSanPham_FManager.TabIndex = 20;
             this.btnLoaiSanPham_FManager.Text = "   Loại sản phẩm";
             this.btnLoaiSanPham_FManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -439,22 +434,22 @@ namespace CHQLDoNoiThat
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(975, 650);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1300, 800);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // FormManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(975, 650);
+            this.ClientSize = new System.Drawing.Size(1300, 800);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
