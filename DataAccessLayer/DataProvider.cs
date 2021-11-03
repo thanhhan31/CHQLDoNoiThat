@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text;
 using System.Data.SqlClient;
 
 namespace DataAccessLayer
@@ -9,13 +10,19 @@ namespace DataAccessLayer
     {
         private static string serverName = @"DESKTOP-ET08Q48\SQLEXPRESS";
         private static string dbName = @"DBMS_NoiThat";
-        private static string connectionString = @"Server=" + serverName + ";Initial Catalog=" + dbName + ";Integrated Security=True;";
+        private static string connectionString;
 
         SqlConnection sqlConnection;
         SqlDataAdapter dataAdapter;
 
         public DataProvider()
         {
+            sqlConnection = new SqlConnection(connectionString);
+        }
+
+        public DataProvider(string username, string hashed_password)
+        {
+            connectionString = @"Server=" + serverName + ";Initial Catalog=" + dbName + ";User ID=" + username + ";Password='" + hashed_password + "'";
             sqlConnection = new SqlConnection(connectionString);
         }
 

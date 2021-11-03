@@ -13,14 +13,14 @@ namespace CHQLDoNoiThat.FormsManager
 {
     public partial class FormBill : Form
     {
-        private string id_employee;
+        private string uid;
         private List<CartItem> cartitems;
 
-        public FormBill(string id_employee)
+        public FormBill(string uid)
         {
             InitializeComponent();
             this.Shown += delegate (object sender, EventArgs args) { dataGridViewSanPham.ClearSelection(); };
-            this.id_employee = id_employee;
+            this.uid = uid;
         }
 
         private void FormBill_Load(object sender, EventArgs e)
@@ -130,6 +130,7 @@ namespace CHQLDoNoiThat.FormsManager
             clear_edit();
             disable_thanhToan();
             disable_xoa_cthd();
+            dataGridViewChiTietHoaDon.Rows.Clear();
         }
 
         private void dataGridViewSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -159,12 +160,13 @@ namespace CHQLDoNoiThat.FormsManager
                 {
                     if (r.Cells[0].Value != null && r.Cells["idProduct"].Value.ToString() == selectedRow.Cells["id"].Value.ToString())
                     {
-                        int total_quantity = int.Parse(r.Cells["quantity_"].Value.ToString()) + int.Parse(txtSoLuong.Text);
-                        if (total_quantity > int.Parse(selectedRow.Cells["quantity"].Value.ToString()))
+                        if (int.Parse(txtSoLuong.Text) > int.Parse(selectedRow.Cells["quantity"].Value.ToString()))
                         {
                             MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
+                        int total_quantity = int.Parse(r.Cells["quantity_"].Value.ToString()) + int.Parse(txtSoLuong.Text);
+                        selectedRow.Cells["quantity"].Value = (int)selectedRow.Cells["quantity"].Value - int.Parse(txtSoLuong.Text);
                         r.Cells["quantity_"].Value = total_quantity.ToString();
                         da_co = true;
                         cartitems.Find(c => c.ProductId == r.Cells["idProduct"].Value.ToString()).Quantity = total_quantity;
@@ -183,6 +185,7 @@ namespace CHQLDoNoiThat.FormsManager
                     selectedRow.Cells["name"].Value,
                     selectedRow.Cells["sellPrice"].Value,
                     txtSoLuong.Text);
+                selectedRow.Cells["quantity"].Value = (int)selectedRow.Cells["quantity"].Value - int.Parse(txtSoLuong.Text);
                 cartitems.Add(new CartItem(selectedRow.Cells["id"].Value.ToString(), int.Parse(txtSoLuong.Text)));
             }
 
@@ -245,7 +248,7 @@ namespace CHQLDoNoiThat.FormsManager
 
             if (!dbl_bill.add_bill(
                     idBill,
-                    id_employee,
+                    uid,
                     ref error))
             {
                 if (!String.IsNullOrEmpty(error))

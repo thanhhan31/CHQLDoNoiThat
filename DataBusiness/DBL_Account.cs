@@ -14,13 +14,19 @@ namespace DataBusiness
             dataProvider = new DataProvider();
         }
 
-        public DataSet employee_get_account(string id, ref string error)
+        public DBL_Account(string username, string hashed_password)
+        {
+            dataProvider = new DataProvider(username, hashed_password);
+        }
+
+        public DataSet get_account_info(string email, string hashed_password, ref string error)
         {
             return dataProvider.ExecuteQueryDataSet(
-                "SELECT * FROM dbo.fn_account_detail(@id)",
+                "SELECT * FROM dbo.fn_account_detail(@email, @password)",
                 CommandType.Text,
                 ref error,
-                new SqlParameter("@id", id)
+                new SqlParameter("@email", email),
+                new SqlParameter("@password", hashed_password)
                 );
         }
 
@@ -43,7 +49,7 @@ namespace DataBusiness
         }
 
         public bool add_employee(string id, string name, DateTime dob, string gender,
-            string phone, string idNo, string address, string email, string password, byte[] avatar, string idType, bool active, ref string error)
+            string phone, string idNo, string address, string email, string password, byte[] avatar, int idType, bool active, ref string error)
         {
             return dataProvider.ExecuteNonQuery(
                 "sp_add_employee",
@@ -67,7 +73,7 @@ namespace DataBusiness
         }
 
         public bool admin_update_employee(string id, string name, DateTime dob, string gender,
-            string phone, string idNo, string address, string email, string password, byte[] avatar, string idType, bool active, ref string error)
+            string phone, string idNo, string address, string email, string password, byte[] avatar, int idType, bool active, ref string error)
         {
             return dataProvider.ExecuteNonQuery(
                 "sp_admin_update_employee",
@@ -90,11 +96,11 @@ namespace DataBusiness
                 );
         }
 
-        public bool employee_update_employee(string id, string name, DateTime dob, string gender,
+        public bool user_update_info(string id, string name, DateTime dob, string gender,
             string phone, string idNo, string address, byte[] avatar, ref string error)
         {
             return dataProvider.ExecuteNonQuery(
-                "sp_employee_update_employee",
+                "sp_user_update_info",
                 CommandType.StoredProcedure,
                 ref error,
                 new SqlParameter("@id", id),
@@ -104,26 +110,26 @@ namespace DataBusiness
                 new SqlParameter("@phone", phone),
                 new SqlParameter("@idNo", idNo),
                 new SqlParameter("@address", address),
-                avatar.Length != 0 ? new SqlParameter("@avatar", SqlDbType.VarBinary) { Value = avatar } : new SqlParameter("@avatar", DBNull.Value)
+                avatar.Length != 0 ? new SqlParameter("@avatar", SqlDbType.VarBinary) { Value = avatar } : new SqlParameter("@avatar", SqlDbType.VarBinary) { Value = DBNull.Value }
                 );
         }
 
-        public bool deactive_employee(string id, ref string error)
+        public bool deactive_employee(string email, ref string error)
         {
             return dataProvider.ExecuteNonQuery(
                 "sp_hide_employee",
                 CommandType.StoredProcedure,
                 ref error,
-                new SqlParameter("@id", id)
+                new SqlParameter("@email", email)
                 );
         }
 
-        public bool change_password(string id, string email, string old_password, string new_password, ref string error)
+        public bool user_update_password(string id, string email, string old_password, string new_password, ref string error)
         {
             var returnParam = new SqlParameter("@ReturnVal", SqlDbType.Bit) { Direction = ParameterDirection.ReturnValue };
             
             if (!dataProvider.ExecuteNonQuery(
-                "sp_employee_update_password",
+                "sp_user_update_password",
                 CommandType.StoredProcedure,
                 ref error,
                 new SqlParameter("@id", id),
@@ -134,17 +140,6 @@ namespace DataBusiness
                 ))
                 return false;
             return (int)returnParam.Value == 1 ? true : false;
-        }
-
-        public DataSet login(string email, string pswd, ref string error)
-        {
-            return dataProvider.ExecuteQueryDataSet(
-                "SELECT * FROM dbo.fnLogin(@email, @pswd)",
-                CommandType.Text,
-                ref error,
-                new SqlParameter("@email", email),
-                new SqlParameter("@pswd", pswd)
-                );
         }
     }
 }

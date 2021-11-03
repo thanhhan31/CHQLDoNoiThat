@@ -13,7 +13,6 @@ namespace CHQLDoNoiThat
 {
     public partial class LoginForm : Form
     {
-
         public LoginForm()
         {
             InitializeComponent();
@@ -41,31 +40,39 @@ namespace CHQLDoNoiThat
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string email = txtUser.Text;
-            string passwd = txtPassword.Text;
+            string hashed_password = Utils.sha256(txtPassword.Text + email);
+            txtPassword.Text = "";
 
             string error = "";
-            DBL_Account dbl = new DBL_Account();
-            DataSet userinf = dbl.login(email, passwd, ref error);
-            if(userinf == null)
+            DBL_Account dbl = new DBL_Account(email, hashed_password);
+            DataSet userinf = dbl.get_account_info(email, hashed_password, ref error);
+            if(userinf == null || userinf.Tables[0].Rows.Count != 1)
             {
-                MessageBox.Show("Không có dữ liệu", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (String.IsNullOrEmpty(error) || error.Contains("Login failed"))
+                {
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(error, "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 return;
-            }    
-            bool login_as_employee = radioButton2.Checked;
-            if (userinf.Tables[0].Rows.Count == 1)
+            }
+            else
             {
+                bool login_as_employee = radioButton2.Checked;
                 var tmp = userinf.Tables[0].Rows[0].ItemArray;
                 if ((bool)tmp[11]) //active account
                 {
-                    if (((string)tmp[10]).Trim() == "1" && login_as_employee)
+                    if ((int)tmp[10] == 2 && login_as_employee)
                     {
-                        var formHomeStaff = new FormHomeStaff((string)tmp[0], this);
+                        var formHomeStaff = new FormHomeStaff((string)tmp[0], email, hashed_password, this);
                         formHomeStaff.Show();
                         this.Hide();
                     }
-                    else if (((string)tmp[10]).Trim() == "2" && !login_as_employee) //Quản lý
+                    else if ((int)tmp[10] == 1 && !login_as_employee) //Quản lý
                     {
-                        var formManager = new FormManager((string)tmp[0], this);
+                        var formManager = new FormManager((string)tmp[0], email, hashed_password, this);
                         formManager.Show();
                         this.Hide();
                     }
@@ -77,17 +84,6 @@ namespace CHQLDoNoiThat
                 else //deactive account
                 {
                     MessageBox.Show("Tài khoản đã bị vô hiệu hóa", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                if (String.IsNullOrEmpty(error))
-                {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show(error, "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

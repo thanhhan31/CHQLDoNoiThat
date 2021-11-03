@@ -17,11 +17,15 @@ namespace CHQLDoNoiThat
         private Form activeForm;
         private Form parent;
         private string uid;
+        private string email;
+        private string hashed_password;
 
-        public FormHomeStaff(string uid, Form parent)
+        public FormHomeStaff(string uid, string email, string hashed_password, Form parent)
         {
             InitializeComponent();
             this.uid = uid;
+            this.email = email;
+            this.hashed_password = hashed_password;
             this.parent = parent;
             this.FormClosed += FormHomeStaff_FormClosed;
         }
@@ -107,7 +111,7 @@ namespace CHQLDoNoiThat
         private void lblTenDangNhap_Click(object sender, EventArgs e)
         {
             DisableButton();
-            OpenChildForm(new FormAccount(uid), sender);
+            OpenChildForm(new FormAccount(uid, email, hashed_password, lblDangXuat_Click), sender);
         }
 
         private void lblDangXuat_Click(object sender, EventArgs e)
@@ -125,7 +129,7 @@ namespace CHQLDoNoiThat
         private void FormHomeStaff_Load(object sender, EventArgs e)
         {
             string error = "";
-            AccountObject account = Utils.getUserInfo(uid, ref error);
+            AccountObject account = Utils.getUserInfo(email, hashed_password, ref error);
             if (account == null)
             {
                 MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);

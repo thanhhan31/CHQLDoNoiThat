@@ -17,9 +17,10 @@ namespace DataBusiness
         public DataSet get_typeaccounts(ref string error)
         {
             return dataProvider.ExecuteQueryDataSet(
-                "SELECT * FROM TYPEACCS",
-                CommandType.Text,
-                ref error);
+                "sp_DS_TYPEACCS",
+                CommandType.StoredProcedure,
+                ref error
+                );
         }
     }
 }

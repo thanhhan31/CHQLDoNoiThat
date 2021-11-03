@@ -11,11 +11,11 @@ namespace CHQLDoNoiThat
 {
     public class Utils
     {
-        public static AccountObject getUserInfo(string uid, ref string error)
+        public static AccountObject getUserInfo(string email, string hashed_password, ref string error)
         {
             DBL_Account dbl = new DBL_Account();
 
-            var ds = dbl.employee_get_account(uid, ref error);
+            var ds = dbl.get_account_info(email, hashed_password, ref error);
             if (ds != null && ds.Tables[0].Rows.Count == 1)
             {
                 var tmp = ds.Tables[0].Rows[0].ItemArray;
@@ -29,7 +29,7 @@ namespace CHQLDoNoiThat
                             (string)tmp[6],
                             (string)tmp[7],
                             tmp[9] != DBNull.Value ? (byte[])tmp[9] : Array.Empty<byte>(),
-                            (string)tmp[10]
+                            (int)tmp[10]
                             );
             }
             else
@@ -38,7 +38,7 @@ namespace CHQLDoNoiThat
             }
         }
 
-        public static string getTypeAccName(string id, ref string error)
+        public static string getTypeAccName(int id, ref string error)
         {
             DBL_TypeAccount dbl = new DBL_TypeAccount();
             var ds = dbl.get_typeaccounts(ref error);
@@ -47,7 +47,7 @@ namespace CHQLDoNoiThat
                 var tmp = ds.Tables[0].Rows;
                 for (int i = 0; i < tmp.Count; i++)
                 {
-                    if ((string)tmp[i].ItemArray[0] == id)
+                    if ((int)tmp[i].ItemArray[0] == id)
                         return (string)tmp[i].ItemArray[1];
                 }
                 return null;
@@ -76,6 +76,17 @@ namespace CHQLDoNoiThat
             Bitmap bm = new Bitmap(new Bitmap(mStream, false), new_size);
             mStream.Dispose();
             return bm;
+        }
+        public static string sha256(string str)
+        {
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(str));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("X2"));
+            }
+            return hash.ToString();
         }
     }
 }

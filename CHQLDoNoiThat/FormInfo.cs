@@ -14,11 +14,15 @@ namespace CHQLDoNoiThat
     public partial class FormInfo : Form
     {
         private string uid;
+        private string email;
         private byte[] avt;
-        public FormInfo(string uid)
+        private string hashed_password;
+        public FormInfo(string uid, string email, string hashed_password)
         {
             InitializeComponent();
             this.uid = uid;
+            this.email = email;
+            this.hashed_password = hashed_password;
         }
 
         private void btnTaiAnhDaiDien_Click(object sender, EventArgs e)
@@ -51,6 +55,7 @@ namespace CHQLDoNoiThat
 
             btnLuu.Enabled = false;
             btnTaiAnhDaiDien.Enabled = false;
+            btnClearAvt.Enabled = false;
 
             btnSua.Enabled = true;
         }
@@ -66,6 +71,7 @@ namespace CHQLDoNoiThat
 
             btnLuu.Enabled = true;
             btnTaiAnhDaiDien.Enabled = true;
+            btnClearAvt.Enabled = true;
 
             btnSua.Enabled = false;
         }
@@ -79,7 +85,7 @@ namespace CHQLDoNoiThat
         {
             string error = "";
             DBL_Account dbl = new DBL_Account();
-            if (!dbl.employee_update_employee(
+            if (!dbl.user_update_info(
                 uid,
                 txtHoTen.Texts,
                 datePickerControlNgaySinh.Value,
@@ -90,8 +96,11 @@ namespace CHQLDoNoiThat
                 avt,
                 ref error))
             {
-                MessageBox.Show(error, "Lỗi cập nhật thông tin");
+                MessageBox.Show(error, "Lỗi cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+                MessageBox.Show("Cập nhật thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             disable_edit();
             update_data();
         }
@@ -105,10 +114,10 @@ namespace CHQLDoNoiThat
         private void update_data()
         {
             string error = "";
-            AccountObject account = Utils.getUserInfo(uid, ref error);
+            AccountObject account = Utils.getUserInfo(email, hashed_password, ref error);
             if (account == null)
             {
-                MessageBox.Show(error, "Lỗi tải thông tin nhân viên");
+                MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -125,7 +134,7 @@ namespace CHQLDoNoiThat
                 if (r != null)
                     label7.Text = "Chức vụ: " + r;
                 else
-                    MessageBox.Show("Không tìm thấy chức vụ " + error, "Lỗi tải thông tin chức vụ");
+                    MessageBox.Show("Không tìm thấy chức vụ (" + error + ")", "Lỗi tải thông tin chức vụ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 label11.Text = "Tình trạng: Đang hoạt động";
 
                 if (account.Avatar.Length != 0)
@@ -141,6 +150,12 @@ namespace CHQLDoNoiThat
                     avt = Array.Empty<byte>();
                 }
             }
+        }
+
+        private void btnClearAvt_Click(object sender, EventArgs e)
+        {
+            pictureBoxNhanVien.Image = null;
+            avt = Array.Empty<byte>();
         }
     }
 }

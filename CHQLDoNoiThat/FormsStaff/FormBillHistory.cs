@@ -15,20 +15,20 @@ namespace CHQLDoNoiThat.FormsStaff
     {
         DBL_Bill dbl = new DBL_Bill();
 
-        private string id_employee;
+        private string uid;
 
-        public FormBillHistory(string id_employee)
+        public FormBillHistory(string uid)
         {
             InitializeComponent();
             dataGridViewLSHD.ForeColor = Color.Black;
             this.Shown += delegate (object sender, EventArgs args) { dataGridViewLSHD.ClearSelection(); };
-            this.id_employee = id_employee;
+            this.uid = uid;
         }
 
         private void FormBillHistory_Load(object sender, EventArgs e)
         {
             string err = "";
-            DataSet ds = dbl.get_nv_billHistory(id_employee, ref err);
+            DataSet ds = dbl.get_nv_billHistory(uid, ref err);
             if (ds == null)
             {
                 MessageBox.Show(err, "Lỗi không thể lấy dữ liệu hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,7 +71,7 @@ namespace CHQLDoNoiThat.FormsStaff
         private void btnClearFilter_Click(object sender, EventArgs e)
         {
             string err = "";
-            DataSet ds = dbl.get_nv_billHistory(id_employee, ref err);
+            DataSet ds = dbl.get_nv_billHistory(uid, ref err);
             if (!String.IsNullOrEmpty(err))
             {
                 MessageBox.Show(err, "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -17,11 +17,11 @@ namespace DataBusiness
         private string _address;
         private string _email;
         private byte[] _avatar;
-        private string _idType;
+        private int _idType;
 
         public AccountObject(string id, string name, DateTime dob,
             string gender, string phone, string idNo, string address, string email,
-            byte[] avatar, string idType)
+            byte[] avatar, int idType)
         {
             this.Id = id;
             this.Name = name;
@@ -44,6 +44,6 @@ namespace DataBusiness
         public string Address { get => _address; set => _address = value; }
         public string Email { get => _email; set => _email = value; }
         public byte[] Avatar { get => _avatar; set => _avatar = value; }
-        public string IdType { get => _idType; set => _idType = value; }
+        public int IdType { get => _idType; set => _idType = value; }
     }
 }

@@ -14,17 +14,23 @@ namespace CHQLDoNoiThat
     public partial class FormChangePassword : Form
     {
         private string uid;
-        public FormChangePassword(string uid)
+        private string email;
+        private string hashed_password;
+        private Action<object, EventArgs> logoutAction;
+        public FormChangePassword(string uid, string email, string hashed_password, Action<object, EventArgs> logoutAction)
         {
             InitializeComponent();
             this.uid = uid;
+            this.email = email;
+            this.hashed_password = hashed_password;
+            this.logoutAction = logoutAction;
             txtTenDangNhap.Enabled = false;
         }
 
         private void FormChangePassword_Load(object sender, EventArgs e)
         {
             string error = "";
-            AccountObject account = Utils.getUserInfo(uid, ref error);
+            AccountObject account = Utils.getUserInfo(email, hashed_password, ref error);
             if (account == null)
             {
                 MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -44,10 +50,10 @@ namespace CHQLDoNoiThat
             }
             string error = "";
             DBL_Account dbl = new DBL_Account();
-            if(!dbl.change_password(
+            if (!dbl.user_update_password(
                 uid,
                 txtTenDangNhap.Texts,
-                txtMatKhauCu.Texts,
+                Utils.sha256(txtMatKhauCu.Texts + email),
                 txtMatKhauMoi.Texts,
                 ref error))
             {
@@ -63,9 +69,7 @@ namespace CHQLDoNoiThat
             else
             {
                 MessageBox.Show("Cập nhật mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMatKhauCu.Texts = "";
-                txtMatKhauMoi.Texts = "";
-                txtMatKhauMoi2.Texts = "";
+                logoutAction.Invoke(null, null);
             }
         }
     }

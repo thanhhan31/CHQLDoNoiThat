@@ -64,7 +64,10 @@ namespace CHQLDoNoiThat.FormsManager
                 txtCMND.Texts = dataGridViewNhanVien.CurrentRow.Cells["idNo"].Value.ToString();
                 txtDiaChi.Texts = dataGridViewNhanVien.CurrentRow.Cells["address"].Value.ToString();
                 txtEmail.Texts = dataGridViewNhanVien.CurrentRow.Cells["email"].Value.ToString();
-
+                if ((bool)dataGridViewNhanVien.CurrentRow.Cells["active"].Value)
+                    btnVohieuhoa.Enabled = true;
+                else
+                    btnVohieuhoa.Enabled = false;
 
                 var t = dataGridViewNhanVien.CurrentRow.Cells["idType"] as DataGridViewComboBoxCell;
                 for (int i = 0; i < t.Items.Count; i++)
@@ -129,7 +132,7 @@ namespace CHQLDoNoiThat.FormsManager
                     txtEmail.Texts,
                     txtPassword.Texts,
                     avt,
-                    (string)(cmbChucVu.SelectedItem as DataRowView).Row.ItemArray[0],
+                    (int)(cmbChucVu.SelectedItem as DataRowView).Row.ItemArray[0],
                     cmbTinhTrang.SelectedIndex == 0 ? true : false,
                     ref error))
                 {
@@ -159,7 +162,7 @@ namespace CHQLDoNoiThat.FormsManager
                     txtEmail.Texts,
                     txtPassword.Texts,
                     avt,
-                    (string)(cmbChucVu.SelectedItem as DataRowView).Row.ItemArray[0],
+                    (int)(cmbChucVu.SelectedItem as DataRowView).Row.ItemArray[0],
                     cmbTinhTrang.SelectedIndex == 0 ? true : false,
                     ref error))
                 {
@@ -199,7 +202,7 @@ namespace CHQLDoNoiThat.FormsManager
         {
             string error = "";
             DBL_Account dbl_account = new DBL_Account();
-            if (!dbl_account.deactive_employee(txtId.Texts, ref error))
+            if (!dbl_account.deactive_employee(txtEmail.Texts, ref error))
             {
                 MessageBox.Show(error, "Lỗi khi vô hiệu hóa nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -254,8 +257,8 @@ namespace CHQLDoNoiThat.FormsManager
 
             btnTaiAnhDaiDien.Enabled = false;
             btnLuu.Enabled = false;
+            btnClearAvt.Enabled = false;
 
-          
             dataGridViewNhanVien.CellClick += DataGridViewNhanVien_CellClick;
         }
 
@@ -276,6 +279,7 @@ namespace CHQLDoNoiThat.FormsManager
 
             btnTaiAnhDaiDien.Enabled = true;
             btnLuu.Enabled = true;
+            btnClearAvt.Enabled = true;
 
             dataGridViewNhanVien.CellClick -= DataGridViewNhanVien_CellClick;
         }
@@ -289,11 +293,30 @@ namespace CHQLDoNoiThat.FormsManager
             txtDiaChi.Texts = "";
             txtEmail.Texts = "";
 
-            cmbGioiTinh.SelectedIndex = -1;
-            cmbChucVu.SelectedIndex = -1;
-            cmbTinhTrang.SelectedIndex = -1;
+            cmbGioiTinh.SelectedIndex = 0;
+            cmbChucVu.SelectedIndex = 1;
+            cmbTinhTrang.SelectedIndex = 0;
 
             pictureBoxNhanVien.Image = null;
+        }
+
+        private void dataGridViewNhanVien_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dataGridViewNhanVien.Rows)
+            {
+                if (r.Cells["active"].Value == null)
+                    continue;
+                if ((bool)r.Cells["active"].Value)
+                    r.Cells["tinhtrang"].Value = "Đang làm";
+                else
+                    r.Cells["tinhtrang"].Value = "Vô hiệu hóa";
+            }
+        }
+
+        private void btnClearAvt_Click(object sender, EventArgs e)
+        {
+            pictureBoxNhanVien.Image = null;
+            avt = Array.Empty<byte>();
         }
     }
 }
