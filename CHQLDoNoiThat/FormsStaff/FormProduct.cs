@@ -41,7 +41,7 @@ namespace CHQLDoNoiThat.FormsStaff
             var ds_products = dbl_products.employee_get_view_product(ref error);
             if (ds_products == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + error + ")", "Lỗi không thể lấy dữ liệu sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

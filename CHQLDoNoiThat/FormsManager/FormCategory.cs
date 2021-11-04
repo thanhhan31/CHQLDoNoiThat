@@ -56,7 +56,7 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet ds_category = dbl_category.get_categories(ref error);
             if (ds_category == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + error + ")", "Lỗi không thể lấy dữ liệu loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -117,11 +117,11 @@ namespace CHQLDoNoiThat.FormsManager
             DBL_Category dbl_category = new DBL_Category();
             if (!dbl_category.delete_category(txtIdLoaiSanPham.Texts, ref error))
             {
-                MessageBox.Show(error, "Lỗi khi xóa loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + error + ")", "Lỗi khi xóa loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Xóa loại sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa loại sản phẩm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 update_data();
             }
         }
@@ -139,13 +139,13 @@ namespace CHQLDoNoiThat.FormsManager
                 {
                     if (!String.IsNullOrEmpty(error))
                     {
-                        MessageBox.Show(error, "Lỗi khi thêm mới loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi("+error+")", "Lỗi khi thêm mới loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Thêm loại sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm loại sản phẩm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else if (selected_mode == 2)
@@ -159,18 +159,18 @@ namespace CHQLDoNoiThat.FormsManager
                 {
                     if (!String.IsNullOrEmpty(error))
                     {
-                        MessageBox.Show(error, "Lỗi khi chỉnh sửa thông tin loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi("+error+")", "Lỗi khi chỉnh sửa thông tin loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Sửa đổi thông tin loại sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa đổi thông tin loại sản phẩm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn sửa hoặc thêm loại sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn sửa hoặc thêm loại sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             disable_edit();
             update_data();

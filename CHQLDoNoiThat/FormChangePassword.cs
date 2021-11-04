@@ -33,7 +33,7 @@ namespace CHQLDoNoiThat
             AccountObject account = Utils.getUserInfo(email, hashed_password, ref error);
             if (account == null)
             {
-                MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi("+error+")", "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -45,7 +45,7 @@ namespace CHQLDoNoiThat
         {
             if (txtMatKhauMoi.Texts != txtMatKhauMoi2.Texts)
             {
-                MessageBox.Show("Mật khẩu mới nhập lại không đúng!");
+                MessageBox.Show("Mật khẩu mới nhập lại không đúng!","Thông Báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string error = "";
@@ -59,11 +59,11 @@ namespace CHQLDoNoiThat
             {
                 if (!String.IsNullOrEmpty(error))
                 {
-                    MessageBox.Show("Lỗi: " + error, "Lỗi không thể cập nhật mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi(" + error +")", "Lỗi không thể cập nhật mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu cũ không chính xác", "Lỗi không thể cập nhật mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mật khẩu cũ không chính xác!", "Lỗi không thể cập nhật mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

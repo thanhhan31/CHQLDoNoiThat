@@ -43,11 +43,11 @@ namespace CHQLDoNoiThat.FormsManager
             string err = "";
             if(!dbl_i.delete_inventory(txtId.Texts, ref err))
             {
-                MessageBox.Show(err, "Lỗi khi xóa lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + err + ")", "Lỗi khi xóa lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Xóa lô sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa lô sản phẩm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 update_data();
             }
         }
@@ -100,20 +100,20 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet dsi = dbl_i.admin_get_view_inventories(ref err);
             if (dsi == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi("+err+")", "Lỗi không thể lấy dữ liệu lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             err = "";
             DataSet ds_pname_loc = dbl_p.get_products_name(ref err);
             if (ds_pname_loc == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + err + ")", "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataSet dsp = dbl_p.get_products_name(ref err);
             if (dsp == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + err + ")", "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataRow dr = ds_pname_loc.Tables[0].NewRow();
@@ -154,13 +154,13 @@ namespace CHQLDoNoiThat.FormsManager
                 {
                     if (!String.IsNullOrEmpty(err))
                     {
-                        MessageBox.Show(err, "Lỗi khi thêm lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi(" + err + ")", "Lỗi khi thêm lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Thêm lô sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm lô sản phẩm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else if(selected_mode == 2)
@@ -178,18 +178,18 @@ namespace CHQLDoNoiThat.FormsManager
                 {
                     if (!String.IsNullOrEmpty(err))
                     {
-                        MessageBox.Show(err, "Lỗi khi cập nhật lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi(" + err + ")", "Lỗi khi cập nhật lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật lô sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật lô sản phẩm thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn sửa hoặc thêm lô sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn sửa hoặc thêm lô sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             disable_edit();
             update_data();
@@ -260,7 +260,7 @@ namespace CHQLDoNoiThat.FormsManager
         {
             if(txtId.Texts == null || txtGiaGoc == null || txtLoiNhuan == null || txtSoLuong == null || txtVat == null || cmbTenSanPham.SelectedItem == null)
             {
-                MessageBox.Show("Vui lòng cung cấp đầy đủ thông tin", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng cung cấp đầy đủ thông tin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;

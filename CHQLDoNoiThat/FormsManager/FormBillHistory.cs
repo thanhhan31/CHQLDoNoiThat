@@ -26,7 +26,7 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet ds = dbl.get_view_billhistory(ref err);
             if (ds == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi("+err+")", "Lỗi không thể lấy dữ liệu hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             dataGridViewLSHD.DataSource = ds.Tables[0];
@@ -55,7 +55,7 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet ds = dbl.get_ql_billHistory_createDate(date, ref err);
             if (!String.IsNullOrEmpty(err))
             {
-                MessageBox.Show(err, "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + err + ")", "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 dataGridViewLSHD.DataSource = ds.Tables[0];
@@ -67,7 +67,7 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet ds = dbl.get_view_billhistory(ref err);
             if (!String.IsNullOrEmpty(err))
             {
-                MessageBox.Show(err, "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + err + ")", "Lỗi khi tải lịch sử hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 dataGridViewLSHD.DataSource = ds.Tables[0];

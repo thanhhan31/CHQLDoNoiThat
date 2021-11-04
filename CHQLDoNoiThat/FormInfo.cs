@@ -96,10 +96,10 @@ namespace CHQLDoNoiThat
                 avt,
                 ref error))
             {
-                MessageBox.Show(error, "Lỗi cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi ("+error+")", "Lỗi cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("Cập nhật thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             disable_edit();
             update_data();
@@ -117,7 +117,7 @@ namespace CHQLDoNoiThat
             AccountObject account = Utils.getUserInfo(email, hashed_password, ref error);
             if (account == null)
             {
-                MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + error + ")", "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

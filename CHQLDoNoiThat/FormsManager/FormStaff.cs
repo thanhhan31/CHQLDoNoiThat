@@ -138,13 +138,13 @@ namespace CHQLDoNoiThat.FormsManager
                 {
                     if (!String.IsNullOrEmpty(error))
                     {
-                        MessageBox.Show(error, "Lỗi khi thêm mới nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi(" + error + ")", "Lỗi khi thêm mới nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Thêm nhân viên thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else if (selected_mode == 2)
@@ -168,18 +168,18 @@ namespace CHQLDoNoiThat.FormsManager
                 {
                     if (!String.IsNullOrEmpty(error))
                     {
-                        MessageBox.Show(error, "Lỗi khi chỉnh sửa thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi(" + error + ")", "Lỗi khi chỉnh sửa thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Sửa đổi thông tin nhân viên thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa đổi thông tin nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn sửa hoặc thêm nhân viên", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn sửa hoặc thêm nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             disable_edit();
             update_data();
@@ -204,11 +204,11 @@ namespace CHQLDoNoiThat.FormsManager
             DBL_Account dbl_account = new DBL_Account();
             if (!dbl_account.deactive_employee(txtEmail.Texts, ref error))
             {
-                MessageBox.Show(error, "Lỗi khi vô hiệu hóa nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi("+error+")", "Lỗi khi vô hiệu hóa nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Vô hiệu hóa nhân viên thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vô hiệu hóa nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 update_data();
             }
         }
@@ -220,7 +220,7 @@ namespace CHQLDoNoiThat.FormsManager
             DataSet ds_account = dbl_account.admin_get_accounts(ref error);
             if (ds_account == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + error + ")", "Lỗi không thể lấy dữ liệu nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -229,7 +229,7 @@ namespace CHQLDoNoiThat.FormsManager
             var ds_typeaccount = dbl_typeaccount.get_typeaccounts(ref error).Tables[0];
             if (ds_typeaccount == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu chức vụ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + error + ")", "Lỗi không thể lấy dữ liệu chức vụ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

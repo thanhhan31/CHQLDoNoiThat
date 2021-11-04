@@ -37,7 +37,7 @@ namespace CHQLDoNoiThat.FormsManager
                 DataSet ds = dbl_s.statistic_allyear(ref err);
                 if (ds == null)
                 {
-                    MessageBox.Show("Không có dữ liệu", "Thông báo");
+                    MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 dataGridViewStatistic.DataSource = ds.Tables[0];
@@ -47,7 +47,7 @@ namespace CHQLDoNoiThat.FormsManager
                 DataSet ds = dbl_s.statistic_allmonth(ref err);
                 if (ds == null)
                 {
-                    MessageBox.Show("Không có dữ liệu", "Thông báo");
+                    MessageBox.Show("Không có dữ liệu!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 dataGridViewStatistic.DataSource = ds.Tables[0];
@@ -59,7 +59,7 @@ namespace CHQLDoNoiThat.FormsManager
                 DataSet ds = dbl_s.statistic_allquarter(ref err);
                 if (ds == null)
                 {
-                    MessageBox.Show("Không có dữ liệu", "Thông báo");
+                    MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 dataGridViewStatistic.DataSource = ds.Tables[0];

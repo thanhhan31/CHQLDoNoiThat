@@ -148,7 +148,7 @@ namespace CHQLDoNoiThat
             AccountObject account = Utils.getUserInfo(email, hashed_password, ref error);
             if (account == null)
             {
-                MessageBox.Show(error, "Lỗi tải thông tin nhân viên");
+                MessageBox.Show("Lỗi(" + error + ")" , "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -157,7 +157,7 @@ namespace CHQLDoNoiThat
                     lblTenDangNhap.Image = Utils.ByteToImage(account.Avatar, new Size(40, 40));
                     lblTenDangNhap.ImageAlign = ContentAlignment.MiddleLeft;
                 }
-                lblTenDangNhap.Text = account.Email;
+                lblTenDangNhap.Text = account.Name;
             }
         }
     }

@@ -26,7 +26,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet dsi = dbl_i.employee_get_inventories_by_pid("",ref err);
             if (dsi == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + err + ")", "Lỗi không thể lấy dữ liệu lô sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -34,7 +34,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_pname = dbl_p.get_products_name(ref err);
             if (ds_pname == null)
             {
-                MessageBox.Show(err, "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + err + ")", "Lỗi không thể lấy dữ liệu tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DataRow dr = ds_pname.Tables[0].NewRow();

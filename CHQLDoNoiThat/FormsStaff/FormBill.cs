@@ -80,7 +80,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_product = dbl_product.get_products(ref error);
             if (ds_product == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi("+error+")", "Lỗi không thể lấy dữ liệu sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -93,7 +93,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_catefory = dbl_category.get_categories(ref error);
             if (ds_catefory == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy dữ liệu loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi("+error+")", "Lỗi không thể lấy dữ liệu loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -162,7 +162,7 @@ namespace CHQLDoNoiThat.FormsStaff
                     {
                         if (int.Parse(txtSoLuong.Text) > int.Parse(selectedRow.Cells["quantity"].Value.ToString()))
                         {
-                            MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         int total_quantity = int.Parse(r.Cells["quantity_"].Value.ToString()) + int.Parse(txtSoLuong.Text);
@@ -178,7 +178,7 @@ namespace CHQLDoNoiThat.FormsStaff
             {
                 if (int.Parse(txtSoLuong.Text) > int.Parse(selectedRow.Cells["quantity"].Value.ToString()))
                 {
-                    MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số lượng sản phẩm quá lượng sản phẩm trên kệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 dataGridViewChiTietHoaDon.Rows.Add(selectedRow.Cells["id"].Value,
@@ -240,7 +240,7 @@ namespace CHQLDoNoiThat.FormsStaff
             DataSet ds_bill = dbl_bill.get_bills(ref error);
             if (ds_bill == null)
             {
-                MessageBox.Show(error, "Lỗi không thể lấy được dữ liệu hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi(" + error + ")" , "Lỗi không thể lấy được dữ liệu hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -253,7 +253,7 @@ namespace CHQLDoNoiThat.FormsStaff
             {
                 if (!String.IsNullOrEmpty(error))
                 {
-                    MessageBox.Show(error, "Lỗi khi thêm mới hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi(" + error + ")", "Lỗi khi thêm mới hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -263,19 +263,19 @@ namespace CHQLDoNoiThat.FormsStaff
                 DBL_BillDetail dbl_billDetail = new DBL_BillDetail();
                 if (!dbl_billDetail.add_billdetail(idBill, cartitems, ref error))
                 {
-                    MessageBox.Show(error, "Lỗi khi thêm mới chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi(" + error + ")" , "Lỗi khi thêm mới chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if (!dbl_bill.delete_bill(idBill, ref error))
                     {
                         if (!dbl_bill.delete_bill(idBill, ref error)) //retry
                         {
-                            MessageBox.Show(error, "Lỗi không thể hủy bỏ hóa đơn " + idBill, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Lỗi("+error+")", "Lỗi không thể hủy bỏ hóa đơn " + idBill, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Thêm hóa đơn thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm hóa đơn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

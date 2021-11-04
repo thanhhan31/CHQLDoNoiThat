@@ -50,11 +50,11 @@ namespace CHQLDoNoiThat
             {
                 if (String.IsNullOrEmpty(error) || error.Contains("Login failed"))
                 {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show(error, "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi("+error+")", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 return;
             }
@@ -78,12 +78,12 @@ namespace CHQLDoNoiThat
                     }
                     else //wrong account type
                     {
-                        MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else //deactive account
                 {
-                    MessageBox.Show("Tài khoản đã bị vô hiệu hóa", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tài khoản đã bị vô hiệu hóa!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

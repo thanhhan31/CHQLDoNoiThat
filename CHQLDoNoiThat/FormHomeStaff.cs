@@ -132,7 +132,7 @@ namespace CHQLDoNoiThat
             AccountObject account = Utils.getUserInfo(email, hashed_password, ref error);
             if (account == null)
             {
-                MessageBox.Show(error, "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi("+error+")", "Lỗi tải thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -142,7 +142,7 @@ namespace CHQLDoNoiThat
                     lblTenDangNhap.ImageAlign = ContentAlignment.MiddleLeft;
                 }
                 lblTenDangNhap.TextAlign = ContentAlignment.MiddleRight;
-                lblTenDangNhap.Text = account.Email;
+                lblTenDangNhap.Text = account.Name;
             }
         }
     }
