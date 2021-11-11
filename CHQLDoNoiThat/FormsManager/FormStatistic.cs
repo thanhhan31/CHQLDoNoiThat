@@ -76,7 +76,7 @@ namespace CHQLDoNoiThat.FormsManager
 
             Decimal thu = (Decimal)result["thu"];
             Decimal chi = (Decimal)result["chi"];
-            Decimal loi = (Decimal)result["doanhThu"];
+            Decimal loi = (Decimal)result["loiNhuan"];
             lblTienThu.Text = "Tiền thu: " + thu.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
             lblTienChi.Text = "Tiền chi: " + chi.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
             lblLoiNhuan.Text = "Lợi nhuận: " + loi.ToString("C3", CultureInfo.CreateSpecificCulture("vi-VN"));
