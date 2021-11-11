@@ -141,7 +141,6 @@ namespace CHQLDoNoiThat
                     lblTenDangNhap.Image = Utils.ByteToImage(account.Avatar, new Size(40, 40));
                     lblTenDangNhap.ImageAlign = ContentAlignment.MiddleLeft;
                 }
-                lblTenDangNhap.TextAlign = ContentAlignment.MiddleRight;
                 lblTenDangNhap.Text = account.Name;
             }
         }
