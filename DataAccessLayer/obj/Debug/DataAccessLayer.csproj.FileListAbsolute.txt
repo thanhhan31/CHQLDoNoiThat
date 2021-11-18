@@ -21,3 +21,9 @@ C:\Users\phamp\Documents\GitHub\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAcce
 C:\Users\phamp\Documents\GitHub\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\phamp\Documents\GitHub\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 C:\Users\Nancy\source\repos\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\N3\HKI-21_22\HQTCSDL\CHQLDoNoiThat\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

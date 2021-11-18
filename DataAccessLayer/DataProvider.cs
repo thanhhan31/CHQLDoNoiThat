@@ -8,7 +8,7 @@ namespace DataAccessLayer
 {
     public class DataProvider
     {
-        private static string serverName = @"DESKTOP-ET08Q48\SQLEXPRESS";
+        private static string serverName = @"DESKTOP-RLFQC12\SQLEXPRESS01";
         private static string dbName = @"DBMS_NoiThat";
         private static string connectionString;
 
