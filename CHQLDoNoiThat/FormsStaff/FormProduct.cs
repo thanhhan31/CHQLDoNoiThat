@@ -100,14 +100,5 @@ namespace CHQLDoNoiThat.FormsStaff
             else
                 (dataGridViewSanPham.DataSource as DataTable).DefaultView.RowFilter = "";
         }
-
-        private void txtTimTenSanPham__TextChanged(object sender, EventArgs e)
-        {
-            string filter = txtTimTenSanPham.Texts;
-            if (!String.IsNullOrEmpty(filter))
-                (dataGridViewSanPham.DataSource as DataTable).DefaultView.RowFilter = string.Format("productName LIKE '*{0}*'", filter);
-            else
-                (dataGridViewSanPham.DataSource as DataTable).DefaultView.RowFilter = "";
-        }
     }
 }

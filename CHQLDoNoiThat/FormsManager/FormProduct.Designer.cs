@@ -594,7 +594,7 @@ namespace CHQLDoNoiThat.FormsManager
             this.txtTimTenSanPham.TabIndex = 25;
             this.txtTimTenSanPham.Texts = "";
             this.txtTimTenSanPham.UnderlinedStyle = true;
-            this.txtTimTenSanPham.TextChanged += new System.EventHandler(this.txtTimTenSanPham_TextChanged);
+            this.txtTimTenSanPham._TextChanged += new System.EventHandler(this.txtTimTenSanPham_TextChanged);
             // 
             // elipseControl1
             // 

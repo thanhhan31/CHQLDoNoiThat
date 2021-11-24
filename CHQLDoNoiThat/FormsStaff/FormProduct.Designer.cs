@@ -406,8 +406,7 @@ namespace CHQLDoNoiThat.FormsStaff
             this.txtTimTenSanPham.TabIndex = 81;
             this.txtTimTenSanPham.Texts = "";
             this.txtTimTenSanPham.UnderlinedStyle = true;
-            this.txtTimTenSanPham._TextChanged += new System.EventHandler(this.txtTimTenSanPham__TextChanged);
-            this.txtTimTenSanPham.TextChanged += new System.EventHandler(this.txtTimTenSanPham_TextChanged);
+            this.txtTimTenSanPham._TextChanged += new System.EventHandler(this.txtTimTenSanPham_TextChanged);
             // 
             // FormProduct
             // 
